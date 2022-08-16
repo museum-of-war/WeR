@@ -1,0 +1,46 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+@font-face {
+  font-family: "RockstarBlack";
+  src: local("RockstarBlack"),
+  url("/public/fonts/RockStar-Black.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "RockstarLight";
+  src: local("RockstarLight"),
+  url("/public/fonts/RockStar-Light.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "RockstarNarrowRegular";
+  src: local("RockstarNarrowRegular"),
+  url("/public/fonts/RockStar-NarrowRegular.otf") format("truetype");
+}
+
+.typing-text {
+  width: 100%;
+  animation: typing 1s steps(22), blink .5s step-end alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 10px solid;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
+}

@@ -86,5 +86,5 @@ export const TEAM = [
   { name: 'V K', position: 'Position' },
   { name: 'Serhii Revva', position: 'Design' },
   { name: 'Rustam Abduvaliiev', position: 'Development' },
-  { name: 'Oleksandr Pokhilenko', position: 'Position' },
+  { name: 'Oleksandr Pokhylenko', position: 'Position' },
 ];

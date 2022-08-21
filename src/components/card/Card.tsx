@@ -52,7 +52,7 @@ export const Card: React.FC<CardProps> = ({ data }) => {
         <img
           src={data.imageSrc}
           alt=""
-          style={{ marginTop: 48, height: 256 }}
+          style={{ marginTop: 48, width: '100%' }}
         />
         <Stack
           direction="row"

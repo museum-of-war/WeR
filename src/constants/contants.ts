@@ -15,7 +15,7 @@ export const LOCATIONS: Record<
     shortLocation: 'locations.kyiv.shortLocation',
     location: 'locations.kyiv.location',
     url: 'Kyiv',
-    imageSrc: '/images/Map.png',
+    imageSrc: '/images/Irpin.png',
     videoSrc: '',
   },
   hostomel: {

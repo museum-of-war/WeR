@@ -1,11 +1,22 @@
 /* eslint-disable */
-import React, { useLayoutEffect, useMemo } from 'react';
-import { Box, Container, Stack, Typography } from '@mui/material';
+import React, { useEffect, useLayoutEffect, useMemo } from 'react';
+import {
+  Box,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { useIntl } from 'react-intl';
 import { LOCATIONS } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
 
 export const Heading: React.FC = () => {
+  const theme = useTheme();
+  const sm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const xs = useMediaQuery(theme.breakpoints.down('sm'));
   const intl = useIntl();
 
   const cities = useMemo(() => {
@@ -78,18 +89,51 @@ export const Heading: React.FC = () => {
     };
   }, [intl.locale]);
 
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      const video = document.querySelector('.heading-video') as HTMLElement;
+      const videoTrimmer = document.querySelector('.video-trimmer');
+
+      if (video && videoTrimmer) {
+        const margin = -(video.clientHeight - videoTrimmer.clientHeight) / 2;
+        video.style.marginTop = `${margin}px`;
+      }
+    });
+    const container = document.querySelector('body');
+
+    if (container) {
+      resizeObserver.observe(container);
+    }
+
+    return () => {
+      if (container) {
+        resizeObserver.unobserve(container);
+      }
+    };
+  }, []);
+
   return (
     <Container>
       <Stack direction="column" alignItems="center" position="relative">
-        <Box overflow="hidden" width="100%" height={464}>
+        <Box
+          overflow="hidden"
+          width="100%"
+          height={{
+            xs: 192,
+            sm: 384,
+            md: 464,
+          }}
+          className="video-trimmer"
+        >
           <video
             src="/videos/MainBanner.mp4"
+            className="heading-video"
             webkit-playsinline="true"
             controls={false}
             muted
             loop
             autoPlay
-            style={{ width: '100%', marginTop: -128 }}
+            style={{ width: '100%' }}
           />
         </Box>
         <Box
@@ -117,31 +161,32 @@ export const Heading: React.FC = () => {
           direction="row"
         >
           <Typography variant="h1" color="white" id="text" />
-          <Box id="cursor" />
+          <Typography variant="h1" color="white" id="cursor">
+            |
+          </Typography>
         </Stack>
       </Stack>
-      <Stack
-        mt={16}
-        sx={{
-          flexDirection: {
-            xs: 'column',
-            sm: 'row',
-          },
+      <Grid
+        container
+        mt={{
+          xs: 4,
+          sm: 6,
+          md: 10,
         }}
+        spacing={6}
       >
-        <Stack direction="column" flexBasis="35%" pr={6}>
+        <Grid item md={12} lg={5}>
           <Typography variant="h2">
-            {' '}
             <Message id="heading.title" />
           </Typography>
           <Typography mt={4}>
             <Message id="heading.description" />
           </Typography>
-        </Stack>
-        <Stack flexBasis="65%">
+        </Grid>
+        <Grid item md={12} lg={7}>
           <img src="/images/Map.png" alt="map" style={{ maxWidth: '100%' }} />
-        </Stack>
-      </Stack>
+        </Grid>
+      </Grid>
     </Container>
   );
 };

@@ -9,7 +9,11 @@ export const Footer: React.FC = () => (
       alignItems="center"
       justifyContent="space-between"
       height={96}
-      mt={16}
+      mt={{
+        xs: 6,
+        sm: 10,
+        md: 16,
+      }}
     >
       <Typography variant="body2">
         Ⓒ {new Date().getFullYear()} <Message id="footer.arr" />

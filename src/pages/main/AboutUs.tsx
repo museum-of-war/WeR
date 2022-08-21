@@ -4,7 +4,16 @@ import { ABOUT_US_CLASS_NAME, TEAM } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
 
 export const AboutUs: React.FC = () => (
-  <Container sx={{ mt: 16 }} className={ABOUT_US_CLASS_NAME}>
+  <Container
+    sx={{
+      mt: {
+        xs: 6,
+        sm: 10,
+        md: 16,
+      },
+    }}
+    className={ABOUT_US_CLASS_NAME}
+  >
     <Typography variant="h2">
       <Message id="aboutUs.title" />
     </Typography>
@@ -20,7 +29,7 @@ export const AboutUs: React.FC = () => (
         </Typography>
       </Grid>
       {TEAM.map((member) => (
-        <Grid item key={member.name} sm={12} md={6}>
+        <Grid item key={member.name} xs={12} sm={6}>
           <Stack
             direction="column"
             sx={{

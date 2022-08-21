@@ -7,10 +7,10 @@ export const CardComingSoon: React.FC = () => (
     direction="column"
     justifyContent="center"
     alignItems="center"
+    height="100%"
     sx={{
       borderTop: '2px solid #101010',
       borderBottom: '2px solid #101010',
-      height: 432,
       boxSizing: 'border-box',
     }}
   >

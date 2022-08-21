@@ -38,9 +38,7 @@ export const Header: React.FC<HeaderProps> = ({ setLocale, locale }) => {
     const node = document.querySelector(`.${selector}`);
 
     if (node) {
-      setTimeout(() => {
-        node.scrollIntoView({ behavior: 'smooth' });
-      });
+      node.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

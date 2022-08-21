@@ -139,7 +139,7 @@ export const Heading: React.FC = () => {
           </Typography>
         </Stack>
         <Stack flexBasis="65%">
-          <img src="/images/map.png" alt="map" style={{ maxWidth: '100%' }} />
+          <img src="/images/Map.png" alt="map" style={{ maxWidth: '100%' }} />
         </Stack>
       </Stack>
     </Container>

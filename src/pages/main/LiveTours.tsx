@@ -33,7 +33,16 @@ export const LiveTours: React.FC<LiveToursProps> = ({ heading, className }) => {
   }, []);
 
   return (
-    <Container sx={{ mt: 16 }} className={className}>
+    <Container
+      sx={{
+        mt: {
+          xs: 8,
+          sm: 12,
+          md: 16,
+        },
+      }}
+      className={className}
+    >
       <Typography variant="h2">
         <Message id={heading} />
       </Typography>

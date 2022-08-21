@@ -11,8 +11,8 @@ export const Donate: React.FC = () => (
   <Container
     sx={{
       mt: {
-        xs: 6,
-        sm: 10,
+        xs: 12,
+        sm: 14,
         md: 16,
       },
     }}

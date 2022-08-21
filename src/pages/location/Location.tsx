@@ -1,13 +1,27 @@
 import React from 'react';
-import { Box, Container, Stack, Typography } from '@mui/material';
-import { useParams } from 'react-router-dom';
+import {
+  Box,
+  Container,
+  IconButton,
+  Stack,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useIntl } from 'react-intl';
 import { ReactComponent as Arrow } from '../../svg/ArrowWhite.svg';
 import { LOCATIONS } from '../../constants/contants';
 import { Donate } from '../common/Donate';
 import { LiveTours } from '../main/LiveTours';
+import { Message } from '../../components/message/Message';
 
 export const Location: React.FC = () => {
+  const theme = useTheme();
   const { locationUrl } = useParams();
+  const navigate = useNavigate();
+  const intl = useIntl();
+  const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const location = Object.values(LOCATIONS).find(
     (place) => place.url === locationUrl,
@@ -25,25 +39,33 @@ export const Location: React.FC = () => {
           right: 0,
           width: '100%',
           zIndex: 0,
-          height: 464,
+          height: { xs: 284, sm: 384, md: 464 },
           overflow: 'hidden',
         }}
       >
         <img
           src={location.imageSrc}
-          alt={location.location}
+          alt={intl.formatMessage({ id: location.location })}
           style={{ minWidth: '100%' }}
         />
       </Box>
       <Container sx={{ zIndex: 1, position: 'relative', pt: 6 }}>
         <Stack direction="row" alignItems="center">
-          <Arrow />
-          <Typography variant="body2" ml={2} color="white">
+          <IconButton onClick={() => navigate('/')} sx={{ ml: -1 }}>
+            <Arrow height={xs ? 24 : 48} width={xs ? 24 : 48} />
+          </IconButton>
+          <Typography
+            variant="body2"
+            ml={2}
+            color="white"
+            onClick={() => navigate('/')}
+            sx={{ cursor: 'pointer' }}
+          >
             Back
           </Typography>
         </Stack>
         <Typography variant="h2" color="white">
-          {location.location}
+          <Message id={location.location} />
         </Typography>
         <video
           src={location.videoSrc}
@@ -51,9 +73,9 @@ export const Location: React.FC = () => {
           style={{ marginTop: 40 }}
           controls
         />
-        <LiveTours heading="location.title.moreLiveTours" />
-        <Donate />
       </Container>
+      <LiveTours heading="location.title.moreLiveTours" />
+      <Donate />
     </Box>
   );
 };

@@ -1,22 +1,10 @@
-/* eslint-disable */
 import React, { useEffect, useLayoutEffect, useMemo } from 'react';
-import {
-  Box,
-  Container,
-  Grid,
-  Stack,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
+import { Box, Container, Grid, Stack, Typography } from '@mui/material';
 import { useIntl } from 'react-intl';
 import { LOCATIONS } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
 
 export const Heading: React.FC = () => {
-  const theme = useTheme();
-  const sm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  const xs = useMediaQuery(theme.breakpoints.down('sm'));
   const intl = useIntl();
 
   const cities = useMemo(() => {

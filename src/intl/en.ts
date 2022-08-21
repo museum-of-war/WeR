@@ -50,8 +50,8 @@ export const en = {
   'team.revva.position': 'Design',
   'team.abduvaliiev.name': 'Rustam Abduvaliiev',
   'team.abduvaliiev.position': 'Development',
-  'team.pokhilenko.name': 'Oleksandr Pokhilenko',
-  'team.pokhilenko.position': 'Position',
+  'team.pokhylenko.name': 'Oleksandr Pokhylenko',
+  'team.pokhylenko.position': 'Position',
 
   'home.title.liveTours': 'Live Tours',
 

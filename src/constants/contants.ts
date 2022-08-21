@@ -98,7 +98,7 @@ export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
   { name: 'team.VK.name', position: 'team.VK.position' },
   { name: 'team.revva.name', position: 'team.revva.position' },
   { name: 'team.abduvaliiev.name', position: 'team.abduvaliiev.position' },
-  { name: 'team.pokhilenko.name', position: 'team.pokhilenko.position' },
+  { name: 'team.pokhylenko.name', position: 'team.pokhylenko.position' },
 ];
 
 export const USER_LANGUAGE_LS_KEY = 'USER_LANGUAGE';

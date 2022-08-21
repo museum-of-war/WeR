@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { ReactComponent as Arrow } from '../../svg/Arrow.svg';
+import { Message, TranslationKey } from '../message/Message';
 
 type CardProps = {
   data: {
-    location: string;
+    location: TranslationKey;
     imageSrc: string;
     isLive?: boolean;
     url: string;
@@ -14,45 +16,55 @@ export const Card: React.FC<CardProps> = ({ data }) => {
   const [showArrow, setShowArrow] = useState(false);
 
   return (
-    <Stack
-      direction="column"
-      sx={{
-        borderTop: '2px solid #101010',
-        borderBottom: '2px solid #101010',
-        cursor: 'pointer',
-      }}
-      onMouseEnter={() => setShowArrow(true)}
-      onMouseLeave={() => setShowArrow(false)}
-      position="relative"
-    >
-      {data.isLive && (
+    <Link to={data.url} style={{ textDecoration: 'none' }}>
+      <Stack
+        direction="column"
+        sx={{
+          borderTop: '2px solid #101010',
+          borderBottom: '2px solid #101010',
+          cursor: 'pointer',
+        }}
+        onMouseEnter={() => setShowArrow(true)}
+        onMouseLeave={() => setShowArrow(false)}
+        position="relative"
+      >
+        {data.isLive && (
+          <Stack
+            position="absolute"
+            left={0}
+            top={48}
+            bgcolor="primary.main"
+            alignItems="center"
+            direction="row"
+          >
+            <Box
+              height={8}
+              width={8}
+              borderRadius={4}
+              sx={{ backgroundColor: '#DE4646' }}
+              ml={2}
+            />
+            <Typography variant="body2" color="white" ml={1} mr={2}>
+              <Message id="card.liveNow" />
+            </Typography>
+          </Stack>
+        )}
+        <img
+          src={data.imageSrc}
+          alt=""
+          style={{ marginTop: 48, height: 256 }}
+        />
         <Stack
-          position="absolute"
-          left={0}
-          top={48}
-          bgcolor="primary.main"
-          alignItems="center"
           direction="row"
+          justifyContent="space-between"
+          alignItems="center"
         >
-          <Box
-            height={8}
-            width={8}
-            borderRadius={4}
-            sx={{ backgroundColor: '#DE4646' }}
-            ml={2}
-          />
-          <Typography variant="body2" color="white" ml={1} mr={2}>
-            Live Now
+          <Typography variant="h3" mt={4} mb={6} color="primary.main">
+            <Message id={data.location} />
           </Typography>
+          {showArrow && <Arrow />}
         </Stack>
-      )}
-      <img src={data.imageSrc} alt="" style={{ marginTop: 48, height: 256 }} />
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Typography variant="h3" mt={4} mb={6}>
-          {data.location}
-        </Typography>
-        {showArrow && <Arrow />}
       </Stack>
-    </Stack>
+    </Link>
   );
 };

@@ -1,24 +1,22 @@
 import React from 'react';
-import { Button, Container, Grid, Stack, Typography } from '@mui/material';
-import { Card } from '../../components/card/Card';
-import { TEAM } from '../../constants/contants';
+import { Container, Grid, Stack, Typography } from '@mui/material';
+import { ABOUT_US_CLASS_NAME, TEAM } from '../../constants/contants';
+import { Message } from '../../components/message/Message';
 
 export const AboutUs: React.FC = () => (
-  <Container sx={{ mt: 16 }}>
-    <Typography variant="h2">About Us</Typography>
+  <Container sx={{ mt: 16 }} className={ABOUT_US_CLASS_NAME}>
+    <Typography variant="h2">
+      <Message id="aboutUs.title" />
+    </Typography>
     <Grid container spacing={6} sx={{ mt: 0 }}>
       <Grid item sm={12} md={6}>
         <Typography>
-          We are a team of volunteers, who have crowdfunded and bought cool
-          drones and filmed the cities of Ukraine after their deoccupation. Our
-          project aims to keep the world's eyes wide open on the war in Ukraine.
+          <Message id="aboutUs.description1" />
         </Typography>
       </Grid>
       <Grid item sm={12} md={6}>
         <Typography>
-          On this site you can watch VR videos with an augmented reality helmet
-          – a rough reality, which will get no prize for film directing or
-          editing.
+          <Message id="aboutUs.description2" />
         </Typography>
       </Grid>
       {TEAM.map((member) => (
@@ -32,9 +30,11 @@ export const AboutUs: React.FC = () => (
             }}
           >
             <Stack direction="column" alignItems="flex-start" height="100%">
-              <Typography mt={3}>{member.name}</Typography>
+              <Typography mt={3}>
+                <Message id={member.name} />
+              </Typography>
               <Typography sx={{ mt: 1, opacity: 0.5 }}>
-                {member.position}
+                <Message id={member.position} />
               </Typography>
             </Stack>
           </Stack>

@@ -22,25 +22,23 @@ body, html, #root {
   url("/public/fonts/RockStar-NarrowRegular.otf") format("truetype");
 }
 
-.typing-text {
-  width: 100%;
-  animation: typing 1s steps(22), blink .5s step-end alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 10px solid;
+#text {
+  display: inline-block;
+  vertical-align: middle;
+  letter-spacing: 2px;
 }
 
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
+#cursor {
+  width: 16px;
+  height: 96px;
+  animation: blink .75s step-end infinite;
 }
 
 @keyframes blink {
+  from, to {
+    background-color: transparent
+  }
   50% {
-    border-color: transparent
+    background-color: white;
   }
 }

@@ -1,40 +1,82 @@
 /* eslint-disable */
-import React, {
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useLayoutEffect, useMemo } from 'react';
 import { Box, Container, Stack, Typography } from '@mui/material';
+import { useIntl } from 'react-intl';
 import { LOCATIONS } from '../../constants/contants';
+import { Message } from '../../components/message/Message';
 
 export const Heading: React.FC = () => {
-  const textRef = useRef<HTMLParagraphElement>(null);
+  const intl = useIntl();
+
   const cities = useMemo(() => {
     return [
-      'War as it sees',
-      ...Object.values(LOCATIONS).map((place) => place.shortLocation),
+      intl.locale === 'en' ? 'War as it sees' : 'Війна, як вона є',
+      ...Object.values(LOCATIONS).map((place) =>
+        intl.formatMessage({ id: place.shortLocation }),
+      ),
     ];
-  }, []);
-
-  const [currentLocationIndex, setCurrentLocationIndex] = useState(0);
+  }, [intl.locale]);
 
   useLayoutEffect(() => {
-    // todo @current add typing animation
-    setTimeout(() => {
-      if (textRef.current) {
-        setCurrentLocationIndex(
-          cities[currentLocationIndex + 1] ? currentLocationIndex + 1 : 0,
-        );
+    let cityIndex = 0;
+    let letterIndex = 0;
+    let interval: any;
+    let timeout: any;
 
-        // textRef.current.style.animation = 'none';
-        // textRef.current.offsetHeight;
-        // // @ts-ignore
-        // textRef.current.style.animation = null;
+    const textEl = document.querySelector('#text');
+    const cursorEl = document.querySelector('#cursor');
+
+    const typingHandler = () => {
+      if (!textEl || !cursorEl) return;
+
+      const text = cities[cityIndex].substring(0, letterIndex + 1);
+      textEl.innerHTML = text;
+      letterIndex++;
+
+      if (text === cities[cityIndex]) {
+        // @ts-ignore
+        // cursorEl.style.display = 'none';
+
+        clearInterval(interval);
+        timeout = setTimeout(() => {
+          interval = setInterval(deletionHandler, 100);
+        }, 1000);
       }
-    }, 6000);
-  }, [currentLocationIndex]);
+    };
+
+    const deletionHandler = () => {
+      if (!textEl || !cursorEl) return;
+
+      const text = cities[cityIndex].substring(0, letterIndex - 1);
+      textEl.innerHTML = text;
+      letterIndex--;
+
+      if (text === '') {
+        clearInterval(interval);
+
+        if (cityIndex == cities.length - 1) cityIndex = 0;
+        else cityIndex++;
+
+        letterIndex = 0;
+
+        timeout = setTimeout(() => {
+          // @ts-ignore
+          // cursorEl.style.display = 'inline-block';
+          interval = setInterval(typingHandler, 150);
+        }, 200);
+      }
+    };
+
+    interval = setInterval(typingHandler, 150);
+
+    return () => {
+      if (textEl) {
+        textEl.innerHTML = '';
+      }
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
+  }, [intl.locale]);
 
   return (
     <Container>
@@ -74,19 +116,8 @@ export const Heading: React.FC = () => {
           display="inline-flex"
           direction="row"
         >
-          <Typography
-            variant="h1"
-            color="white"
-            // className="typing-text"
-            ref={textRef}
-            // style={{
-            //   animation: `typing 1s steps(${
-            //     cities[currentLocationIndex].length - 4
-            //   })`,
-            // }}
-          >
-            {cities[currentLocationIndex]}
-          </Typography>
+          <Typography variant="h1" color="white" id="text" />
+          <Box id="cursor" />
         </Stack>
       </Stack>
       <Stack
@@ -99,13 +130,12 @@ export const Heading: React.FC = () => {
         }}
       >
         <Stack direction="column" flexBasis="35%" pr={6}>
-          <Typography variant="h2">You Need A Look Not A Ride</Typography>
+          <Typography variant="h2">
+            {' '}
+            <Message id="heading.title" />
+          </Typography>
           <Typography mt={4}>
-            Take a safe look at the unsafe cities of Ukraine after their
-            deoccupation as if you were there right now. Due to Russian
-            unprovoked and inhuman invasion, Ukrainians are fighting for
-            freedom, human rights and safety of democracy. Your eyes wide open
-            matters.
+            <Message id="heading.description" />
           </Typography>
         </Stack>
         <Stack flexBasis="65%">

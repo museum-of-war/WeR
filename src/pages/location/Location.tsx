@@ -51,11 +51,9 @@ export const Location: React.FC = () => {
           style={{ marginTop: 40 }}
           controls
         />
-        <LiveTours heading="More Live Tours" />
+        <LiveTours heading="location.title.moreLiveTours" />
         <Donate />
       </Container>
     </Box>
   );
 };
-// todo @current video controls / pause icon
-// todo @current video description

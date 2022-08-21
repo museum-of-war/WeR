@@ -1,5 +1,6 @@
 import React from 'react';
 import { Stack, Typography } from '@mui/material';
+import { Message } from '../message/Message';
 
 export const CardComingSoon: React.FC = () => (
   <Stack
@@ -13,6 +14,8 @@ export const CardComingSoon: React.FC = () => (
       boxSizing: 'border-box',
     }}
   >
-    <Typography variant="h3">More is coming soon</Typography>
+    <Typography variant="h3">
+      <Message id="card.comingSoon" />
+    </Typography>
   </Stack>
 );

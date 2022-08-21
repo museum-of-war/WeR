@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Stack, Typography } from '@mui/material';
+import { Container, Link, Stack, Typography } from '@mui/material';
+import { Message } from '../message/Message';
 
 export const Footer: React.FC = () => (
   <Container>
@@ -11,10 +12,15 @@ export const Footer: React.FC = () => (
       mt={16}
     >
       <Typography variant="body2">
-        Ⓒ {new Date().getFullYear()} All rights reserved
+        Ⓒ {new Date().getFullYear()} <Message id="footer.arr" />
       </Typography>
-      <Typography variant="body2">YouTube</Typography>
+      <Link
+        href="https://www.youtube.com/channel/UCOssjJx0Vm9kuEvxRKaMPBg"
+        variant="body2"
+        target="_blank"
+      >
+        YouTube
+      </Link>
     </Stack>
   </Container>
 );
-// todo @current youtube link

@@ -4,6 +4,7 @@ import { LiveTours } from './LiveTours';
 import { AboutUs } from './AboutUs';
 import { Donate } from '../common/Donate';
 import { Box, Container } from '@mui/material';
+import { LIVE_TOURS_CLASS_NAME } from '../../constants/contants';
 
 export const Main: React.FC = () => (
   <Box>
@@ -16,7 +17,10 @@ export const Main: React.FC = () => (
       />
     </Container>
     <Heading />
-    <LiveTours heading="Live Tours" />
+    <LiveTours
+      heading="home.title.liveTours"
+      className={LIVE_TOURS_CLASS_NAME}
+    />
     <Donate />
     <AboutUs />
   </Box>

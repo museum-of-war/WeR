@@ -1,14 +1,17 @@
 import React from 'react';
 import { Button, Container, Grid, Stack, Typography } from '@mui/material';
+import { Message, TranslationKey } from '../../components/message/Message';
 
-const RECIPIENTS = [
-  { title: 'United 24', url: '' },
-  { title: 'Come Back Alive Foundation', url: '' },
-  { title: 'Serhii Prytula Foundation', url: '' },
+const RECIPIENTS: { title: TranslationKey; url: string }[] = [
+  // { title: 'United 24', url: '' },
+  // { title: 'Come Back Alive Foundation', url: '' },
+  { title: 'donate.recipient.prytula', url: 'https://prytulafoundation.org/' },
 ];
 export const Donate: React.FC = () => (
   <Container sx={{ mt: 16 }}>
-    <Typography variant="h2">Donate to Ukraine</Typography>
+    <Typography variant="h2">
+      <Message id="donate.title" />
+    </Typography>
     <Grid container spacing={6} sx={{ mt: 0 }}>
       {RECIPIENTS.map((recipient) => (
         <Grid item key={recipient.title} sm={12} md={6}>
@@ -24,10 +27,10 @@ export const Donate: React.FC = () => (
           >
             <Stack direction="column" alignItems="flex-start" height="100%">
               <Typography variant="h3" mt={4} mb={6}>
-                {recipient.title}
+                <Message id={recipient.title} />
               </Typography>
               <Button sx={{ mt: 'auto', mb: 6 }} variant="outlined">
-                Go To Website
+                <Message id="donate.button.goToWebSite" />
               </Button>
             </Stack>
           </Stack>
@@ -36,4 +39,3 @@ export const Donate: React.FC = () => (
     </Grid>
   </Container>
 );
-// todo @current donations links

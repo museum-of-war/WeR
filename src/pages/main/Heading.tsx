@@ -9,7 +9,7 @@ export const Heading: React.FC = () => {
 
   const cities = useMemo(() => {
     return [
-      intl.locale === 'en' ? 'War as it sees' : 'Війна, як вона є',
+      intl.locale === 'en' ? 'War as it is' : 'Війна, як вона є',
       ...Object.values(LOCATIONS).map((place) =>
         intl.formatMessage({ id: place.shortLocation }),
       ),

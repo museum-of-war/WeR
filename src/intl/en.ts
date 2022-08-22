@@ -43,15 +43,15 @@ export const en = {
   'donate.button.goToWebSite': 'Go To Website',
 
   'team.andrienko.name': 'Yurii Andrienko',
-  'team.andrienko.position': 'Position',
+  'team.andrienko.position': 'COO',
   'team.VK.name': 'V K',
-  'team.VK.position': 'Position',
+  'team.VK.position': 'Chaos',
   'team.revva.name': 'Serhii Revva',
   'team.revva.position': 'Design',
   'team.abduvaliiev.name': 'Rustam Abduvaliiev',
   'team.abduvaliiev.position': 'Development',
   'team.pokhylenko.name': 'Oleksandr Pokhylenko',
-  'team.pokhylenko.position': 'Position',
+  'team.pokhylenko.position': 'Development',
 
   'home.title.liveTours': 'Live Tours',
 

@@ -94,8 +94,8 @@ export const LOCATIONS: Record<
 export const TOURS = [LOCATIONS.irpin, LOCATIONS.kyiv];
 
 export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
-  { name: 'team.andrienko.name', position: 'team.andrienko.position' },
   { name: 'team.VK.name', position: 'team.VK.position' },
+  { name: 'team.andrienko.name', position: 'team.andrienko.position' },
   { name: 'team.revva.name', position: 'team.revva.position' },
   { name: 'team.abduvaliiev.name', position: 'team.abduvaliiev.position' },
   { name: 'team.pokhylenko.name', position: 'team.pokhylenko.position' },

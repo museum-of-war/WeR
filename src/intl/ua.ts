@@ -42,15 +42,15 @@ export const ua: Record<TranslationKey, string> = {
   'donate.button.goToWebSite': 'Перейти на веб-сайт',
 
   'team.andrienko.name': 'Юрій Андрієнко',
-  'team.andrienko.position': 'Позиція',
+  'team.andrienko.position': 'COO',
   'team.VK.name': 'V K',
-  'team.VK.position': 'Позиція',
+  'team.VK.position': 'Хаос',
   'team.revva.name': 'Сергій Ревва',
   'team.revva.position': 'Дизайн',
   'team.abduvaliiev.name': 'Рустам Абдувалієв',
   'team.abduvaliiev.position': 'Розробка',
   'team.pokhylenko.name': 'Олександр Похиленко',
-  'team.pokhylenko.position': 'Позиція',
+  'team.pokhylenko.position': 'Розробка',
 
   'home.title.liveTours': 'Live Тури',
 

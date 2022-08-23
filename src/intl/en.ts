@@ -45,7 +45,7 @@ export const en = {
   'team.andrienko.name': 'Yurii Andrienko',
   'team.andrienko.position': 'COO',
   'team.VK.name': 'V K',
-  'team.VK.position': 'Chaos',
+  'team.VK.position': 'CEO/Chaos',
   'team.revva.name': 'Serhii Revva',
   'team.revva.position': 'Design',
   'team.abduvaliiev.name': 'Rustam Abduvaliiev',

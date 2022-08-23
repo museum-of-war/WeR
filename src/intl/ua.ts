@@ -44,7 +44,7 @@ export const ua: Record<TranslationKey, string> = {
   'team.andrienko.name': 'Юрій Андрієнко',
   'team.andrienko.position': 'COO',
   'team.VK.name': 'V K',
-  'team.VK.position': 'Хаос',
+  'team.VK.position': 'CEO/Хаос',
   'team.revva.name': 'Сергій Ревва',
   'team.revva.position': 'Дизайн',
   'team.abduvaliiev.name': 'Рустам Абдувалієв',

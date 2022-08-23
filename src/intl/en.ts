@@ -39,6 +39,7 @@ export const en = {
     'On this site you can watch VR videos with an augmented reality helmet – a rough reality, which will get no prize for film directing or editing.',
 
   'donate.title': 'Donate to Ukraine',
+  'donate.recipient.united24': 'United 24',
   'donate.recipient.prytula': 'Serhii Prytula Foundation',
   'donate.button.goToWebSite': 'Go To Website',
 

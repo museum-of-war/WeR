@@ -3,9 +3,9 @@ import { Button, Container, Grid, Stack, Typography } from '@mui/material';
 import { Message, TranslationKey } from '../../components/message/Message';
 
 const RECIPIENTS: { title: TranslationKey; url: string }[] = [
-  // { title: 'United 24', url: '' },
+  { title: 'donate.recipient.united24', url: 'https://u24.gov.ua/' },
   // { title: 'Come Back Alive Foundation', url: '' },
-  { title: 'donate.recipient.prytula', url: 'https://prytulafoundation.org/' },
+  // { title: 'donate.recipient.prytula', url: 'https://prytulafoundation.org/' },
 ];
 export const Donate: React.FC = () => (
   <Container

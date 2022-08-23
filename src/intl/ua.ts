@@ -38,6 +38,7 @@ export const ua: Record<TranslationKey, string> = {
   'aboutUs.description2': 'І тут буде',
 
   'donate.title': 'Зробити внесок для України',
+  'donate.recipient.united24': 'United 24',
   'donate.recipient.prytula': 'Фонд Сергія Притули',
   'donate.button.goToWebSite': 'Перейти на веб-сайт',
 

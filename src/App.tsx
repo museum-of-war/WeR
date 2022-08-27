@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
+import ReactGA from 'react-ga4';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { IntlProvider, ReactIntlErrorCode } from 'react-intl';
 import { OnErrorFn } from '@formatjs/intl/src/types';
@@ -12,6 +13,8 @@ import { USER_LANGUAGE_LS_KEY } from './constants/contants';
 import { en } from './intl/en';
 import { ua } from './intl/ua';
 
+ReactGA.initialize('G-H6MQYL5SD8');
+
 const onError: OnErrorFn = (error) => {
   if (error.code === ReactIntlErrorCode.MISSING_DATA) {
     return;
@@ -21,6 +24,13 @@ const onError: OnErrorFn = (error) => {
 export type AppLocale = 'en' | 'ua';
 export const App: React.FC = () => {
   const [locale, setLocale] = useState<AppLocale>('ua');
+
+  useEffect(() => {
+    ReactGA.send({
+      hitType: 'pageview',
+      page: window.location.pathname + window.location.search,
+    });
+  }, []);
 
   useEffect(() => {
     const locale = localStorage.getItem(USER_LANGUAGE_LS_KEY);
@@ -71,3 +81,5 @@ export const App: React.FC = () => {
 // todo @current meta
 // todo @current translations
 // todo @current VR places
+// todo @current add Google Analytics for donations
+// todo @current add Google Analytics for VR places

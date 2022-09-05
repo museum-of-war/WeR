@@ -24,7 +24,7 @@ export const Location: React.FC = () => {
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const location = Object.values(LOCATIONS).find(
-    (place) => place.url === locationUrl,
+    (place) => place.url === `/${locationUrl}`,
   );
 
   if (!location) return null;

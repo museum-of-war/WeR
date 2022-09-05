@@ -14,7 +14,7 @@ export const Heading: React.FC = () => {
         intl.formatMessage({ id: place.shortLocation }),
       ),
     ];
-  }, [intl.locale]);
+  }, [intl]);
 
   useLayoutEffect(() => {
     let cityIndex = 0;
@@ -53,7 +53,7 @@ export const Heading: React.FC = () => {
       if (text === '') {
         clearInterval(interval);
 
-        if (cityIndex == cities.length - 1) cityIndex = 0;
+        if (cityIndex === cities.length - 1) cityIndex = 0;
         else cityIndex++;
 
         letterIndex = 0;
@@ -75,7 +75,7 @@ export const Heading: React.FC = () => {
       clearInterval(interval);
       clearTimeout(timeout);
     };
-  }, [intl.locale]);
+  }, [intl.locale, cities]);
 
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {

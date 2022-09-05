@@ -1,5 +1,12 @@
 import React from 'react';
-import { Container, Grid, Stack, Typography } from '@mui/material';
+import {
+  Button,
+  Container,
+  Grid,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material';
 import { ABOUT_US_CLASS_NAME, TEAM } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
 
@@ -49,6 +56,24 @@ export const AboutUs: React.FC = () => (
           </Stack>
         </Grid>
       ))}
+    </Grid>
+    <Grid container spacing={6} sx={{ mt: 0 }}>
+      <Grid item sm={12} md={6}>
+        <Typography variant="h3">
+          <Message id="aboutUs.supportUs.title" />
+        </Typography>
+        <Button variant="outlined" sx={{ mt: 4 }}>
+          <Message id="aboutUs.supportUs.button" />
+        </Button>
+      </Grid>
+      <Grid item sm={12} md={6}>
+        <Typography variant="h3">
+          <Message id="aboutUs.contactUs" />
+        </Typography>
+        <Stack sx={{ mt: 4, textDecoration: 'underline' }}>
+          <Link href="mailto:general@wer.travel">general@wer.travel</Link>
+        </Stack>
+      </Grid>
     </Grid>
   </Container>
 );

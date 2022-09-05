@@ -28,20 +28,30 @@ export const en = {
   'card.liveNow': 'Live Now',
   'card.comingSoon': 'More is coming soon',
 
-  'heading.title': 'You Need A Look Not A Ride',
+  'heading.title': 'Feel and immerse',
   'heading.description':
-    'Take a safe look at the unsafe cities of Ukraine after their deoccupation as if you were there right now. Due to Russian unprovoked and inhuman invasion, Ukrainians are fighting for freedom, human rights and safety of democracy. Your eyes wide open matters.',
+    'We show the world the real war and give you the opportunity to immerse yourself in it and feel it.',
 
   'aboutUs.title': 'About Us',
   'aboutUs.description1':
-    "We are a team of volunteers, who have crowdfunded and bought cool drones and filmed the cities of Ukraine after their deoccupation. Our project aims to keep the world's eyes wide open on the war in Ukraine.",
+    'We are a team of volunteers who created a project aimed at making the world see the war in Ukraine through our eyes, without editors and the right staff.',
   'aboutUs.description2':
-    'On this site you can watch VR videos with an augmented reality helmet – a rough reality, which will get no prize for film directing or editing.',
+    'On this site, you will be able to immerse yourself in the harsh reality of the modern war that is taking place on the territory of Ukraine, with the help of VR tours and live broadcasts of civilian and historical and cultural objects destroyed by the russian army.',
+  'aboutUs.supportUs.title': 'Support our project',
+  'aboutUs.supportUs.button': 'Donate to project in ETH',
+  'aboutUs.contactUs': 'Contact us if you have questions or suggestions',
 
   'donate.title': 'Donate to Ukraine',
-  'donate.recipient.united24': 'United 24',
-  'donate.recipient.prytula': 'Serhii Prytula Foundation',
-  'donate.button.goToWebSite': 'Go To Website',
+  'donate.recipient.mincult.title':
+    'Ministry of Culture and Information Policy of Ukraine',
+  'donate.recipient.mincult.description':
+    'Every day, the Russian army destroys cities, villages and monuments of cultural and historical heritage. Each of your donations - decide to open broken schools, kindergartens and hospitals in Ukraine. All your funds are transferred to the official accounts of the National Bank of Ukraine.',
+  'donate.recipient.dronarium.title': 'Dronarium',
+  'donate.recipient.dronarium.description':
+    'DRONARIUM is the first training center for drone pilots in Ukraine, where graduates get practical experience of operating UAVs in a wide variety of conditions, in-depth study of aviation law, Ukrainian legislation and international law in the field of UAVs. All this makes graduates of the academy reliable defenders of the Ukrainian sky and accurate eyes in the sky. You can support the academy and accelerate the approach of victory - by sending a donation of any amount.',
+  'donate.button.donate': 'Donate',
+
+  'vrplaces.title': 'VR Places',
 
   'team.andrienko.name': 'Yurii Andrienko',
   'team.andrienko.position': 'COO',
@@ -59,4 +69,6 @@ export const en = {
   'location.title.moreLiveTours': 'More Live Tours',
 
   'footer.arr': 'All rights reserved',
+
+  'partners.title': 'Partners',
 };

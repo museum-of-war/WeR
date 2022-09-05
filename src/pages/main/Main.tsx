@@ -1,10 +1,12 @@
 import React from 'react';
+import { Box, Container } from '@mui/material';
+import { Donate } from '../common/Donate';
+import { LIVE_TOURS_CLASS_NAME } from '../../constants/contants';
+import { AboutUs } from './AboutUs';
 import { Heading } from './Heading';
 import { LiveTours } from './LiveTours';
-import { AboutUs } from './AboutUs';
-import { Donate } from '../common/Donate';
-import { Box, Container } from '@mui/material';
-import { LIVE_TOURS_CLASS_NAME } from '../../constants/contants';
+import { VRPlaces } from './VRPlaces';
+import { Partners } from './Partners';
 
 export const Main: React.FC = () => (
   <Box>
@@ -21,7 +23,9 @@ export const Main: React.FC = () => (
       heading="home.title.liveTours"
       className={LIVE_TOURS_CLASS_NAME}
     />
+    <VRPlaces />
     <Donate />
     <AboutUs />
+    <Partners />
   </Box>
 );

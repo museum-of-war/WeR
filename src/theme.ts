@@ -7,6 +7,9 @@ export const theme = createTheme({
       main: '#101010',
     },
   },
+  typography: {
+    fontFamily: 'RockstarNarrowRegular',
+  },
   components: {
     MuiTypography: {
       styleOverrides: {

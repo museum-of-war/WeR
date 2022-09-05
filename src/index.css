@@ -43,3 +43,7 @@ body, html, #root {
     color: white;
   }
 }
+
+.bold {
+  font-family: RockstarBlack!important;
+}

@@ -43,7 +43,8 @@ export const ua: Record<TranslationKey, string> = {
   'aboutUs.supportUs.button': 'Зробити внесок у проект у ETH',
   'aboutUs.contactUs': 'Напишіть нам, якщо маєте запитання або пропозиції',
 
-  'donate.title': 'Donate to Ukraine',
+  'donate.title': 'Підтримай Україну',
+  'donate.title.to': 'Підримати',
   'donate.recipient.mincult.title':
     'Міністерство культури та інформаційної політики України',
   'donate.recipient.mincult.description':

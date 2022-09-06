@@ -42,6 +42,7 @@ export const en = {
   'aboutUs.contactUs': 'Contact us if you have questions or suggestions',
 
   'donate.title': 'Donate to Ukraine',
+  'donate.title.to': 'Donate to',
   'donate.recipient.mincult.title':
     'Ministry of Culture and Information Policy of Ukraine',
   'donate.recipient.mincult.description':

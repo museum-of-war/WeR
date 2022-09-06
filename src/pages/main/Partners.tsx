@@ -46,8 +46,8 @@ export const Partners: React.FC = () => (
         }}
       >
         {PARTNERS.map((partner) => (
-          <Grid item sm={12} md={6} lg={3}>
-            <Stack justifyContent="center" height="100%" px="10%">
+          <Grid item xs={6} md={6} lg={3}>
+            <Stack justifyContent="center" height="100%" px="25%">
               <img src={partner} alt="" style={{ maxWidth: '100%' }} />
             </Stack>
           </Grid>

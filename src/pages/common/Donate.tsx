@@ -77,7 +77,7 @@ export const Donate: React.FC = () => {
       {RECIPIENTS.map((recipient) => (
         <Stack
           key={recipient.title}
-          direction="row"
+          direction={{ xs: 'column', sm: 'row' }}
           spacing={8}
           sx={{
             borderTop: '2px solid #101010',
@@ -89,7 +89,7 @@ export const Donate: React.FC = () => {
             mt: 6,
           }}
         >
-          <Stack direction="column" width="50%">
+          <Stack direction="column" width={{ xs: '100%', sm: '50%' }}>
             <img
               src={recipient.logo}
               width={130}
@@ -108,7 +108,7 @@ export const Donate: React.FC = () => {
               <Message id="donate.button.donate" />
             </Button>
           </Stack>
-          <Stack width="50%">
+          <Stack width={{ xs: '100%', sm: '50%' }}>
             <Typography>
               <Message id={recipient.description} />
             </Typography>
@@ -118,7 +118,8 @@ export const Donate: React.FC = () => {
       {activeRecipient && (
         <Dialog open onClose={() => setActiveRecipient(null)}>
           <DialogTitle>
-            Donate to <Message id={activeRecipient.title} />
+            <Message id="donate.title.to" />{' '}
+            <Message id={activeRecipient.title} />
           </DialogTitle>
           <DialogContent>
             <Stack spacing={2}>
@@ -128,7 +129,9 @@ export const Donate: React.FC = () => {
                     {requisite.key}
                   </Typography>
                   <Stack direction="row" alignItems="center">
-                    <Typography variant="body2">{requisite.value}</Typography>
+                    <Typography variant="body2" sx={{ wordBreak: 'break-all' }}>
+                      {requisite.value}
+                    </Typography>
                     <IconButton
                       sx={{ ml: 2 }}
                       onClick={() => {

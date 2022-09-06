@@ -47,3 +47,12 @@ body, html, #root {
 .bold {
   font-family: RockstarBlack!important;
 }
+
+.hide-scroll::-webkit-scrollbar, .hide-scroll *::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scroll, .hide-scroll * {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -88,6 +88,7 @@ export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
         ))}
       </Grid>
       <Dialog
+        className="hide-scroll"
         onClose={handleClose}
         open={open}
         fullWidth

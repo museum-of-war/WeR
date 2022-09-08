@@ -41,16 +41,22 @@ export const en = {
   'aboutUs.supportUs.button': 'Donate to project in ETH',
   'aboutUs.contactUs': 'Contact us if you have questions or suggestions',
 
+  'donate.amount': 'Enter amount',
+  'donate.continue': 'Continue',
+  'donate.walletNeeded': 'You need an Ethereum wallet to donate. Connect with one of our available wallet providers or create a new one.',
   'donate.title': 'Donate to Ukraine',
   'donate.title.to': 'Donate to',
   'donate.recipient.mincult.title':
     'Ministry of Culture and Information Policy of Ukraine',
+  'donate.recipient.mincult.donate': 'Donate to Ministry of Culture and Information Policy of Ukraine',
   'donate.recipient.mincult.description':
     'Every day, the Russian army destroys cities, villages and monuments of cultural and historical heritage. Each of your donations - decide to open broken schools, kindergartens and hospitals in Ukraine. All your funds are transferred to the official accounts of the National Bank of Ukraine.',
   'donate.recipient.dronarium.title': 'Dronarium',
   'donate.recipient.dronarium.description':
     'DRONARIUM is the first training center for drone pilots in Ukraine, where graduates get practical experience of operating UAVs in a wide variety of conditions, in-depth study of aviation law, Ukrainian legislation and international law in the field of UAVs. All this makes graduates of the academy reliable defenders of the Ukrainian sky and accurate eyes in the sky. You can support the academy and accelerate the approach of victory - by sending a donation of any amount.',
   'donate.button.donate': 'Donate',
+  'donate.recipient.dronarium.donate': 'Donate to DRONARIUM',
+  'donate.recipient.wer.donate': 'Donate to project',
 
   'vrplaces.title': 'VR Places',
 

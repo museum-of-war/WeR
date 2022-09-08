@@ -1,5 +1,7 @@
 version: 0.2
-
+env:
+  parameter-store:
+    REACT_APP_INFURA_API: "WER_INFURA_API"
 phases:
   install:
     runtime-versions:

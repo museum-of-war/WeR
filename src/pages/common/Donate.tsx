@@ -2,20 +2,17 @@ import React, { useState } from 'react';
 import {
   Button,
   Container,
-  Dialog,
-  DialogContent,
-  DialogTitle,
-  IconButton,
   Stack,
   Typography,
 } from '@mui/material';
-import copy from 'copy-to-clipboard';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import { Message, TranslationKey } from '../../components/message/Message';
 import { useIntl } from 'react-intl';
+import { DonationDialog } from '../../components/donationDialog/DonationDialog';
 
 type Recipient = {
   title: TranslationKey;
+  donateToTitle: TranslationKey;
+  ethAddress: string;
   url: string;
   logo: string;
   description: TranslationKey;
@@ -24,6 +21,8 @@ type Recipient = {
 const RECIPIENTS: Recipient[] = [
   {
     title: 'donate.recipient.mincult.title',
+    donateToTitle: 'donate.recipient.mincult.donate',
+    ethAddress: '0xc47f5F962b6816d204cb6DbFfbC78d146b42d66c',
     url: '',
     logo: '/images/donate/mincult.png',
     description: 'donate.recipient.mincult.description',
@@ -44,6 +43,8 @@ const RECIPIENTS: Recipient[] = [
   },
   {
     title: 'donate.recipient.dronarium.title',
+    donateToTitle: 'donate.recipient.dronarium.donate',
+    ethAddress: '0x0a677927534E0654F89FFA256B9558b578D1cA04',
     url: '',
     logo: '/images/donate/dronarium.png',
     description: 'donate.recipient.dronarium.description',
@@ -116,36 +117,12 @@ export const Donate: React.FC = () => {
         </Stack>
       ))}
       {activeRecipient && (
-        <Dialog open onClose={() => setActiveRecipient(null)}>
-          <DialogTitle>
-            <Message id="donate.title.to" />{' '}
-            <Message id={activeRecipient.title} />
-          </DialogTitle>
-          <DialogContent>
-            <Stack spacing={2}>
-              {activeRecipient.requisites.map((requisite) => (
-                <Stack direction="column" spacing={1} key={requisite.key}>
-                  <Typography className="bold" variant="body2">
-                    {requisite.key}
-                  </Typography>
-                  <Stack direction="row" alignItems="center">
-                    <Typography variant="body2" sx={{ wordBreak: 'break-all' }}>
-                      {requisite.value}
-                    </Typography>
-                    <IconButton
-                      sx={{ ml: 2 }}
-                      onClick={() => {
-                        copy(requisite.value);
-                      }}
-                    >
-                      <ContentCopyIcon fontSize="small" />
-                    </IconButton>
-                  </Stack>
-                </Stack>
-              ))}
-            </Stack>
-          </DialogContent>
-        </Dialog>
+        <DonationDialog
+          open
+          onClose={() => setActiveRecipient(null)}
+          title={activeRecipient.donateToTitle}
+          address={activeRecipient.ethAddress}
+        />
       )}
     </Container>
   );

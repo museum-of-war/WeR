@@ -2,19 +2,14 @@ import React, { useState } from 'react';
 import {
   Button,
   Container,
-  Dialog,
-  DialogContent,
-  DialogTitle,
   Grid,
-  IconButton,
   Link,
   Stack,
   Typography,
 } from '@mui/material';
 import { ABOUT_US_CLASS_NAME, TEAM } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
-import copy from 'copy-to-clipboard';
-import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import { DonationDialog } from '../../components/donationDialog/DonationDialog';
 
 export const AboutUs: React.FC = () => {
   const [open, setOpen] = useState(false);
@@ -88,33 +83,12 @@ export const AboutUs: React.FC = () => {
           </Stack>
         </Grid>
       </Grid>
-      <Dialog open={open} onClose={() => setOpen(false)}>
-        <DialogTitle>
-          <Message id="aboutUs.supportUs.title" />
-        </DialogTitle>
-        <DialogContent>
-          <Stack spacing={2}>
-            <Stack direction="column" spacing={1}>
-              <Typography className="bold" variant="body2">
-                Ethereum (ETH)
-              </Typography>
-              <Stack direction="row" alignItems="center">
-                <Typography variant="body2" sx={{ wordBreak: 'break-all' }}>
-                  0xFC215bB18cCE2E515C7A5406d42e1E0AFe3C0Fc3
-                </Typography>
-                <IconButton
-                  sx={{ ml: 2 }}
-                  onClick={() => {
-                    copy('0xFC215bB18cCE2E515C7A5406d42e1E0AFe3C0Fc3');
-                  }}
-                >
-                  <ContentCopyIcon fontSize="small" />
-                </IconButton>
-              </Stack>
-            </Stack>
-          </Stack>
-        </DialogContent>
-      </Dialog>
+      <DonationDialog
+        open={open}
+        onClose={() => setOpen(false)}
+        title="donate.recipient.wer.donate"
+        address="0xFC215bB18cCE2E515C7A5406d42e1E0AFe3C0Fc3"
+      />
     </Container>
   );
 };

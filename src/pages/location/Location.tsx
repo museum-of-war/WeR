@@ -10,7 +10,7 @@ import {
 } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useIntl } from 'react-intl';
-import { ReactComponent as Arrow } from '../../svg/ArrowWhite.svg';
+import { ReactComponent as Arrow } from '../../icons/ArrowWhite.svg';
 import { LOCATIONS } from '../../constants/contants';
 import { Donate } from '../common/Donate';
 import { LiveTours } from '../main/LiveTours';

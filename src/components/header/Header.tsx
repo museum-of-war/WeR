@@ -18,7 +18,7 @@ import {
   ABOUT_US_CLASS_NAME,
   LIVE_TOURS_CLASS_NAME,
 } from '../../constants/contants';
-import { ReactComponent as Menu } from '../../svg/Menu.svg';
+import { ReactComponent as Menu } from '../../icons/Menu.svg';
 
 type HeaderProps = {
   setLocale: (locale: AppLocale) => void;

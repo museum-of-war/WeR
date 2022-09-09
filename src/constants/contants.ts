@@ -121,8 +121,7 @@ export const VR_PLACES: {
   {
     location: 'vrPlaces.lukyanivka',
     p360src: '/images/vrplaces/pano/lukyanivka.jpg',
-    imageSrc: '/images/vrplaces/previews/an225.jpg',
-    // imageSrc: '/images/vrplaces/previews/kapitanivka.jpg',
+    imageSrc: '/images/vrplaces/previews/lukyanivka.jpg',
   },
   {
     location: 'vrPlaces.mist_hostomel',

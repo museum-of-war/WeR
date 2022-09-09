@@ -48,13 +48,13 @@ export const LiveTours: React.FC<LiveToursProps> = ({ heading, className }) => {
         <Message id={heading} />
       </Typography>
       <Grid container spacing={6} sx={{ mt: 0 }} className="cards">
-        {Object.values(TOURS).map((tour) => (
-          <Grid item key={tour.location} xs={12} sm={6} className="card">
-            <Link to={tour.url} style={{ textDecoration: 'none' }}>
-              <Card data={tour} />
-            </Link>
-          </Grid>
-        ))}
+        {/*{Object.values(TOURS).map((tour) => (*/}
+        {/*  <Grid item key={tour.location} xs={12} sm={6} className="card">*/}
+        {/*    <Link to={tour.url} style={{ textDecoration: 'none' }}>*/}
+        {/*      <Card data={tour} />*/}
+        {/*    </Link>*/}
+        {/*  </Grid>*/}
+        {/*))}*/}
         <Grid item xs={12} sm={6} className="coming-soon-card">
           <CardComingSoon />
         </Grid>

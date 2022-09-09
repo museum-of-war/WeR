@@ -76,10 +76,6 @@ export const App: React.FC = () => {
   );
 };
 // todo @current live tours page
-// todo @current mobile
-// todo @current favicon
 // todo @current meta
-// todo @current translations
-// todo @current VR places
 // todo @current add Google Analytics for donations
 // todo @current add Google Analytics for VR places

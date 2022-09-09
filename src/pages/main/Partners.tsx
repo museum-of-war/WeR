@@ -1,14 +1,5 @@
 import React from 'react';
-import {
-  Box,
-  Button,
-  Container,
-  Grid,
-  Link,
-  Stack,
-  Typography,
-} from '@mui/material';
-import { ABOUT_US_CLASS_NAME, TEAM } from '../../constants/contants';
+import { Box, Container, Grid, Stack, Typography } from '@mui/material';
 import { Message } from '../../components/message/Message';
 
 const PARTNERS = [
@@ -46,9 +37,13 @@ export const Partners: React.FC = () => (
         }}
       >
         {PARTNERS.map((partner) => (
-          <Grid item xs={6} md={6} lg={3}>
+          <Grid item xs={6} md={6} lg={3} key={partner}>
             <Stack justifyContent="center" height="100%" px="25%">
-              <img src={partner} alt="" style={{ maxWidth: '100%' }} />
+              <img
+                src={partner}
+                alt=""
+                style={{ width: '100%', height: 'auto' }}
+              />
             </Stack>
           </Grid>
         ))}

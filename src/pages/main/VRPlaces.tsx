@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import {
   Container,
   Dialog,
@@ -6,57 +6,51 @@ import {
   Grid,
   Typography,
 } from '@mui/material';
-// @ts-ignore
-import create360Viewer from '360-image-viewer';
-// @ts-ignore
-import canvasFit from 'canvas-fit';
+import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 import { Card } from '../../components/card/Card';
-import { TOURS } from '../../constants/contants';
+import { VR_PLACES } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
+
+type ModalProps = {
+  handleClose: () => void;
+  p360src: string;
+};
+const Modal: React.FC<ModalProps> = ({ handleClose, p360src }) => {
+  const photoSphereRef = useRef<any>();
+
+  return (
+    <Dialog
+      className="hide-scroll"
+      onClose={handleClose}
+      open
+      fullWidth
+      maxWidth="xl"
+      PaperProps={{ sx: { height: '100%' } }}
+    >
+      <DialogContent>
+        <ReactPhotoSphereViewer
+          ref={photoSphereRef}
+          src={p360src}
+          // @ts-ignore
+          height="100%"
+          // @ts-ignore
+          width="100%"
+        />
+      </DialogContent>
+    </Dialog>
+  );
+};
 
 type VRPlacesProps = {
   className?: string;
 };
 export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
   const [open, setOpen] = React.useState(false);
-  const contentRef = useRef(null);
-  const viewerRef = useRef(null);
-  const fitRef = useRef(null);
+  const [p360src, setP360src] = useState('');
 
-  const handleClose = () => {
-    setOpen(false);
-
-    if (viewerRef.current && fitRef.current) {
-      // @ts-ignore
-      viewerRef.current.destroy();
-      window.removeEventListener('resize', fitRef.current);
-    }
-  };
-
-  const handleOpen = useCallback(() => {
+  const handleOpen = useCallback((p360src: string) => {
+    setP360src(p360src);
     setOpen(true);
-
-    setTimeout(() => {
-      const image = new Image();
-      image.src = '/p360/an225.jpg';
-
-      image.onload = () => {
-        if (!contentRef.current) return;
-        const viewer = create360Viewer({
-          image,
-        });
-
-        // @ts-ignore
-        contentRef.current.appendChild(viewer.canvas);
-
-        const fit = canvasFit(viewer.canvas, window, window.devicePixelRatio);
-        window.addEventListener('resize', fit, false);
-        fit();
-        viewer.start();
-        fitRef.current = fit;
-        viewerRef.current = viewer;
-      };
-    }, 200);
   }, []);
 
   return (
@@ -74,29 +68,20 @@ export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
         <Message id="vrplaces.title" />
       </Typography>
       <Grid container spacing={6} sx={{ mt: 0 }} className="cards">
-        {Object.values(TOURS).map((tour) => (
+        {VR_PLACES.map((place) => (
           <Grid
             item
-            key={tour.location}
+            key={place.location}
             xs={12}
             sm={6}
             className="card"
-            onClick={() => handleOpen()}
+            onClick={() => handleOpen(place.p360src)}
           >
-            <Card data={tour} />
+            <Card data={place} disableArrow />
           </Grid>
         ))}
       </Grid>
-      <Dialog
-        className="hide-scroll"
-        onClose={handleClose}
-        open={open}
-        fullWidth
-        maxWidth="xl"
-        PaperProps={{ sx: { height: '100%' } }}
-      >
-        <DialogContent ref={contentRef} />
-      </Dialog>
+      {open && <Modal handleClose={() => setOpen(false)} p360src={p360src} />}
     </Container>
   );
 };

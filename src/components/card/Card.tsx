@@ -8,10 +8,12 @@ type CardProps = {
     location: TranslationKey;
     imageSrc: string;
     isLive?: boolean;
-    url: string;
+    url?: string;
+    p360src?: string;
   };
+  disableArrow?: boolean;
 };
-export const Card: React.FC<CardProps> = ({ data }) => {
+export const Card: React.FC<CardProps> = ({ data, disableArrow }) => {
   const [showArrow, setShowArrow] = useState(false);
 
   return (
@@ -21,6 +23,7 @@ export const Card: React.FC<CardProps> = ({ data }) => {
         borderTop: '2px solid #101010',
         borderBottom: '2px solid #101010',
         cursor: 'pointer',
+        height: '100%',
       }}
       onMouseEnter={() => setShowArrow(true)}
       onMouseLeave={() => setShowArrow(false)}
@@ -56,7 +59,7 @@ export const Card: React.FC<CardProps> = ({ data }) => {
         <Typography variant="h3" mt={4} mb={6} color="primary.main">
           <Message id={data.location} />
         </Typography>
-        {showArrow && <Arrow />}
+        {showArrow && !disableArrow && <Arrow />}
       </Stack>
     </Stack>
   );

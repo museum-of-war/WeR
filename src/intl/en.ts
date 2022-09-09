@@ -65,6 +65,16 @@ export const en = {
   'team.pokhylenko.name': 'Oleksandr Pokhylenko',
   'team.pokhylenko.position': 'Development',
 
+  'vrPlaces.an225': 'Hostomel Airport, Aircraft  AN - 225 Mriya',
+  'vrPlaces.borodyanka': 'Borodyanka city, Kyiv region',
+  'vrPlaces.bucha': 'Bucha city, Kyiv region',
+  'vrPlaces.kapitanivka': 'Kapitanivka village, Kyiv region',
+  'vrPlaces.lukyanivka': "Kyiv сity, Luk'yanivka",
+  'vrPlaces.mist_hostomel': 'Bridge Hostomel, Kyiv region',
+  'vrPlaces.moschun': 'Private house - Moschun, Kyiv region',
+  'vrPlaces.priymachenko_museum': 'Primachenko museum',
+  'vrPlaces.rusaniv': 'Rusaniv village,  Kyiv region',
+
   'home.title.liveTours': 'Live Tours',
 
   'location.title.moreLiveTours': 'More Live Tours',

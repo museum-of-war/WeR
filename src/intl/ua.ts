@@ -67,6 +67,16 @@ export const ua: Record<TranslationKey, string> = {
   'team.pokhylenko.name': 'Олександр Похиленко',
   'team.pokhylenko.position': 'Розробка',
 
+  'vrPlaces.an225': 'Аеропорт Гостомель, літак АН - 225 Мрія',
+  'vrPlaces.borodyanka': 'Місто Бородянка',
+  'vrPlaces.bucha': 'Місто Буча',
+  'vrPlaces.kapitanivka': 'Село Капітанівка',
+  'vrPlaces.lukyanivka': "Місто Київ, Лук'янівка",
+  'vrPlaces.mist_hostomel': 'Міст Гостомель',
+  'vrPlaces.moschun': 'Приватний будинок - Мощун',
+  'vrPlaces.priymachenko_museum': 'Музей Примаченко',
+  'vrPlaces.rusaniv': 'Село Русанів',
+
   'home.title.liveTours': 'Live Тури',
 
   'location.title.moreLiveTours': 'Більше live турів',

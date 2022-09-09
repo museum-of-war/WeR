@@ -93,6 +93,77 @@ export const LOCATIONS: Record<
 
 export const TOURS = [LOCATIONS.irpin, LOCATIONS.kyiv];
 
+export const VR_PLACES: {
+  location: TranslationKey;
+  p360src: string;
+  imageSrc: string;
+}[] = [
+  {
+    location: 'vrPlaces.an225',
+    p360src: '/images/vrplaces/pano/an225.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/an225.jpg',
+  },
+  {
+    location: 'vrPlaces.borodyanka',
+    p360src: '/images/vrplaces/pano/borodyanka.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/borodyanka.jpg',
+  },
+  {
+    location: 'vrPlaces.bucha',
+    p360src: '/images/vrplaces/pano/bucha.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/bucha.jpg',
+  },
+  {
+    location: 'vrPlaces.kapitanivka',
+    p360src: '/images/vrplaces/pano/kapitanivka.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/kapitanivka.jpg',
+  },
+  {
+    location: 'vrPlaces.lukyanivka',
+    p360src: '/images/vrplaces/pano/lukyanivka.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/kapitanivka.jpg',
+  },
+  {
+    location: 'vrPlaces.mist_hostomel',
+    p360src: '/images/vrplaces/pano/mist_hostomel.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/mist_hostomel.jpg',
+  },
+  {
+    location: 'vrPlaces.moschun',
+    p360src: '/images/vrplaces/pano/moschun.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/moschun.jpg',
+  },
+  {
+    location: 'vrPlaces.priymachenko_museum',
+    p360src: '/images/vrplaces/pano/priymachenko_museum.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/priymachenko_museum.jpg',
+  },
+  {
+    location: 'vrPlaces.rusaniv',
+    p360src: '/images/vrplaces/pano/rusaniv.jpg',
+    imageSrc: '/images/vrplaces/previews/an225.jpg',
+    // imageSrc: '/images/vrplaces/previews/rusaniv.jpg',
+  },
+];
+
+//   vrPlaces.an225
+//   vrPlaces.borodyanka
+//   vrPlaces.bucha
+//   vrPlaces.kapitanivka
+//   vrPlaces.lukyanivka
+//   vrPlaces.mist_hostomel
+//   vrPlaces.moschun
+//   vrPlaces.priymachenko_museum
+//   vrPlaces.rusaniv
+
 export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
   { name: 'team.VK.name', position: 'team.VK.position' },
   { name: 'team.andrienko.name', position: 'team.andrienko.position' },

@@ -9,9 +9,9 @@ phases:
 
     commands:
       # install yarn
-      - npm install yarn
+      - npm install --global yarn
       # install dependencies
-      - yarn
+      - yarn install
       # so that build commands work
       - yarn add eslint-config-react-app
 

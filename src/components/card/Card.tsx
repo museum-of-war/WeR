@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
-import { ReactComponent as Arrow } from '../../svg/Arrow.svg';
+import { ReactComponent as Arrow } from '../../icons/Arrow.svg';
 import { Message, TranslationKey } from '../message/Message';
 
 type CardProps = {

@@ -4007,26 +4007,6 @@ camelize@^1.0.0:
   resolved "https://registry.yarnpkg.com/camelize/-/camelize-1.0.0.tgz#164a5483e630fa4321e5af07020e531831b2609b"
   integrity sha512-W2lPwkBkMZwFlPCXhIlYgxu+7gC/NUlCtdK652DAJ1JdgV0sTrvuPFshNPrFa1TY2JOkLhgdeEBplB4ezEa+xg==
 
-camera-picking-ray@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/camera-picking-ray/-/camera-picking-ray-1.0.1.tgz#49567a4edc2de5bc13e4b6fd959520bf13a30490"
-  integrity sha512-gjZ7L/zmuM+/3CqDrEIDSJ2fXemoANW9mr31HxeJ1SaBw1n/hJU7IOQwcSVqq84/5BCwG3CSEMRyLv9zkeKIsg==
-  dependencies:
-    camera-unproject "^1.0.1"
-    gl-vec3 "^1.0.3"
-
-camera-project@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/camera-project/-/camera-project-1.0.2.tgz#d1d696c5aa164cee92e21bb922aba52b6c0a25de"
-  integrity sha512-s/5k30aOHDIDk8dP6yif9yOCD6lM7swXApz1V+SizSZIYuETQsjCmB/pCZH8JOQYTqtl0WGTxuck62Nfl35fwg==
-  dependencies:
-    gl-vec4 "^1.0.1"
-
-camera-unproject@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/camera-unproject/-/camera-unproject-1.0.1.tgz#86927a9d6d5340a8c9e36da840f7ccb6d6da12cf"
-  integrity sha512-IAta9EeGGa9rLJsw9Fk0lrZycDg2fF6nl6AvJ+QrkROxc4IaawosU9PQjoqgFYrOe1+kqJlod/W2TAZkTpxZQg==
-
 caniuse-api@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/caniuse-api/-/caniuse-api-3.0.0.tgz#5e4d90e2274961d46291997df599e3ed008ee4c0"
@@ -4041,6 +4021,13 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001370, caniuse-lite@^1.0.30001373:
   version "1.0.30001375"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001375.tgz#8e73bc3d1a4c800beb39f3163bf0190d7e5d7672"
   integrity sha512-kWIMkNzLYxSvnjy0hL8w1NOaWNr2rn39RTAVyIwcw8juu60bZDWiF1/loOYANzjtJmy6qPgNmn38ro5Pygagdw==
+
+canvas-fit@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/canvas-fit/-/canvas-fit-1.5.0.tgz#ae13be66ade42f5be0e487e345fce30a5e5b5e5f"
+  integrity sha512-onIcjRpz69/Hx5bB5HGbYKUF2uC6QT6Gp+pfpGm3A7mPfcluSLV5v4Zu+oflDUwLdUw0rLIBhUbi0v8hM4FJQQ==
+  dependencies:
+    element-size "^1.1.1"
 
 case-sensitive-paths-webpack-plugin@^2.4.0:
   version "2.4.0"
@@ -5750,7 +5737,7 @@ eventemitter3@4.0.7, eventemitter3@^4.0.0, eventemitter3@^4.0.7:
   resolved "https://registry.yarnpkg.com/eventemitter3/-/eventemitter3-4.0.7.tgz#2de9b68f6528d5644ef5c59526a1b4a07306169f"
   integrity sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==
 
-events@^3.2.0:
+events@^3.0.0, events@^3.2.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/events/-/events-3.3.0.tgz#31a95ad0a924e2d2c419a813aeb2c4e878ea7400"
   integrity sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==
@@ -6184,40 +6171,6 @@ getpass@^0.1.1:
   integrity sha512-0fzj9JxOLfJ+XGLhR8ze3unN0KZCgZwiSSDz168VERjK8Wl8kVSdcu2kspd4s4wtAa1y/qrVRiAA0WclVsu0ng==
   dependencies:
     assert-plus "^1.0.0"
-
-gl-mat3@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gl-mat3/-/gl-mat3-1.0.0.tgz#89633219ca429379a16b9185d95d41713453b912"
-  integrity sha512-obeEq9y7xaDoVkwMGJNL1upwpYlPJiXJFhREaNytMqUdfHKHNna9HvImmLV8F8Ys6QOYwPPddptZNoiiec/XOg==
-
-gl-mat4@^1.1.3, gl-mat4@^1.1.4:
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/gl-mat4/-/gl-mat4-1.2.0.tgz#49d8a7636b70aa00819216635f4a3fd3f4669b26"
-  integrity sha512-sT5C0pwB1/e9G9AvAoLsoaJtbMGjfd/jfxo8jMCKqYYEnjZuFvqV5rehqar0538EmssjdDeiEWnKyBSTw7quoA==
-
-gl-quat@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gl-quat/-/gl-quat-1.0.0.tgz#0945ec923386f45329be5dc357b1c8c2d47586c5"
-  integrity sha512-Pv9yvjJgQN85EbE79S+DF50ujxDkyjfYHIyXJcCRiimU1UxMY7vEHbVkj0IWLFaDndhfZT9vVOyfdMobLlrJsQ==
-  dependencies:
-    gl-mat3 "^1.0.0"
-    gl-vec3 "^1.0.3"
-    gl-vec4 "^1.0.0"
-
-gl-vec2@^1.0.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/gl-vec2/-/gl-vec2-1.3.0.tgz#83d472ed46034de8e09cbc857123fb6c81c51199"
-  integrity sha512-YiqaAuNsheWmUV0Sa8k94kBB0D6RWjwZztyO+trEYS8KzJ6OQB/4686gdrf59wld4hHFIvaxynO3nRxpk1Ij/A==
-
-gl-vec3@^1.0.2, gl-vec3@^1.0.3:
-  version "1.1.3"
-  resolved "https://registry.yarnpkg.com/gl-vec3/-/gl-vec3-1.1.3.tgz#a47c62f918774a06cbed1b65bcd0288ecbb03826"
-  integrity sha512-jduKUqT0SGH02l8Yl+mV1yVsDfYgQAJyXGxkJQGyxPLHRiW25DwVIRPt6uvhrEMHftJfqhqKthRcyZqNEl9Xdw==
-
-gl-vec4@^1.0.0, gl-vec4@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/gl-vec4/-/gl-vec4-1.0.1.tgz#97d96878281b14b532cbce101785dfd1cb340964"
-  integrity sha512-/gx5zzIy75JXzke4yuwcbvK+COWf8UJbVCUPvhfsYVw1GVey4Eextk/0H0ctXnOICruNK7+GS4ILQzEQcHcPEg==
 
 glob-parent@^5.1.2, glob-parent@~5.1.2:
   version "5.1.2"
@@ -8216,11 +8169,6 @@ oauth-sign@~0.9.0:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.9.0.tgz#47a7b016baa68b5fa0ecf3dee08a85c679ac6455"
   integrity sha512-fexhUFFPTGV8ybAtSIGbV6gOkSv8UtRbDBnAyLQw4QPKkgNlsH2ByPGtMUqdWkos6YCRmAqViwgZrJc/mRDzZQ==
 
-object-assign@^2.0.0:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-2.1.1.tgz#43c36e5d569ff8e4816c4efa8be02d26967c18aa"
-  integrity sha512-CdsOUYIh5wIiozhJ3rLQgmUTgcyzFwZZrqhkKhODMoGtPKM+wt0h0CNIoauJWMsS9822EdzPsF/6mb4nLvPN5g==
-
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -8382,20 +8330,6 @@ optionator@^0.9.1:
     prelude-ls "^1.2.1"
     type-check "^0.4.0"
     word-wrap "^1.2.3"
-
-orbit-controls@^1.2.0:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/orbit-controls/-/orbit-controls-1.2.4.tgz#d4922295964303f150d6eae7b0a54c1e90aed5fd"
-  integrity sha512-2x2MTDYrBlJEapwsPfsHcerh1WxSRHZW1i/EmNyeqTVrGPor9XR1cxQPTBahlGnYNxr6P6/kxvl8gLropxuQoA==
-  dependencies:
-    clamp "^1.0.1"
-    defined "^1.0.0"
-    gl-quat "^1.0.0"
-    gl-vec3 "^1.0.3"
-    mouse-event-offset "^3.0.2"
-    mouse-wheel "^1.2.0"
-    quat-from-unit-vec3 "^1.0.0"
-    touch-pinch "^1.0.0"
 
 os-browserify@^0.3.0:
   version "0.3.0"
@@ -9359,14 +9293,6 @@ qs@~6.5.2:
   version "6.5.3"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.3.tgz#3aeeffc91967ef6e35c0e488ef46fb296ab76aad"
   integrity sha512-qxXIEh4pCGfHICj1mAJQ2/2XVZkjCDTcEgfoSQxc/fYivUZxTkk7L3bDBJSoNrEzXI17oUO5Dp07ktqE5KzczA==
-
-quat-from-unit-vec3@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/quat-from-unit-vec3/-/quat-from-unit-vec3-1.0.0.tgz#dad03e745926a1faa4574c2b5abb05d5ca17cc9d"
-  integrity sha512-YafBjP7aQn4bAAloXlOezI1M7Yh1HpjkZOVTUwd7jn/jG2XlZ8JYkxuAuCq92+sxwwCgtpW1VT5fo71rWV1usQ==
-  dependencies:
-    gl-quat "^1.0.0"
-    gl-vec3 "^1.0.3"
 
 query-string@6.13.5:
   version "6.13.5"

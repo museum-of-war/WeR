@@ -86,8 +86,8 @@ export const AboutUs: React.FC = () => {
       <DonationDialog
         open={open}
         onClose={() => setOpen(false)}
-        title={'donate.recipient.wer.donate'}
-        address={'0xFC215bB18cCE2E515C7A5406d42e1E0AFe3C0Fc3'}
+        title="donate.recipient.wer.donate"
+        address="0xFC215bB18cCE2E515C7A5406d42e1E0AFe3C0Fc3"
       />
     </Container>
   );

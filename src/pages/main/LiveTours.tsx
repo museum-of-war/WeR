@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import { Container, Grid, Typography } from '@mui/material';
-import { Card } from '../../components/card/Card';
 import { CardComingSoon } from '../../components/cardComingSoon/CardComingSoon';
-import { TOURS } from '../../constants/contants';
 import { Message, TranslationKey } from '../../components/message/Message';
-import { Link } from 'react-router-dom';
 
 type LiveToursProps = {
   heading: TranslationKey;

@@ -102,7 +102,12 @@ export const Heading: React.FC = () => {
 
   return (
     <Container>
-      <Stack direction="column" alignItems="center" position="relative">
+      <Stack
+        direction="column"
+        alignItems="center"
+        position="relative"
+        sx={{ userSelect: 'none' }}
+      >
         <Box
           overflow="hidden"
           width="100%"

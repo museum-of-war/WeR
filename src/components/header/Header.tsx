@@ -38,7 +38,11 @@ export const Header: React.FC<HeaderProps> = ({ setLocale, locale }) => {
     const node = document.querySelector(`.${selector}`);
 
     if (node) {
-      node.scrollIntoView({ behavior: 'smooth' });
+      node.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center',
+      });
     }
   };
 

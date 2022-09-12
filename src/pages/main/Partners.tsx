@@ -42,7 +42,7 @@ export const Partners: React.FC = () => (
               <img
                 src={partner}
                 alt=""
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
               />
             </Stack>
           </Grid>

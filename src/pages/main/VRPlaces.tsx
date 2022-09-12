@@ -25,9 +25,10 @@ const Modal: React.FC<ModalProps> = ({ handleClose, p360src }) => {
       open
       fullWidth
       maxWidth="xl"
-      PaperProps={{ sx: { height: '100%' } }}
+      sx={{ p: 0 }}
+      PaperProps={{ sx: { height: '100%', p: 0 } }}
     >
-      <DialogContent>
+      <DialogContent sx={{ p: 0, mt: 0 }}>
         <ReactPhotoSphereViewer
           ref={photoSphereRef}
           src={p360src}

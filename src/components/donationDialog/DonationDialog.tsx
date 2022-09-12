@@ -207,7 +207,10 @@ export const DonationDialog: React.FC<DonationProps> = ({
           <Button
             sx={{
               width: 'fit-content',
-              minWidth: 160,
+              minWidth: {
+                xs: '100%',
+                sm: 160,
+              },
             }}
             variant="outlined"
             disabled={(ethAmount ?? 0) <= 0}

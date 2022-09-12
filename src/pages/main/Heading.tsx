@@ -1,18 +1,27 @@
 import React, { useEffect, useLayoutEffect, useMemo } from 'react';
-import { Box, Container, Grid, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Container,
+  Grid,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { useIntl } from 'react-intl';
 import { LOCATIONS } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
+import { theme } from '../../theme';
 
 export const Heading: React.FC = () => {
   const intl = useIntl();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   const cities = useMemo(() => {
     return [
       intl.locale === 'en' ? 'War as it is' : 'Війна, як вона є',
-      ...Object.values(LOCATIONS).map((place) =>
-        intl.formatMessage({ id: place.shortLocation }),
-      ),
+      // ...Object.values(LOCATIONS).map((place) =>
+      //   intl.formatMessage({ id: place.shortLocation }),
+      // ),
     ];
   }, [intl]);
 
@@ -153,8 +162,16 @@ export const Heading: React.FC = () => {
           display="inline-flex"
           direction="row"
         >
-          <Typography variant="h1" color="white" id="text" />
-          <Typography variant="h1" color="white" id="cursor">
+          <Typography
+            variant={isMobile ? 'h2' : 'h1'}
+            color="white"
+            id="text"
+          />
+          <Typography
+            variant={isMobile ? 'h2' : 'h1'}
+            color="white"
+            id="cursor"
+          >
             |
           </Typography>
         </Stack>

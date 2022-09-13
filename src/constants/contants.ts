@@ -38,7 +38,7 @@ export const LOCATIONS: Record<
     url: '/Irpin',
     imageSrc: '/images/Irpin.png',
     isLive: true,
-    videoSrc: '/videos/Irpin.mp4',
+    videoSrc: 'https://www.youtube.com/embed/mMGig57K_Tk?list=PLW9lAaV8EX8MsIik9nzqFEaecBusg37zR&autoplay=1',
   },
   borodyanka: {
     shortLocation: 'locations.borodyanka.shortLocation',
@@ -91,7 +91,7 @@ export const LOCATIONS: Record<
   },
 };
 
-export const TOURS = [LOCATIONS.irpin, LOCATIONS.kyiv];
+export const TOURS = [LOCATIONS.irpin];
 
 export const VR_PLACES: {
   location: TranslationKey;

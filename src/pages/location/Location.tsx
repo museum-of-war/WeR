@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   Box,
   Container,
@@ -23,6 +23,10 @@ export const Location: React.FC = () => {
   const intl = useIntl();
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [locationUrl]);
+
   const location = Object.values(LOCATIONS).find(
     (place) => place.url === `/${locationUrl}`,
   );
@@ -46,7 +50,7 @@ export const Location: React.FC = () => {
         <img
           src={location.imageSrc}
           alt={intl.formatMessage({ id: location.location })}
-          style={{ minWidth: '100%' }}
+          style={{ minWidth: '100%', maxWidth: '100%' }}
         />
       </Box>
       <Container sx={{ zIndex: 1, position: 'relative', pt: 6 }}>
@@ -67,12 +71,27 @@ export const Location: React.FC = () => {
         <Typography variant="h2" color="white">
           <Message id={location.location} />
         </Typography>
-        <video
-          src={location.videoSrc}
-          width="100%"
-          style={{ marginTop: 40 }}
-          controls
-        />
+        {location.videoSrc.startsWith('https://www.youtube.com/') ? (
+          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+            <iframe
+              width="100%"
+              height="720"
+              src={location.videoSrc}
+              title={intl.formatMessage({ id: location.location })}
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+            />
+          </div>
+        ) : (
+          <video
+            src={location.videoSrc}
+            width="100%"
+            style={{ marginTop: 40 }}
+            controls
+          />
+        )}
       </Container>
       <LiveTours heading="location.title.moreLiveTours" />
       <Donate />

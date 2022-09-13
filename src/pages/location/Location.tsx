@@ -47,7 +47,18 @@ export const Location: React.FC = () => {
           overflow: 'hidden',
         }}
       >
+        <Box
+          position="absolute"
+          sx={{
+            width: '100%',
+            height: '100%',
+            background: '#101010',
+            zIndex: 1,
+            opacity: 0.7,
+          }}
+        />
         <img
+          width="100%"
           src={location.imageSrc}
           alt={intl.formatMessage({ id: location.location })}
           style={{ minWidth: '100%', maxWidth: '100%' }}
@@ -72,7 +83,10 @@ export const Location: React.FC = () => {
           <Message id={location.location} />
         </Typography>
         {location.videoSrc.startsWith('https://www.youtube.com/') ? (
-          <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+          <Box
+            position="relative"
+            sx={{ paddingBottom: '56.25%', height: 0, marginTop: '40px' }}
+          >
             <iframe
               width="100%"
               height="720"
@@ -83,7 +97,7 @@ export const Location: React.FC = () => {
               allowFullScreen
               style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
             />
-          </div>
+          </Box>
         ) : (
           <video
             src={location.videoSrc}

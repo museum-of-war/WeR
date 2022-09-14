@@ -43,12 +43,14 @@ export const en = {
 
   'donate.amount': 'Enter amount',
   'donate.continue': 'Continue',
-  'donate.walletNeeded': 'You need an Ethereum wallet to donate. Connect with one of our available wallet providers or create a new one.',
+  'donate.walletNeeded':
+    'You need an Ethereum wallet to donate. Connect with one of our available wallet providers or create a new one.',
   'donate.title': 'Donate to Ukraine',
   'donate.title.to': 'Donate to',
   'donate.recipient.mincult.title':
     'Ministry of Culture and Information Policy of Ukraine',
-  'donate.recipient.mincult.donate': 'Donate to Ministry of Culture and Information Policy of Ukraine',
+  'donate.recipient.mincult.donate':
+    'Donate to Ministry of Culture and Information Policy of Ukraine',
   'donate.recipient.mincult.description':
     'Every day, the Russian army destroys cities, villages and monuments of cultural and historical heritage. Each of your donations - decide to open broken schools, kindergartens and hospitals in Ukraine. All your funds are transferred to the official accounts of the National Bank of Ukraine.',
   'donate.recipient.dronarium.title': 'Dronarium',
@@ -70,6 +72,10 @@ export const en = {
   'team.abduvaliiev.position': 'Development',
   'team.pokhylenko.name': 'Oleksandr Pokhylenko',
   'team.pokhylenko.position': 'Development',
+  'team.novyk.name': 'Ivan Novyk',
+  'team.novyk.position': 'VR content creation',
+  'team.polikashkin.name': 'Andriy Polikashkin',
+  'team.polikashkin.position': 'VR content creation',
 
   'vrPlaces.an225': 'Hostomel Airport, Aircraft  AN - 225 Mriya',
   'vrPlaces.borodyanka': 'Borodyanka city, Kyiv region',
@@ -88,4 +94,10 @@ export const en = {
   'footer.arr': 'All rights reserved',
 
   'partners.title': 'Partners',
+
+  'locations.irpin': `Russian troops pursued to take Irpin, Bucha and Hostomel towns under their control with a goal to surround the Ukrainian capital, Kyiv, from the west.
+
+The Russian army destroyed more than 50% of the Irpin town and killed numerous civilians. Law enforcements and activists are still finding mass graves of people tortured till death by Russian troops.
+
+Due to the Russian intense attack on the capital, Kyiv Regional State Administration called the towns of Bucha, Irpin, Hostomel, Vyshgorod as well as the M06 route – the most dangerous places of the Kyiv region. Irpin received a title of the Hero City of Ukraine on 24 March.`,
 };

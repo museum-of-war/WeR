@@ -1,16 +1,21 @@
 import React, { useEffect } from 'react';
 import { Container, Grid, Typography } from '@mui/material';
+import { Link } from 'react-router-dom';
 import { CardComingSoon } from '../../components/cardComingSoon/CardComingSoon';
 import { Message, TranslationKey } from '../../components/message/Message';
-import { TOURS } from '../../constants/contants';
+import { Location, TOURS } from '../../constants/contants';
 import { Card } from '../../components/card/Card';
-import { Link } from 'react-router-dom';
 
 type LiveToursProps = {
   heading: TranslationKey;
   className?: string;
+  tours: Location[];
 };
-export const LiveTours: React.FC<LiveToursProps> = ({ heading, className }) => {
+export const LiveTours: React.FC<LiveToursProps> = ({
+  heading,
+  className,
+  tours,
+}) => {
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
       const height = document.querySelector('.card')?.clientHeight;
@@ -48,7 +53,7 @@ export const LiveTours: React.FC<LiveToursProps> = ({ heading, className }) => {
         <Message id={heading} />
       </Typography>
       <Grid container spacing={6} sx={{ mt: 0 }} className="cards">
-        {Object.values(TOURS).map((tour) => (
+        {tours.map((tour) => (
           <Grid item key={tour.location} xs={12} sm={6} className="card">
             <Link to={tour.url} style={{ textDecoration: 'none' }}>
               <Card data={tour} />

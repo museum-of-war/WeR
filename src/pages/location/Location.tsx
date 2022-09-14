@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {
   Box,
   Container,
+  Grid,
   IconButton,
   Stack,
   Typography,
@@ -32,6 +33,19 @@ export const Location: React.FC = () => {
   );
 
   if (!location) return null;
+
+  const description = intl
+    .formatMessage({ id: location.description })
+    .split('\n');
+  const firstColParagraphsAmount = Math.ceil(description.length / 2);
+  const descriptionPartOne = description
+    .slice(0, firstColParagraphsAmount)
+    .filter(Boolean)
+    .join('\n\n');
+  const descriptionPartTwo = description
+    .slice(firstColParagraphsAmount)
+    .filter(Boolean)
+    .join('\n\n');
 
   return (
     <Box position="relative" minHeight="100%">
@@ -95,7 +109,13 @@ export const Location: React.FC = () => {
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+              }}
             />
           </Box>
         ) : (
@@ -106,8 +126,20 @@ export const Location: React.FC = () => {
             controls
           />
         )}
+        <Grid container spacing={6} sx={{ mt: 0 }}>
+          <Grid item sm={12} md={6}>
+            <Typography sx={{ whiteSpace: 'pre-line' }}>
+              {descriptionPartOne}
+            </Typography>
+          </Grid>
+          <Grid item sm={12} md={6}>
+            <Typography sx={{ whiteSpace: 'pre-line' }}>
+              {descriptionPartTwo}
+            </Typography>
+          </Grid>
+        </Grid>
       </Container>
-      <LiveTours heading="location.title.moreLiveTours" />
+      {/*<LiveTours heading="location.title.moreLiveTours" tours={[]} />*/}
       <Donate />
     </Box>
   );

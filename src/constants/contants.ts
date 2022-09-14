@@ -1,22 +1,22 @@
 import { TranslationKey } from '../components/message/Message';
 
-export const LOCATIONS: Record<
-  string,
-  {
-    shortLocation: TranslationKey;
-    location: TranslationKey;
-    url: string;
-    imageSrc: string;
-    videoSrc: string;
-    isLive?: boolean;
-  }
-> = {
+export type Location = {
+  shortLocation: TranslationKey;
+  location: TranslationKey;
+  url: string;
+  imageSrc: string;
+  videoSrc: string;
+  description: TranslationKey | '';
+  isLive?: boolean;
+};
+export const LOCATIONS: Record<string, Location> = {
   kyiv: {
     shortLocation: 'locations.kyiv.shortLocation',
     location: 'locations.kyiv.location',
     url: '/Kyiv',
     imageSrc: '/images/Irpin.png',
     videoSrc: '',
+    description: '',
   },
   hostomel: {
     shortLocation: 'locations.hostomel.shortLocation',
@@ -24,6 +24,7 @@ export const LOCATIONS: Record<
     url: '/Hostomel',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   bucha: {
     shortLocation: 'locations.bucha.shortLocation',
@@ -31,14 +32,17 @@ export const LOCATIONS: Record<
     url: '/Bucha',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   irpin: {
     shortLocation: 'locations.irpin.shortLocation',
     location: 'locations.irpin.location',
     url: '/Irpin',
     imageSrc: '/images/Irpin.png',
-    isLive: true,
-    videoSrc: 'https://www.youtube.com/embed/mMGig57K_Tk?list=PLW9lAaV8EX8MsIik9nzqFEaecBusg37zR&autoplay=1',
+    isLive: false,
+    videoSrc:
+      'https://www.youtube.com/embed/mMGig57K_Tk?list=PLW9lAaV8EX8MsIik9nzqFEaecBusg37zR&autoplay=1',
+    description: 'locations.irpin',
   },
   borodyanka: {
     shortLocation: 'locations.borodyanka.shortLocation',
@@ -46,6 +50,7 @@ export const LOCATIONS: Record<
     url: '/Borodyanka',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   moshchun: {
     shortLocation: 'locations.moshchun.shortLocation',
@@ -53,6 +58,7 @@ export const LOCATIONS: Record<
     url: '/Moshchun',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   rusaniv: {
     shortLocation: 'locations.rusaniv.shortLocation',
@@ -60,6 +66,7 @@ export const LOCATIONS: Record<
     url: '/Rusaniv',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   ivankiv: {
     shortLocation: 'locations.ivankiv.shortLocation',
@@ -67,6 +74,7 @@ export const LOCATIONS: Record<
     url: '/Ivankiv',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   vorzel: {
     shortLocation: 'locations.vorzel.shortLocation',
@@ -74,6 +82,7 @@ export const LOCATIONS: Record<
     url: '/Vorzel',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   stoyanka: {
     shortLocation: 'locations.stoyanka.shortLocation',
@@ -81,6 +90,7 @@ export const LOCATIONS: Record<
     url: '/Stoyanka',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
   kapitanivka: {
     shortLocation: 'locations.kapitanivka.shortLocation',
@@ -88,6 +98,7 @@ export const LOCATIONS: Record<
     url: '/Kapitanivka',
     imageSrc: '',
     videoSrc: '',
+    description: '',
   },
 };
 
@@ -151,6 +162,8 @@ export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
   { name: 'team.revva.name', position: 'team.revva.position' },
   { name: 'team.abduvaliiev.name', position: 'team.abduvaliiev.position' },
   { name: 'team.pokhylenko.name', position: 'team.pokhylenko.position' },
+  { name: 'team.novyk.name', position: 'team.novyk.position' },
+  { name: 'team.polikashkin.name', position: 'team.polikashkin.position' },
 ];
 
 export const USER_LANGUAGE_LS_KEY = 'USER_LANGUAGE';

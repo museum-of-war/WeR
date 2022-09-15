@@ -41,7 +41,7 @@ export const LOCATIONS: Record<string, Location> = {
     imageSrc: '/images/Irpin.png',
     isLive: false,
     videoSrc:
-      'https://www.youtube.com/embed/mMGig57K_Tk?list=PLW9lAaV8EX8MsIik9nzqFEaecBusg37zR&autoplay=1',
+      'https://www.youtube.com/embed/lf6OEjappzk?autoplay=1',
     description: 'locations.irpin',
   },
   borodyanka: {

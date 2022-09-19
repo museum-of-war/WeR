@@ -145,7 +145,8 @@ export const DonationDialog: React.FC<DonationProps> = ({
                   <TextField
                     variant="standard"
                     type="number"
-                    value={ethAmount || ''}
+                    inputProps={{ step: 0.1 }}
+                    value={ethAmount ?? ''}
                     label={intl.formatMessage({ id: 'donate.amount' })}
                     onChange={(e) => setEthAmount(Math.abs(+e.target.value))}
                     sx={{ flex: 1 }}

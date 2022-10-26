@@ -1,116 +1,20 @@
-import React, { useEffect, useLayoutEffect, useMemo } from 'react';
+import React from 'react';
 import {
   Box,
   Container,
-  Grid,
   Stack,
-  Typography,
-  useMediaQuery,
 } from '@mui/material';
-import { useIntl } from 'react-intl';
-import { LOCATIONS } from '../../constants/contants';
-import { Message } from '../../components/message/Message';
-import { theme } from '../../theme';
+import { Map } from "./Map";
 
 export const Heading: React.FC = () => {
-  const intl = useIntl();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-
-  const cities = useMemo(() => {
-    return [
-      intl.locale === 'en' ? 'War as it is' : 'Війна, як вона є',
-      // ...Object.values(LOCATIONS).map((place) =>
-      //   intl.formatMessage({ id: place.shortLocation }),
-      // ),
-    ];
-  }, [intl]);
-
-  useLayoutEffect(() => {
-    let cityIndex = 0;
-    let letterIndex = 0;
-    let interval: any;
-    let timeout: any;
-
-    const textEl = document.querySelector('#text');
-    const cursorEl = document.querySelector('#cursor');
-
-    const typingHandler = () => {
-      if (!textEl || !cursorEl) return;
-
-      const text = cities[cityIndex].substring(0, letterIndex + 1);
-      textEl.innerHTML = text;
-      letterIndex++;
-
-      if (text === cities[cityIndex]) {
-        // @ts-ignore
-        // cursorEl.style.display = 'none';
-
-        clearInterval(interval);
-        timeout = setTimeout(() => {
-          interval = setInterval(deletionHandler, 100);
-        }, 1000);
-      }
-    };
-
-    const deletionHandler = () => {
-      if (!textEl || !cursorEl) return;
-
-      const text = cities[cityIndex].substring(0, letterIndex - 1);
-      textEl.innerHTML = text;
-      letterIndex--;
-
-      if (text === '') {
-        clearInterval(interval);
-
-        if (cityIndex === cities.length - 1) cityIndex = 0;
-        else cityIndex++;
-
-        letterIndex = 0;
-
-        timeout = setTimeout(() => {
-          // @ts-ignore
-          // cursorEl.style.display = 'inline-block';
-          interval = setInterval(typingHandler, 150);
-        }, 200);
-      }
-    };
-
-    interval = setInterval(typingHandler, 150);
-
-    return () => {
-      if (textEl) {
-        textEl.innerHTML = '';
-      }
-      clearInterval(interval);
-      clearTimeout(timeout);
-    };
-  }, [intl.locale, cities]);
-
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver(() => {
-      const video = document.querySelector('.heading-video') as HTMLElement;
-      const videoTrimmer = document.querySelector('.video-trimmer');
-
-      if (video && videoTrimmer) {
-        const margin = -(video.clientHeight - videoTrimmer.clientHeight) / 2;
-        video.style.marginTop = `${margin}px`;
-      }
-    });
-    const container = document.querySelector('body');
-
-    if (container) {
-      resizeObserver.observe(container);
-    }
-
-    return () => {
-      if (container) {
-        resizeObserver.unobserve(container);
-      }
-    };
-  }, []);
-
   return (
-    <Container>
+    <Container
+        sx={{
+          paddingLeft: "0 !important",
+          paddingRight: "0 !important",
+          maxWidth: "unset !important"
+        }}
+    >
       <Stack
         direction="column"
         alignItems="center"
@@ -120,11 +24,7 @@ export const Heading: React.FC = () => {
         <Box
           overflow="hidden"
           width="100%"
-          height={{
-            xs: 192,
-            sm: 384,
-            md: 464,
-          }}
+          height="100vh"
           className="video-trimmer"
         >
           <video
@@ -135,7 +35,11 @@ export const Heading: React.FC = () => {
             muted
             loop
             autoPlay
-            style={{ width: '100%' }}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover"
+            }}
           />
         </Box>
         <Box
@@ -151,52 +55,28 @@ export const Heading: React.FC = () => {
           }}
         />
         <Stack
-          position="absolute"
-          zIndex={2}
-          left={0}
-          right={0}
-          top={0}
-          bottom={0}
-          alignItems="center"
-          justifyContent="center"
-          display="inline-flex"
-          direction="row"
+            direction="column"
+            position="absolute"
+            zIndex={1}
+            left={0}
+            right={0}
+            top={0}
+            bottom={0}
         >
-          <Typography
-            variant={isMobile ? 'h2' : 'h1'}
-            color="white"
-            id="text"
-          />
-          <Typography
-            variant={isMobile ? 'h2' : 'h1'}
-            color="white"
-            id="cursor"
-          >
-            |
-          </Typography>
+          <Container>
+            <Box
+                sx={{
+                  borderBottom: '2px solid #ffffff',
+                  pb: 12,
+                }}
+            />
+          </Container>
+
+          <Container>
+            <Map />
+          </Container>
         </Stack>
       </Stack>
-      <Grid
-        container
-        mt={{
-          xs: 4,
-          sm: 6,
-          md: 10,
-        }}
-        spacing={6}
-      >
-        <Grid item md={12} lg={5}>
-          <Typography variant="h2">
-            <Message id="heading.title" />
-          </Typography>
-          <Typography mt={4}>
-            <Message id="heading.description" />
-          </Typography>
-        </Grid>
-        <Grid item md={12} lg={7}>
-          <video src="/videos/map.mp4" autoPlay loop muted playsInline style={{ maxWidth: '100%' }} />
-        </Grid>
-      </Grid>
     </Container>
   );
 };

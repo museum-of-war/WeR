@@ -22,7 +22,8 @@ export const en = {
   'locations.kapitanivka.shortLocation': 'Kapitanivka',
   'locations.kapitanivka.location': 'Kapitanivka, Kyiv region',
 
-  'header.liveTours': 'Live Tours',
+  'header.liveTours': 'Tours',
+  'header.vrPlaces': 'VR Places',
   'header.aboutUs': 'About Us',
 
   'card.liveNow': 'Live Now',

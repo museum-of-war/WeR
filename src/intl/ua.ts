@@ -24,7 +24,8 @@ export const ua: Record<TranslationKey, string> = {
   'locations.kapitanivka.shortLocation': 'Капітанівка',
   'locations.kapitanivka.location': 'Капітанівка, Київська область',
 
-  'header.liveTours': 'Live Тури',
+  'header.liveTours': 'Тури',
+  'header.vrPlaces': 'VR Місця',
   'header.aboutUs': 'Про нас',
 
   'card.liveNow': 'Наживо',

@@ -2615,6 +2615,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-svg-map@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@types/react-svg-map/-/react-svg-map-2.1.2.tgz#1dc41d49bf14d75473a51e7ce2875e27106b4331"
+  integrity sha512-Mm8udymAR45B96EJJJRucSN0WZS/2bDsacrnJX3zOziDvuN7hkqM5jo564psUVdVLv3xHU47VXvPs94EJwBZEg==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-transition-group@^4.4.5":
   version "4.4.5"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-4.4.5.tgz#aae20dcf773c5aa275d5b9f7cdbca638abc5e416"
@@ -9546,6 +9553,13 @@ react-scripts@5.0.1:
     workbox-webpack-plugin "^6.4.1"
   optionalDependencies:
     fsevents "^2.3.2"
+
+react-svg-map@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-svg-map/-/react-svg-map-2.2.0.tgz#ecdeb8898e6e34953c83afbf7433a621925a8f0b"
+  integrity sha512-slZTt4ffXgOb3ND/WEHOc0ojX5lBEv9FKbTU3tWnTLZPQ9L0e686SBqgVxmsuTD+o52Aor87InMzAzDRTQedpA==
+  dependencies:
+    prop-types "^15.7.2"
 
 react-transition-group@^4.4.5:
   version "4.4.5"

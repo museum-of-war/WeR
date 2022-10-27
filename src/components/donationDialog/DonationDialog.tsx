@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import { BytesLike, ethers } from 'ethers';
-import Web3Modal, { local } from 'web3modal';
+import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { useIntl } from 'react-intl';
 import { Message, TranslationKey } from '../message/Message';
@@ -183,7 +183,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
               </>
             ) : (
               <Stack direction="column" spacing={2}>
-                <Stack direction="row">
+                <Stack direction={{ xs: 'column', sm: 'row' }}>
                   <TextField
                     variant="standard"
                     inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
@@ -202,7 +202,10 @@ export const DonationDialog: React.FC<DonationProps> = ({
                       onChange={(event) =>
                         setCurrency(event.target.value as Currency)
                       }
-                      sx={{ ml: 4 }}
+                      sx={{
+                        ml: { xs: 0, sm: 4 },
+                        width: { xs: '100%', sm: 'auto' },
+                      }}
                       inputProps={{ sx: { textTransform: 'uppercase' } }}
                     >
                       {CURRENCIES.map((currency) => (
@@ -217,7 +220,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
                     </Select>
                   )}
                 </Stack>
-                <Stack direction="row">
+                <Stack direction="row" sx={{ pt: { xs: 2, sm: 0 } }}>
                   {CURRENCIES.find(
                     ({ name }) => name === currency,
                   )?.defaultValues.map((value) => (

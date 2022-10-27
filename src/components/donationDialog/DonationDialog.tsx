@@ -11,7 +11,7 @@ import {
   Typography,
 } from '@mui/material';
 import { BytesLike, ethers } from 'ethers';
-import Web3Modal from 'web3modal';
+import Web3Modal, { local } from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { useIntl } from 'react-intl';
 import { Message, TranslationKey } from '../message/Message';
@@ -143,7 +143,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
           },
           mode: 'no-cors',
           body: JSON.stringify({
-            locale,
+            locale: locale === 'ua' ? 'uk' : 'en',
             amount,
             currency: currency.toUpperCase(),
           }),

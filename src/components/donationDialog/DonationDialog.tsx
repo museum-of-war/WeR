@@ -138,10 +138,10 @@ export const DonationDialog: React.FC<DonationProps> = ({
         'https://restore.mkip.gov.ua/api/pay/pay-tranzzo',
         {
           method: 'POST',
-          headers: {
+          headers: new Headers({
             'Content-Type': 'application/json',
-          },
-          mode: 'no-cors',
+          }),
+          mode: 'cors',
           body: JSON.stringify({
             locale: locale === 'ua' ? 'uk' : 'en',
             amount,

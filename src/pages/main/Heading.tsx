@@ -17,14 +17,20 @@ export const Heading: React.FC = () => {
     >
       <Stack
         direction="column"
-        alignItems="center"
-        position="relative"
         sx={{ userSelect: 'none' }}
+        position="relative"
+        minHeight="100vh"
+        width="100vw"
+        overflow={"hidden"}
       >
         <Box
-          overflow="hidden"
+          position="absolute"
+          zIndex={1}
+          left={0}
+          right={0}
+          top={0}
+          bottom={0}
           width="100%"
-          height="100vh"
           className="video-trimmer"
         >
           <video
@@ -37,45 +43,49 @@ export const Heading: React.FC = () => {
             autoPlay
             style={{
               width: "100%",
-              height: "100%",
+              height: "calc(100% + 80px)",
+              marginTop: "-40px",
               objectFit: "cover"
             }}
           />
         </Box>
         <Box
           position="absolute"
-          zIndex={1}
+          zIndex={2}
           left={0}
           right={0}
           top={0}
           bottom={0}
+          height={"calc(100% + 80px)"}
+          marginTop={"-40px"}
           sx={{
             bgcolor: 'primary.main',
             opacity: 0.7,
           }}
         />
-        <Stack
-            direction="column"
-            position="absolute"
-            zIndex={1}
-            left={0}
-            right={0}
-            top={0}
-            bottom={0}
-        >
+
+        <Box zIndex={3}>
           <Container>
             <Box
-                sx={{
-                  borderBottom: '2px solid #ffffff',
-                  pb: 12,
-                }}
+              sx={{
+                borderBottom: '2px solid #ffffff',
+                pb: 12,
+              }}
             />
+          </Container>
+
+          <Container>
+            <h1>asdasds</h1>
+            <h1>asdasds</h1>
+            <h1>asdasds</h1>
+            <h1>asdasds</h1>
           </Container>
 
           <Container>
             <Map />
           </Container>
-        </Stack>
+        </Box>
+
       </Stack>
     </Container>
   );

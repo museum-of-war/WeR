@@ -32,7 +32,7 @@ export const RECIPIENTS: Recipient[] = [
         value: 'TFc9GzkEK3dz9aB8K3pxxGuDPAGHZBzQqt',
       },
     ],
-    multiCurrency: true,
+    // multiCurrency: true,
   },
   {
     title: 'donate.recipient.dronarium.title',

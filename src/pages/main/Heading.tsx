@@ -8,7 +8,6 @@ import {
   useMediaQuery,
 } from '@mui/material';
 import { useIntl } from 'react-intl';
-import { LOCATIONS } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
 import { theme } from '../../theme';
 
@@ -194,7 +193,14 @@ export const Heading: React.FC = () => {
           </Typography>
         </Grid>
         <Grid item md={12} lg={7}>
-          <video src="/videos/map.mp4" autoPlay loop muted playsInline style={{ maxWidth: '100%' }} />
+          <video
+            src="/videos/map.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            style={{ maxWidth: '100%' }}
+          />
         </Grid>
       </Grid>
     </Container>

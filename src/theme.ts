@@ -145,6 +145,32 @@ export const theme = createTheme({
         },
       },
     },
+    MuiSelect: {
+      styleOverrides: {
+        standard: {
+          borderRadius: 0,
+          border: 'none',
+          minWidth: '256px!important',
+          [defaultTheme.breakpoints.down('sm')]: {
+            minWidth: '128px!important',
+          },
+        },
+        iconStandard: {
+          display: 'none',
+        },
+      },
+    },
+    MuiInput: {
+      styleOverrides: {
+        root: {
+          height: 60,
+          borderBottom: '2px solid #101010',
+          '&:before, &:after': {
+            display: 'none',
+          },
+        },
+      },
+    },
   },
 });
 // todo @current move white to theme

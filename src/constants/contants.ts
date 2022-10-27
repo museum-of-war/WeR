@@ -40,8 +40,7 @@ export const LOCATIONS: Record<string, Location> = {
     url: '/Irpin',
     imageSrc: '/images/Irpin.png',
     isLive: false,
-    videoSrc:
-      'https://www.youtube.com/embed/lf6OEjappzk?autoplay=1',
+    videoSrc: 'https://www.youtube.com/embed/lf6OEjappzk?autoplay=1',
     description: 'locations.irpin',
   },
   borodyanka: {
@@ -166,6 +165,5 @@ export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
   { name: 'team.polikashkin.name', position: 'team.polikashkin.position' },
 ];
 
-export const USER_LANGUAGE_LS_KEY = 'USER_LANGUAGE';
 export const LIVE_TOURS_CLASS_NAME = 'live-tours';
 export const ABOUT_US_CLASS_NAME = 'about-us';

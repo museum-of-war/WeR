@@ -12,19 +12,16 @@ import {
 } from '@mui/material';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import { AppLocale } from '../../App';
 import { Message } from '../message/Message';
 import {
   ABOUT_US_CLASS_NAME,
   LIVE_TOURS_CLASS_NAME,
 } from '../../constants/contants';
-import { ReactComponent as Menu } from '../../icons/Menu.svg';
+import { ReactComponent as Menu } from '../../icons/menu.svg';
+import { useLocale } from '../../hooks/useLocale';
 
-type HeaderProps = {
-  setLocale: (locale: AppLocale) => void;
-  locale: AppLocale;
-};
-export const Header: React.FC<HeaderProps> = ({ setLocale, locale }) => {
+export const Header: React.FC = () => {
+  const [locale, setLocale] = useLocale();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const theme = useTheme();

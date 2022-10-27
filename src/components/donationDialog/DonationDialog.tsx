@@ -1,21 +1,25 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   Button,
   Dialog,
+  DialogActions,
   DialogContent,
   DialogTitle,
-  TextField,
+  MenuItem,
   Stack,
+  TextField,
   Typography,
-  DialogActions,
 } from '@mui/material';
 import { BytesLike, ethers } from 'ethers';
 import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
-import { Message, TranslationKey } from '../message/Message';
 import { useIntl } from 'react-intl';
+import { Message, TranslationKey } from '../message/Message';
 import { CloseModalButton } from '../closeModalButton/CloseModalButton';
-import { ReactComponent as MetaMask } from '../../icons/MetaMask.svg';
+import { ReactComponent as MetaMask } from '../../icons/meta-mask.svg';
+import { Select } from '../select/Select';
+import { CURRENCIES, Currency } from './constants';
+import { useLocale } from '../../hooks/useLocale';
 
 const providerOptions = {
   walletconnect: {
@@ -37,20 +41,34 @@ const getWeb3Modal = () => {
   return web3Modal;
 };
 
+const DonateButton: React.FC<{
+  amount: number;
+  currency: Currency;
+  setAmount: (amount: number) => void;
+}> = ({ amount, currency, setAmount }) => (
+  <Button variant="text" onClick={() => setAmount(amount)}>
+    {amount} {currency.toUpperCase()}
+  </Button>
+);
+
 type DonationProps = {
   title: TranslationKey;
   address: string;
   open: boolean;
   onClose: () => void;
+  multiCurrency?: boolean;
 };
 export const DonationDialog: React.FC<DonationProps> = ({
   title,
   address,
   open,
   onClose,
+  multiCurrency,
 }) => {
   const intl = useIntl();
-  const [ethAmount, setEthAmount] = useState<number>();
+  const [locale] = useLocale();
+  const [amount, setAmount] = useState<number>();
+  const [currency, setCurrency] = useState(Currency.Eth);
   const [isWalletModal, setIsWalletModal] = useState(false);
   const [isConnecting, setIsConnecting] = useState(false);
 
@@ -79,7 +97,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
 
         const tx = await signer.sendTransaction({
           to: address,
-          value: ethers.utils.parseEther('' + ethAmount),
+          value: ethers.utils.parseEther('' + amount),
           data,
         });
         await tx.wait();
@@ -92,7 +110,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
         web3Modal?.clearCachedProvider();
       }
     },
-    [address, ethAmount, onClose],
+    [address, amount, onClose],
   );
 
   const handleMetaMask = useCallback(async () => {
@@ -112,17 +130,41 @@ export const DonationDialog: React.FC<DonationProps> = ({
     await connectAndDonate('walletconnect');
   }, [connectAndDonate]);
 
+  const handleContinue = useCallback(async () => {
+    if (currency === Currency.Eth) {
+      setIsWalletModal(true);
+    } else {
+      const response = await fetch(
+        'https://restore.mkip.gov.ua/api/pay/pay-tranzzo',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          mode: 'no-cors',
+          body: JSON.stringify({
+            locale,
+            amount,
+            currency: currency.toUpperCase(),
+          }),
+        },
+      );
+      console.log(response);
+      const { data } = await response.json();
+      console.log(data);
+      window.open(data.redirect_url as string, '_blank')?.focus();
+    }
+  }, [currency, locale, amount]);
+
   const handleClose = () => {
     setIsWalletModal(false);
-    setEthAmount(undefined);
+    setAmount(undefined);
     onClose();
   };
 
-  const DonateButton: React.FC<{ amount: number }> = ({ amount }) => (
-    <Button variant="text" onClick={() => setEthAmount(amount)}>
-      {amount} ETH
-    </Button>
-  );
+  useEffect(() => {
+    setAmount(undefined);
+  }, [currency]);
 
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
@@ -140,23 +182,54 @@ export const DonationDialog: React.FC<DonationProps> = ({
                 </Typography>
               </>
             ) : (
-              <>
-                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2}>
+              <Stack direction="column" spacing={2}>
+                <Stack direction="row">
                   <TextField
                     variant="standard"
-                    type="number"
-                    inputProps={{ step: 0.1 }}
-                    value={ethAmount ?? ''}
-                    label={intl.formatMessage({ id: 'donate.amount' })}
-                    onChange={(e) => setEthAmount(Math.abs(+e.target.value))}
-                    sx={{ flex: 1 }}
+                    inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                    value={amount ?? ''}
+                    placeholder={intl.formatMessage({ id: 'donate.amount' })}
+                    onChange={(e) => {
+                      if (!isNaN(Math.abs(+e.target.value))) {
+                        setAmount(Math.abs(+e.target.value));
+                      }
+                    }}
+                    sx={{ flex: 1, height: '100%' }}
                   />
-                  <DonateButton amount={0.1} />
-                  <DonateButton amount={0.3} />
-                  <DonateButton amount={0.5} />
-                  <DonateButton amount={1} />
+                  {multiCurrency && (
+                    <Select
+                      value={currency}
+                      onChange={(event) =>
+                        setCurrency(event.target.value as Currency)
+                      }
+                      sx={{ ml: 4 }}
+                      inputProps={{ sx: { textTransform: 'uppercase' } }}
+                    >
+                      {CURRENCIES.map((currency) => (
+                        <MenuItem
+                          key={currency.name}
+                          value={currency.name}
+                          sx={{ textTransform: 'uppercase' }}
+                        >
+                          {currency.name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  )}
                 </Stack>
-              </>
+                <Stack direction="row">
+                  {CURRENCIES.find(
+                    ({ name }) => name === currency,
+                  )?.defaultValues.map((value) => (
+                    <DonateButton
+                      amount={value}
+                      currency={currency}
+                      setAmount={setAmount}
+                      key={value}
+                    />
+                  ))}
+                </Stack>
+              </Stack>
             )}
           </Stack>
         </Stack>
@@ -196,7 +269,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
             }}
           >
             <img
-              src="/images/icons/WalletConnect.png"
+              src="/images/icons/wallet-connect.png"
               alt="wallet connect"
               style={{ marginRight: 16, width: 22, height: 'auto' }}
             />
@@ -214,8 +287,8 @@ export const DonationDialog: React.FC<DonationProps> = ({
               },
             }}
             variant="outlined"
-            disabled={(ethAmount ?? 0) <= 0}
-            onClick={() => setIsWalletModal(true)}
+            disabled={(amount ?? 0) <= 0}
+            onClick={handleContinue}
           >
             <Message id="donate.continue" />
           </Button>

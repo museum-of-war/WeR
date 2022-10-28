@@ -31,9 +31,11 @@ export const ua: Record<TranslationKey, string> = {
   'card.liveNow': 'Наживо',
   'card.comingSoon': 'Далі буде',
 
-  'heading.title': 'Відчуй та погрузись',
+  'heading.title': 'Війна як вона є',
+  'heading.subtitle': 'Відчуй. Погрузись. Пожертвуйте',
   'heading.description':
     'Ми показуємо світу справжню війну і даємо можливість зануритися в неї та відчути її.',
+
   'aboutUs.title': 'Про нас',
 
   'aboutUs.description1':

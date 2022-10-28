@@ -29,7 +29,8 @@ export const en = {
   'card.liveNow': 'Live Now',
   'card.comingSoon': 'More is coming soon',
 
-  'heading.title': 'Feel and immerse',
+  'heading.title': 'War as it is',
+  'heading.subtitle': 'Feel. Immerse. Donate',
   'heading.description':
     'We show the world the real war and give you the opportunity to immerse yourself in it and feel it.',
 

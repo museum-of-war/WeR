@@ -3,8 +3,10 @@ import {
   Box,
   Container,
   Stack,
+  Typography
 } from '@mui/material';
 import { Map } from "./Map";
+import {Message} from "../../components/message/Message";
 
 export const Heading: React.FC = () => {
   return (
@@ -75,10 +77,43 @@ export const Heading: React.FC = () => {
           </Container>
 
           <Container>
-            <h1>asdasds</h1>
-            <h1>asdasds</h1>
-            <h1>asdasds</h1>
-            <h1>asdasds</h1>
+            <Stack
+              direction="row"
+              spacing={{ xs: 0, sm: 0, md: 6 }}
+              mt={16}
+              sx={{
+                display: 'flex',
+                flexDirection: {
+                  xs: 'column',
+                  sm: 'column',
+                  md: 'row',
+                },
+                color: '#ffffff'
+              }}
+            >
+              <Box sx={{ flex: 6, mb: { xs: 2, sm: 3, md: 0 } }}>
+                <Typography variant={'h1'} mb={4} >
+                  <Message id="heading.title" />
+                </Typography>
+
+                <Typography variant={'h3'}>
+                  <Message id="heading.subtitle" />
+                </Typography>
+              </Box>
+
+              <Box sx={{
+                display: 'flex',
+                flex: 3.5,
+                alignItems: 'flex-end'
+              }}>
+                <Typography
+                  fontSize={'22px'}
+                  lineHeight={'32px'}
+                >
+                  <Message id="heading.description" />
+                </Typography>
+              </Box>
+            </Stack>
           </Container>
 
           <Container>

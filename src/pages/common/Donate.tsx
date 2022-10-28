@@ -100,7 +100,13 @@ export const Donate: React.FC = () => {
               <Message id={recipient.title} />
             </Typography>
             <Button
-              sx={{ mt: 'auto', width: 'fit-content', minWidth: 160 }}
+              sx={{
+                mt: 'auto',
+                width: '222px',
+                minWidth: 160,
+                background: '#000000',
+                color: '#ffffff'
+              }}
               variant="outlined"
               onClick={() => {
                 setActiveRecipient(recipient);
@@ -109,8 +115,11 @@ export const Donate: React.FC = () => {
               <Message id="donate.button.donate" />
             </Button>
           </Stack>
-          <Stack width={{ xs: '100%', sm: '50%' }}>
-            <Typography>
+          <Stack
+            width={{ xs: '100%', sm: '50%' }}
+            ml={{ sm: '48px !important' }}
+          >
+            <Typography fontSize={{ sm: "16px" }} lineHeight={{ sm: "24px" }}>
               <Message id={recipient.description} />
             </Typography>
           </Stack>

@@ -65,7 +65,6 @@ export const Heading: React.FC = () => {
             opacity: 0.7,
           }}
         />
-
         <Box zIndex={3}>
           <Container>
             <Box
@@ -75,7 +74,6 @@ export const Heading: React.FC = () => {
               }}
             />
           </Container>
-
           <Container>
             <Stack
               direction="row"
@@ -115,12 +113,10 @@ export const Heading: React.FC = () => {
               </Box>
             </Stack>
           </Container>
-
           <Container>
             <Map />
           </Container>
         </Box>
-
       </Stack>
     </Container>
   );

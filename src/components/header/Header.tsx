@@ -71,7 +71,6 @@ export const Header: React.FC<HeaderProps> = ({ setLocale, locale }) => {
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        px={2}
       >
         <Link href="/">
           <img src="/images/Logo_white.png" alt="logo" height={46} />

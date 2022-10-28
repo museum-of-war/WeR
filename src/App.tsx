@@ -6,6 +6,7 @@ import { OnErrorFn } from '@formatjs/intl/src/types';
 import { ThemeProvider } from '@mui/material';
 import { Main } from './pages/main/Main';
 import { Location } from './pages/location/Location';
+import { VRPlaces } from "./pages/places/VRPlaces";
 import { theme } from './theme';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
@@ -68,6 +69,7 @@ export const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/:locationUrl" element={<Location />} />
+            <Route path="/vr-places" element={<VRPlaces />} />
           </Routes>
           <Footer />
         </ThemeProvider>

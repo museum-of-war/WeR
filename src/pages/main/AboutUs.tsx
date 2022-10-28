@@ -30,12 +30,12 @@ export const AboutUs: React.FC = () => {
       </Typography>
       <Grid container spacing={6} sx={{ mt: 0 }}>
         <Grid item sm={12} md={6}>
-          <Typography>
+          <Typography fontSize={16}>
             <Message id="aboutUs.description1" />
           </Typography>
         </Grid>
         <Grid item sm={12} md={6}>
-          <Typography>
+          <Typography fontSize={16}>
             <Message id="aboutUs.description2" />
           </Typography>
         </Grid>
@@ -68,7 +68,7 @@ export const AboutUs: React.FC = () => {
           </Typography>
           <Button
             variant="outlined"
-            sx={{ mt: 4 }}
+            sx={{ mt: 8 }}
             onClick={() => setOpen(true)}
           >
             <Message id="aboutUs.supportUs.button" />

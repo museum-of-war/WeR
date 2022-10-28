@@ -8,14 +8,11 @@ import {
 } from '@mui/material';
 import { ReactComponent as Arrow } from '../../icons/Arrow.svg';
 import { Card } from '../../components/card/Card';
-import { VR_PLACES } from '../../constants/contants';
+import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
 import { Modal } from "../common/Modal";
 
-type VRPlacesProps = {
-  className?: string;
-};
-export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
+export const VRPlaces: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const [p360src, setP360src] = useState('');
 
@@ -35,7 +32,7 @@ export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
           md: 16,
         },
       }}
-      className={className}
+      className={VR_PLACES_CLASS_NAME}
     >
       <Stack
         flex={1}

@@ -65,7 +65,7 @@ export const Heading: React.FC = () => {
             opacity: 0.7,
           }}
         />
-        <Box zIndex={3}>
+        <Box zIndex={3} mb={12} >
           <Container>
             <Box
               sx={{

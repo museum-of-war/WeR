@@ -14,8 +14,8 @@ export const theme = createTheme({
     MuiTypography: {
       styleOverrides: {
         h1: {
-          fontSize: 96,
-          lineHeight: '96px',
+          fontSize: 84,
+          lineHeight: '80px',
           fontWeight: 900,
           fontFamily: 'RockstarBlack',
           [defaultTheme.breakpoints.down('sm')]: {

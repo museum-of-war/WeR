@@ -24,15 +24,18 @@ export const ua: Record<TranslationKey, string> = {
   'locations.kapitanivka.shortLocation': 'Капітанівка',
   'locations.kapitanivka.location': 'Капітанівка, Київська область',
 
-  'header.liveTours': 'Live Тури',
+  'header.liveTours': 'Тури',
+  'header.vrPlaces': 'VR Місця',
   'header.aboutUs': 'Про нас',
 
   'card.liveNow': 'Наживо',
   'card.comingSoon': 'Далі буде',
 
-  'heading.title': 'Відчуй та погрузись',
+  'heading.title': 'Війна як вона є',
+  'heading.subtitle': 'Відчуй. Погрузись. Пожертвуйте',
   'heading.description':
     'Ми показуємо світу справжню війну і даємо можливість зануритися в неї та відчути її.',
+
   'aboutUs.title': 'Про нас',
 
   'aboutUs.description1':
@@ -58,11 +61,12 @@ export const ua: Record<TranslationKey, string> = {
   'donate.recipient.dronarium.title': 'Дронаріум',
   'donate.recipient.dronarium.description':
     'DRONARIUM – це перший в Україні навчальний центр для пілотів дронів, де випускники отримують, практичний досвід керування БПЛА в найрізноманітніших умовах, поглиблене вивчення авіаційного права, законодавства України та міжнародного права у сфері БПЛА. Все це робить випускників академії - надійними захисниками Українського неба та точними очимами в небі. Ви можете підтримати академію та прискорити наближення перемоги – відправивши пожертву на будь-яку суму.',
-  'donate.button.donate': 'Зробити внесок',
+  'donate.button.donate': 'Зробити внесок в ETH',
   'donate.recipient.dronarium.donate': 'Зробити внесок до DRONARIUM',
   'donate.recipient.wer.donate': 'Зробити внесок у проект',
 
   'vrplaces.title': 'VR місця',
+  'vrplaces.seeAllPlaces': 'Подивитись всі місця',
 
   'team.andrienko.name': 'Юрій Андрієнко',
   'team.andrienko.position': 'COO',
@@ -89,7 +93,7 @@ export const ua: Record<TranslationKey, string> = {
   'vrPlaces.priymachenko_museum': 'Музей Примаченко',
   'vrPlaces.rusaniv': 'Село Русанів',
 
-  'home.title.liveTours': 'Live Тури',
+  'home.title.liveTours': 'Тури',
 
   'location.title.moreLiveTours': 'Більше live турів',
 

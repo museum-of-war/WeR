@@ -1,51 +1,13 @@
-import React, { useCallback, useRef, useState } from 'react';
-import {
-  Container,
-  Dialog,
-  DialogContent,
-  Grid,
-  Typography,
-} from '@mui/material';
-import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
+import React, { useCallback, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Container, Grid, Typography, Stack } from '@mui/material';
+import { ReactComponent as Arrow } from '../../icons/arrow.svg';
 import { Card } from '../../components/card/Card';
-import { VR_PLACES } from '../../constants/contants';
+import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
+import { Modal } from '../common/Modal';
 
-type ModalProps = {
-  handleClose: () => void;
-  p360src: string;
-};
-const Modal: React.FC<ModalProps> = ({ handleClose, p360src }) => {
-  const photoSphereRef = useRef<any>();
-
-  return (
-    <Dialog
-      className="hide-scroll"
-      onClose={handleClose}
-      open
-      fullWidth
-      maxWidth="xl"
-      sx={{ p: 0 }}
-      PaperProps={{ sx: { height: '100%', p: 0 } }}
-    >
-      <DialogContent sx={{ p: 0, mt: 0 }}>
-        <ReactPhotoSphereViewer
-          ref={photoSphereRef}
-          src={p360src}
-          // @ts-ignore
-          height="100%"
-          // @ts-ignore
-          width="100%"
-        />
-      </DialogContent>
-    </Dialog>
-  );
-};
-
-type VRPlacesProps = {
-  className?: string;
-};
-export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
+export const VRPlaces: React.FC = () => {
   const [open, setOpen] = React.useState(false);
   const [p360src, setP360src] = useState('');
 
@@ -53,6 +15,9 @@ export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
     setP360src(p360src);
     setOpen(true);
   }, []);
+
+  const itemsToRender =
+    VR_PLACES.length > 8 ? VR_PLACES.slice(0, 8) : VR_PLACES;
 
   return (
     <Container
@@ -63,22 +28,46 @@ export const VRPlaces: React.FC<VRPlacesProps> = ({ className }) => {
           md: 16,
         },
       }}
-      className={className}
+      className={VR_PLACES_CLASS_NAME}
     >
-      <Typography variant="h2">
-        <Message id="vrplaces.title" />
-      </Typography>
+      <Stack
+        flex={1}
+        direction="row"
+        alignItems="center"
+        justifyContent="space-between"
+      >
+        <Typography variant="h2">
+          <Message id="vrplaces.title" />
+        </Typography>
+
+        {VR_PLACES.length > 8 && (
+          <Link
+            to="/vr-places"
+            style={{
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+            }}
+          >
+            <Typography variant="body2" mr="19px" color="primary.main">
+              <Message id="vrplaces.seeAllPlaces" />
+            </Typography>
+
+            <Arrow />
+          </Link>
+        )}
+      </Stack>
       <Grid container spacing={6} sx={{ mt: 0 }} className="cards">
-        {VR_PLACES.map((place) => (
+        {itemsToRender.map((place) => (
           <Grid
             item
             key={place.location}
-            xs={12}
-            sm={6}
+            xs={6}
+            sm={3}
             className="card"
             onClick={() => handleOpen(place.p360src)}
           >
-            <Card data={place} disableArrow />
+            <Card data={place} isSmall disableArrow />
           </Grid>
         ))}
       </Grid>

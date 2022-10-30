@@ -22,13 +22,15 @@ export const en = {
   'locations.kapitanivka.shortLocation': 'Kapitanivka',
   'locations.kapitanivka.location': 'Kapitanivka, Kyiv region',
 
-  'header.liveTours': 'Live Tours',
+  'header.liveTours': 'Tours',
+  'header.vrPlaces': 'VR Places',
   'header.aboutUs': 'About Us',
 
   'card.liveNow': 'Live Now',
   'card.comingSoon': 'More is coming soon',
 
-  'heading.title': 'Feel and immerse',
+  'heading.title': 'War as it is',
+  'heading.subtitle': 'Feel. Immerse. Donate',
   'heading.description':
     'We show the world the real war and give you the opportunity to immerse yourself in it and feel it.',
 
@@ -56,11 +58,12 @@ export const en = {
   'donate.recipient.dronarium.title': 'Dronarium',
   'donate.recipient.dronarium.description':
     'DRONARIUM is the first training center for drone pilots in Ukraine, where graduates get practical experience of operating UAVs in a wide variety of conditions, in-depth study of aviation law, Ukrainian legislation and international law in the field of UAVs. All this makes graduates of the academy reliable defenders of the Ukrainian sky and accurate eyes in the sky. You can support the academy and accelerate the approach of victory - by sending a donation of any amount.',
-  'donate.button.donate': 'Donate',
+  'donate.button.donate': 'Donate in ETH',
   'donate.recipient.dronarium.donate': 'Donate to DRONARIUM',
   'donate.recipient.wer.donate': 'Donate to project',
 
   'vrplaces.title': 'VR Places',
+  'vrplaces.seeAllPlaces': 'See All Places',
 
   'team.andrienko.name': 'Yurii Andrienko',
   'team.andrienko.position': 'COO',
@@ -87,7 +90,7 @@ export const en = {
   'vrPlaces.priymachenko_museum': 'Primachenko museum',
   'vrPlaces.rusaniv': 'Rusaniv village,  Kyiv region',
 
-  'home.title.liveTours': 'Live Tours',
+  'home.title.liveTours': 'Tours',
 
   'location.title.moreLiveTours': 'More Live Tours',
 

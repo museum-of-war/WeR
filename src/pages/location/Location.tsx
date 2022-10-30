@@ -77,8 +77,14 @@ export const Location: React.FC = () => {
           style={{ minWidth: '100%', maxWidth: '100%' }}
         />
       </Box>
-      <Container sx={{ zIndex: 1, position: 'relative', pt: 6 }}>
-        <Stack direction="row" alignItems="center">
+      <Container sx={{ zIndex: 1, position: 'relative' }}>
+        <Box
+          sx={{
+            borderBottom: '2px solid #ffffff',
+            pb: 12,
+          }}
+        />
+        <Stack direction="row" alignItems="center" my={6}>
           <IconButton onClick={() => navigate('/')} sx={{ ml: -1 }}>
             <Arrow height={xs ? 24 : 48} width={xs ? 24 : 48} />
           </IconButton>

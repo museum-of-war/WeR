@@ -15,6 +15,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Message } from '../message/Message';
 import {
   ABOUT_US_CLASS_NAME,
+  VR_PLACES_CLASS_NAME,
   LIVE_TOURS_CLASS_NAME,
 } from '../../constants/contants';
 import { ReactComponent as Menu } from '../../icons/menu.svg';
@@ -50,31 +51,51 @@ export const Header: React.FC = () => {
   }, [md]);
 
   return (
-    <Container>
+    <Container
+        sx={{
+          display: "flex",
+          position: "absolute",
+          top: "0",
+          right: "0",
+          bottom: "0",
+          left: "0",
+          zIndex: 10,
+          height: "96px",
+        }}
+    >
       <Stack
+        flex={1}
         direction="row"
         alignItems="center"
         justifyContent="space-between"
-        height={96}
       >
         <Link href="/">
-          <img src="/images/Logo.png" alt="logo" height={48} />
+          <img src="/images/Logo_white.png" alt="logo" height={46} />
         </Link>
         {md ? (
           <IconButton onClick={() => setShowMenu(true)}>
             <Menu />
           </IconButton>
         ) : (
-          <Box>
+          <Box
+              sx={{
+                '& > button, a': {
+                  color: "#ffffff"
+                }
+              }}
+          >
             <Link mr={6} onClick={() => scrollToSection(LIVE_TOURS_CLASS_NAME)}>
               <Message id="header.liveTours" />
+            </Link>
+            <Link mr={6} onClick={() => scrollToSection(VR_PLACES_CLASS_NAME)}>
+              <Message id="header.vrPlaces" />
             </Link>
             <Link mr={6} onClick={() => scrollToSection(ABOUT_US_CLASS_NAME)}>
               <Message id="header.aboutUs" />
             </Link>
             <Button
               variant={locale === 'en' ? 'outlined' : undefined}
-              sx={{ width: 75 }}
+              sx={{ width: 75, borderColor: "#ffffff" }}
               onClick={() => setLocale('en')}
             >
               EN

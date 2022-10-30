@@ -12,15 +12,15 @@ type CardProps = {
     p360src?: string;
   };
   disableArrow?: boolean;
+  isSmall?: boolean;
 };
-export const Card: React.FC<CardProps> = ({ data, disableArrow }) => {
+export const Card: React.FC<CardProps> = ({ data, disableArrow, isSmall }) => {
   const [showArrow, setShowArrow] = useState(false);
 
   return (
     <Stack
       direction="column"
       sx={{
-        borderTop: '2px solid #101010',
         borderBottom: '2px solid #101010',
         cursor: 'pointer',
         height: '100%',
@@ -53,10 +53,15 @@ export const Card: React.FC<CardProps> = ({ data, disableArrow }) => {
       <img
         src={data.imageSrc}
         alt=""
-        style={{ marginTop: 48, width: '100%' }}
+        style={{ width: '100%' }}
       />
       <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Typography variant="h3" mt={4} mb={6} color="primary.main">
+        <Typography
+          variant={isSmall ? 'body1' : 'h3'}
+          mt={isSmall ? 3 : 4}
+          mb={isSmall ? 4 : 6}
+          color="primary.main"
+        >
           <Message id={data.location} />
         </Typography>
         {showArrow && !disableArrow && <Arrow />}

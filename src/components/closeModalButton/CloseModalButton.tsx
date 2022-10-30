@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, useMediaQuery } from '@mui/material';
-import { ReactComponent as CloseIcon } from '../../icons/CloseIcon.svg';
+import { ReactComponent as CloseIcon } from '../../icons/close-icon.svg';
 import { theme } from '../../theme';
 
 type CloseModalButtonProps = { onClick: () => void };

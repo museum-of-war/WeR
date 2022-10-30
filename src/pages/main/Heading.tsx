@@ -1,21 +1,16 @@
 import React from 'react';
-import {
-  Box,
-  Container,
-  Stack,
-  Typography
-} from '@mui/material';
-import { Map } from "./Map";
-import {Message} from "../../components/message/Message";
+import { Box, Container, Stack, Typography } from '@mui/material';
+import { Map } from './Map';
+import { Message } from '../../components/message/Message';
 
 export const Heading: React.FC = () => {
   return (
     <Container
-        sx={{
-          paddingLeft: "0 !important",
-          paddingRight: "0 !important",
-          maxWidth: "unset !important"
-        }}
+      sx={{
+        paddingLeft: '0 !important',
+        paddingRight: '0 !important',
+        maxWidth: 'unset !important',
+      }}
     >
       <Stack
         direction="column"
@@ -23,7 +18,7 @@ export const Heading: React.FC = () => {
         position="relative"
         minHeight="100vh"
         width="100vw"
-        overflow={"hidden"}
+        overflow={'hidden'}
       >
         <Box
           position="absolute"
@@ -44,10 +39,10 @@ export const Heading: React.FC = () => {
             loop
             autoPlay
             style={{
-              width: "100%",
-              height: "calc(100% + 80px)",
-              marginTop: "-40px",
-              objectFit: "cover"
+              width: '100%',
+              height: 'calc(100% + 80px)',
+              marginTop: '-40px',
+              objectFit: 'cover',
             }}
           />
         </Box>
@@ -58,14 +53,14 @@ export const Heading: React.FC = () => {
           right={0}
           top={0}
           bottom={0}
-          height={"calc(100% + 80px)"}
-          marginTop={"-40px"}
+          height={'calc(100% + 80px)'}
+          marginTop={'-40px'}
           sx={{
             bgcolor: 'primary.main',
             opacity: 0.7,
           }}
         />
-        <Box zIndex={3} mb={12} >
+        <Box zIndex={3} mb={12}>
           <Container>
             <Box
               sx={{
@@ -86,11 +81,11 @@ export const Heading: React.FC = () => {
                   sm: 'column',
                   md: 'row',
                 },
-                color: '#ffffff'
+                color: '#ffffff',
               }}
             >
               <Box sx={{ flex: 6, mb: { xs: 2, sm: 3, md: 0 } }}>
-                <Typography variant={'h1'} mb={4} >
+                <Typography variant={'h1'} mb={4}>
                   <Message id="heading.title" />
                 </Typography>
 
@@ -99,15 +94,14 @@ export const Heading: React.FC = () => {
                 </Typography>
               </Box>
 
-              <Box sx={{
-                display: 'flex',
-                flex: 3.5,
-                alignItems: 'flex-end'
-              }}>
-                <Typography
-                  fontSize={'22px'}
-                  lineHeight={'32px'}
-                >
+              <Box
+                sx={{
+                  display: 'flex',
+                  flex: 3.5,
+                  alignItems: 'flex-end',
+                }}
+              >
+                <Typography fontSize={'22px'} lineHeight={'32px'}>
                   <Message id="heading.description" />
                 </Typography>
               </Box>

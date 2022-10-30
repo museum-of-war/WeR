@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import ReactGA from 'react-ga4';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { IntlProvider, ReactIntlErrorCode } from 'react-intl';
@@ -10,9 +10,9 @@ import { VRPlaces } from "./pages/places/VRPlaces";
 import { theme } from './theme';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
-import { USER_LANGUAGE_LS_KEY } from './constants/contants';
 import { en } from './intl/en';
 import { ua } from './intl/ua';
+import { useLocale } from './hooks/useLocale';
 
 ReactGA.initialize('G-H6MQYL5SD8');
 
@@ -24,8 +24,6 @@ const onError: OnErrorFn = (error) => {
 
 export type AppLocale = 'en' | 'ua';
 export const App: React.FC = () => {
-  const [locale, setLocale] = useState<AppLocale>('ua');
-
   useEffect(() => {
     ReactGA.send({
       hitType: 'pageview',
@@ -33,29 +31,11 @@ export const App: React.FC = () => {
     });
   }, []);
 
-  useEffect(() => {
-    const locale = localStorage.getItem(USER_LANGUAGE_LS_KEY);
-
-    if (locale) {
-      setLocale(locale as AppLocale);
-    } else {
-      if (navigator.language === 'ua-UA') {
-        setLocale('ua');
-      } else {
-        setLocale('en');
-      }
-    }
-  }, [setLocale]);
-
-  const handleSetLocale = useCallback((locale: AppLocale) => {
-    setLocale(locale);
-    localStorage.setItem(USER_LANGUAGE_LS_KEY, locale);
-  }, []);
-
   const localesMap: Record<AppLocale, any> = {
     en,
     ua,
   };
+  const [locale] = useLocale();
 
   return (
     <BrowserRouter>
@@ -65,7 +45,7 @@ export const App: React.FC = () => {
         onError={onError}
       >
         <ThemeProvider theme={theme}>
-          <Header setLocale={handleSetLocale} locale={locale} />
+          <Header />
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/:locationUrl" element={<Location />} />

@@ -1,4 +1,4 @@
-import React, {useCallback, useEffect, useState} from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   Box,
   Container,
@@ -11,12 +11,12 @@ import {
 } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useIntl } from 'react-intl';
-import { ReactComponent as Arrow } from '../../icons/ArrowWhite.svg';
+import { ReactComponent as Arrow } from '../../icons/arrow-white.svg';
 import { VR_PLACES } from '../../constants/contants';
 import { Donate } from '../common/Donate';
 import { Message } from '../../components/message/Message';
-import {Card} from "../../components/card/Card";
-import { Modal } from "../common/Modal";
+import { Card } from '../../components/card/Card';
+import { Modal } from '../common/Modal';
 
 export const VRPlaces: React.FC = () => {
   const theme = useTheme();
@@ -81,7 +81,11 @@ export const VRPlaces: React.FC = () => {
             pb: 12,
           }}
         />
-        <Stack direction="row" alignItems="center" sx={{ mt: { xs: 3, sm: 6 }}}>
+        <Stack
+          direction="row"
+          alignItems="center"
+          sx={{ mt: { xs: 3, sm: 6 } }}
+        >
           <IconButton onClick={() => navigate('/')} sx={{ ml: -1 }}>
             <Arrow height={xs ? 24 : 48} width={xs ? 24 : 48} />
           </IconButton>
@@ -95,17 +99,19 @@ export const VRPlaces: React.FC = () => {
             Back
           </Typography>
         </Stack>
-        <Typography variant="h2" color="white" sx={{ mt: { xs: 3, sm: 6 }}}>
-          <Message id={'vrplaces.title'} />
+        <Typography variant="h2" color="white" sx={{ mt: { xs: 3, sm: 6 } }}>
+          <Message id="vrplaces.title" />
         </Typography>
       </Container>
-      <Container sx={{
-        marginTop: {
-          xs: 0,
-          sm: 6,
-          md: 10,
-        }
-      }}>
+      <Container
+        sx={{
+          marginTop: {
+            xs: 0,
+            sm: 6,
+            md: 10,
+          },
+        }}
+      >
         <Grid container spacing={6} sx={{ mt: 0 }} className="cards">
           {VR_PLACES.map((place) => (
             <Grid

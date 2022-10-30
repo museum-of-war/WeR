@@ -17,8 +17,9 @@ export const Heading: React.FC = () => {
         sx={{ userSelect: 'none' }}
         position="relative"
         minHeight="100vh"
-        width="100vw"
-        overflow={'hidden'}
+        width="100%"
+        maxWidth="100%"
+        overflow="hidden"
       >
         <Box
           position="absolute"
@@ -53,8 +54,8 @@ export const Heading: React.FC = () => {
           right={0}
           top={0}
           bottom={0}
-          height={'calc(100% + 80px)'}
-          marginTop={'-40px'}
+          height="calc(100% + 80px)"
+          mt={-5}
           sx={{
             bgcolor: 'primary.main',
             opacity: 0.7,
@@ -85,15 +86,13 @@ export const Heading: React.FC = () => {
               }}
             >
               <Box sx={{ flex: 6, mb: { xs: 2, sm: 3, md: 0 } }}>
-                <Typography variant={'h1'} mb={4}>
+                <Typography variant="h1" mb={4}>
                   <Message id="heading.title" />
                 </Typography>
-
-                <Typography variant={'h3'}>
+                <Typography variant="h3">
                   <Message id="heading.subtitle" />
                 </Typography>
               </Box>
-
               <Box
                 sx={{
                   display: 'flex',
@@ -101,7 +100,7 @@ export const Heading: React.FC = () => {
                   alignItems: 'flex-end',
                 }}
               >
-                <Typography fontSize={'22px'} lineHeight={'32px'}>
+                <Typography fontSize="22px" lineHeight="32px">
                   <Message id="heading.description" />
                 </Typography>
               </Box>

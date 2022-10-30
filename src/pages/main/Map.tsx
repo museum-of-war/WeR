@@ -167,7 +167,7 @@ export const Map: React.FC = () => {
     >
       <SVGMap
         map={mapUkr}
-        onLocationMouseOver={() => console.log('over')}
+        // onLocationMouseOver={() => console.log('over')}
         childrenBefore={
           <path
             fillRule="evenodd"

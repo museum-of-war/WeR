@@ -1,16 +1,11 @@
 import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Container,
-  Grid,
-  Typography,
-  Stack
-} from '@mui/material';
-import { ReactComponent as Arrow } from '../../icons/Arrow.svg';
+import { Container, Grid, Typography, Stack } from '@mui/material';
+import { ReactComponent as Arrow } from '../../icons/arrow.svg';
 import { Card } from '../../components/card/Card';
 import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
-import { Modal } from "../common/Modal";
+import { Modal } from '../common/Modal';
 
 export const VRPlaces: React.FC = () => {
   const [open, setOpen] = React.useState(false);
@@ -21,7 +16,8 @@ export const VRPlaces: React.FC = () => {
     setOpen(true);
   }, []);
 
-  const itemsToRender = VR_PLACES.length > 8 ? VR_PLACES.slice(0, 8) : VR_PLACES;
+  const itemsToRender =
+    VR_PLACES.length > 8 ? VR_PLACES.slice(0, 8) : VR_PLACES;
 
   return (
     <Container
@@ -46,18 +42,18 @@ export const VRPlaces: React.FC = () => {
 
         {VR_PLACES.length > 8 && (
           <Link
-            to={'/vr-places'}
+            to="/vr-places"
             style={{
               textDecoration: 'none',
               display: 'flex',
-              alignItems: 'center'
+              alignItems: 'center',
             }}
           >
-            <Typography variant="body2" mr={'19px'} color="primary.main">
-              <Message id="vrplaces.seeAllPlaces"/>
+            <Typography variant="body2" mr="19px" color="primary.main">
+              <Message id="vrplaces.seeAllPlaces" />
             </Typography>
 
-            <Arrow/>
+            <Arrow />
           </Link>
         )}
       </Stack>

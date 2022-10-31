@@ -16,7 +16,8 @@ export const Heading: React.FC = () => {
         direction="column"
         sx={{ userSelect: 'none' }}
         position="relative"
-        minHeight="100vh"
+        // minHeight="100vh"
+        minHeight={700}
         width="100%"
         maxWidth="100%"
         overflow="hidden"
@@ -74,7 +75,7 @@ export const Heading: React.FC = () => {
             <Stack
               direction="row"
               spacing={{ xs: 0, sm: 0, md: 6 }}
-              mt={32}
+              mt={16}
               sx={{
                 display: 'flex',
                 flexDirection: {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Container, Stack, Typography } from '@mui/material';
-import { Message, TranslationKey } from '../../components/message/Message';
 import { useIntl } from 'react-intl';
+import { Message } from '../../components/message/Message';
 import { DonationDialog } from '../../components/donationDialog/DonationDialog';
 import { Recipient, RECIPIENTS } from './constants';
 
@@ -54,7 +54,7 @@ export const Donate: React.FC = () => {
                 width: '222px',
                 minWidth: 160,
                 background: '#000000',
-                color: '#ffffff'
+                color: '#ffffff',
               }}
               variant="outlined"
               onClick={() => {
@@ -68,7 +68,7 @@ export const Donate: React.FC = () => {
             width={{ xs: '100%', sm: '50%' }}
             ml={{ sm: '48px !important' }}
           >
-            <Typography fontSize={{ sm: "16px" }} lineHeight={{ sm: "24px" }}>
+            <Typography fontSize={{ sm: '16px' }} lineHeight={{ sm: '24px' }}>
               <Message id={recipient.description} />
             </Typography>
           </Stack>

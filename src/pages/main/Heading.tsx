@@ -74,7 +74,7 @@ export const Heading: React.FC = () => {
             <Stack
               direction="row"
               spacing={{ xs: 0, sm: 0, md: 6 }}
-              mt={16}
+              mt={32}
               sx={{
                 display: 'flex',
                 flexDirection: {
@@ -106,9 +106,7 @@ export const Heading: React.FC = () => {
               </Box>
             </Stack>
           </Container>
-          <Container>
-            <Map />
-          </Container>
+          {/*<Container>/!*<Map />*!/</Container>*/}
         </Box>
       </Stack>
     </Container>

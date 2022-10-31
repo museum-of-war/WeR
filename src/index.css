@@ -22,28 +22,6 @@ body, html, #root {
   url("/public/fonts/RockStar-NarrowRegular.otf") format("truetype");
 }
 
-#text {
-  display: inline-block;
-  vertical-align: middle;
-  letter-spacing: 2px;
-}
-
-#cursor {
-  display: inline-block;
-  vertical-align: middle;
-  letter-spacing: 2px;
-  animation: blink .75s step-end infinite;
-}
-
-@keyframes blink {
-  from, to {
-    color: transparent
-  }
-  50% {
-    color: white;
-  }
-}
-
 .bold {
   font-family: RockstarBlack!important;
 }

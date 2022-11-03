@@ -27,8 +27,8 @@ export const Location: React.FC = () => {
     window.scrollTo(0, 0);
   }, [locationUrl]);
 
-  const location = Object.values(LOCATIONS).find(
-    (place) => place.url === `/${locationUrl}`,
+  const location = LOCATIONS.find(
+    (location) => location.url === `/${locationUrl}`,
   );
 
   if (!location) return null;

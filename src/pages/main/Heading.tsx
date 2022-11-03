@@ -16,8 +16,7 @@ export const Heading: React.FC = () => {
         direction="column"
         sx={{ userSelect: 'none' }}
         position="relative"
-        // minHeight="100vh"
-        minHeight={700}
+        minHeight="100vh"
         width="100%"
         maxWidth="100%"
         overflow="hidden"
@@ -107,7 +106,9 @@ export const Heading: React.FC = () => {
               </Box>
             </Stack>
           </Container>
-          {/*<Container>/!*<Map />*!/</Container>*/}
+          <Container>
+            <Map />
+          </Container>
         </Box>
       </Stack>
     </Container>

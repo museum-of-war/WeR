@@ -6,13 +6,14 @@ import { OnErrorFn } from '@formatjs/intl/src/types';
 import { ThemeProvider } from '@mui/material';
 import { Main } from './pages/main/Main';
 import { Location } from './pages/location/Location';
-import { VRPlaces } from "./pages/places/VRPlaces";
+import { VRPlaces } from './pages/places/VRPlaces';
 import { theme } from './theme';
 import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
 import { en } from './intl/en';
 import { ua } from './intl/ua';
 import { useLocale } from './hooks/useLocale';
+import { RegionComponent as Region } from './pages/region/Region';
 
 ReactGA.initialize('G-H6MQYL5SD8');
 
@@ -49,6 +50,7 @@ export const App: React.FC = () => {
           <Routes>
             <Route path="/" element={<Main />} />
             <Route path="/:locationUrl" element={<Location />} />
+            <Route path="/region/:regionId" element={<Region />} />
             <Route path="/vr-places" element={<VRPlaces />} />
           </Routes>
           <Footer />

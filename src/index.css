@@ -38,3 +38,9 @@ body, html, #root {
 img {
   user-select: none;
 }
+
+.map-counter {
+  font-size: 40px;
+  font-family: "RockstarNarrowRegular";
+  fill: white;
+}

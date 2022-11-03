@@ -16,7 +16,7 @@ import { VR_PLACES } from '../../constants/contants';
 import { Donate } from '../common/Donate';
 import { Message } from '../../components/message/Message';
 import { Card } from '../../components/card/Card';
-import { Modal } from '../common/Modal';
+import { Modal360 } from '../common/Modal360';
 
 export const VRPlaces: React.FC = () => {
   const theme = useTheme();
@@ -126,7 +126,9 @@ export const VRPlaces: React.FC = () => {
             </Grid>
           ))}
         </Grid>
-        {open && <Modal handleClose={() => setOpen(false)} p360src={p360src} />}
+        {open && (
+          <Modal360 handleClose={() => setOpen(false)} p360src={p360src} />
+        )}
       </Container>
       <Donate />
     </Box>

@@ -1,13 +1,13 @@
-import React, {useRef} from "react";
-import { Dialog, DialogContent } from "@mui/material";
-import { ReactPhotoSphereViewer } from "react-photo-sphere-viewer";
+import React, { useRef } from 'react';
+import { Dialog, DialogContent } from '@mui/material';
+import { ReactPhotoSphereViewer } from 'react-photo-sphere-viewer';
 
 type ModalProps = {
   handleClose: () => void;
   p360src: string;
 };
 
-export const Modal: React.FC<ModalProps> = ({ handleClose, p360src }) => {
+export const Modal360: React.FC<ModalProps> = ({ handleClose, p360src }) => {
   const photoSphereRef = useRef<any>();
 
   return (

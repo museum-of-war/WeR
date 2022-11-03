@@ -5,10 +5,10 @@ import { ReactComponent as Arrow } from '../../icons/arrow.svg';
 import { Card } from '../../components/card/Card';
 import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
-import { Modal } from '../common/Modal';
+import { Modal360 } from '../common/Modal360';
 
 export const VRPlaces: React.FC = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [p360src, setP360src] = useState('');
 
   const handleOpen = useCallback((p360src: string) => {
@@ -39,7 +39,6 @@ export const VRPlaces: React.FC = () => {
         <Typography variant="h2">
           <Message id="vrplaces.title" />
         </Typography>
-
         {VR_PLACES.length > 8 && (
           <Link
             to="/vr-places"
@@ -52,7 +51,6 @@ export const VRPlaces: React.FC = () => {
             <Typography variant="body2" mr="19px" color="primary.main">
               <Message id="vrplaces.seeAllPlaces" />
             </Typography>
-
             <Arrow />
           </Link>
         )}
@@ -71,7 +69,9 @@ export const VRPlaces: React.FC = () => {
           </Grid>
         ))}
       </Grid>
-      {open && <Modal handleClose={() => setOpen(false)} p360src={p360src} />}
+      {open && (
+        <Modal360 handleClose={() => setOpen(false)} p360src={p360src} />
+      )}
     </Container>
   );
 };

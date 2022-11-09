@@ -4,17 +4,29 @@ import { Container, Grid, Typography, Stack } from '@mui/material';
 import { ReactComponent as Arrow } from '../../icons/arrow.svg';
 import { Card } from '../../components/card/Card';
 import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/contants';
-import { Message } from '../../components/message/Message';
+import { Message, TranslationKey } from '../../components/message/Message';
 import { VideoModal } from '../common/VideoModal';
 
 export const VRPlaces: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState('');
+  const [data, setData] = useState({
+    videoSrc: '',
+    location: '' as TranslationKey,
+  });
 
-  const handleOpen = useCallback((videoSrc: string) => {
-    setVideoSrc(videoSrc);
-    setOpen(true);
-  }, []);
+  const handleOpen = useCallback(
+    ({
+      videoSrc,
+      location,
+    }: {
+      videoSrc: string;
+      location: TranslationKey;
+    }) => {
+      setData({ videoSrc, location });
+      setOpen(true);
+    },
+    [],
+  );
 
   const itemsToRender =
     VR_PLACES.length > 8 ? VR_PLACES.slice(0, 8) : VR_PLACES;
@@ -63,15 +75,15 @@ export const VRPlaces: React.FC = () => {
             xs={6}
             sm={3}
             className="card"
-            onClick={() => handleOpen(place.videoSrc)}
+            onClick={() =>
+              handleOpen({ videoSrc: place.videoSrc, location: place.location })
+            }
           >
             <Card data={place} isSmall disableArrow />
           </Grid>
         ))}
       </Grid>
-      {open && (
-        <VideoModal handleClose={() => setOpen(false)} videoSrc={videoSrc} />
-      )}
+      {open && <VideoModal handleClose={() => setOpen(false)} data={data} />}
     </Container>
   );
 };

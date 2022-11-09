@@ -21,20 +21,33 @@ import {
 } from '../../constants/contants';
 import { Card } from '../../components/card/Card';
 import { VideoModal } from '../common/VideoModal';
+import { TranslationKey } from '../../components/message/Message';
 
 export const RegionComponent: React.FC = () => {
   const { regionId } = useParams();
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
-  const [videoSrc, setVideoSrc] = useState('');
+  const [data, setData] = useState({
+    videoSrc: '',
+    location: '' as TranslationKey,
+  });
 
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleOpen = useCallback((videoSrc: string) => {
-    setVideoSrc(videoSrc);
-    setOpen(true);
-  }, []);
+  const handleOpen = useCallback(
+    ({
+      videoSrc,
+      location,
+    }: {
+      videoSrc: string;
+      location: TranslationKey;
+    }) => {
+      setData({ videoSrc, location });
+      setOpen(true);
+    },
+    [],
+  );
 
   return (
     <Box position="relative" minHeight="100%">
@@ -61,6 +74,7 @@ export const RegionComponent: React.FC = () => {
           }}
         />
         <img
+          alt="heading"
           width="100%"
           src="/images/irpin.png"
           style={{ height: '100%', objectFit: 'cover' }}
@@ -122,17 +136,19 @@ export const RegionComponent: React.FC = () => {
                 xs={6}
                 sm={3}
                 className="card"
-                onClick={() => handleOpen(place.videoSrc)}
+                onClick={() =>
+                  handleOpen({
+                    videoSrc: place.videoSrc,
+                    location: place.location,
+                  })
+                }
               >
                 <Card data={place} isSmall disableArrow />
               </Grid>
             ))}
           </Grid>
           {open && (
-            <VideoModal
-              handleClose={() => setOpen(false)}
-              videoSrc={videoSrc}
-            />
+            <VideoModal handleClose={() => setOpen(false)} data={data} />
           )}
         </Container>
       </Box>

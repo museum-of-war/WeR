@@ -14,7 +14,7 @@ import { useIntl } from 'react-intl';
 import { ReactComponent as Arrow } from '../../icons/arrow-white.svg';
 import { VR_PLACES } from '../../constants/contants';
 import { Donate } from '../common/Donate';
-import { Message } from '../../components/message/Message';
+import { Message, TranslationKey } from '../../components/message/Message';
 import { Card } from '../../components/card/Card';
 import { VideoModal } from '../common/VideoModal';
 
@@ -26,16 +26,28 @@ export const VRPlaces: React.FC = () => {
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [open, setOpen] = React.useState(false);
-  const [videoSrc, setVideoSrc] = useState('');
+  const [data, setData] = useState({
+    videoSrc: '',
+    location: '' as TranslationKey,
+  });
+
+  const handleOpen = useCallback(
+    ({
+      videoSrc,
+      location,
+    }: {
+      videoSrc: string;
+      location: TranslationKey;
+    }) => {
+      setData({ videoSrc, location });
+      setOpen(true);
+    },
+    [],
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [locationUrl]);
-
-  const handleOpen = useCallback((videoSrc: string) => {
-    setVideoSrc(videoSrc);
-    setOpen(true);
-  }, []);
 
   return (
     <Box position="relative" minHeight="100%">
@@ -120,15 +132,18 @@ export const VRPlaces: React.FC = () => {
               xs={6}
               sm={3}
               className="card"
-              onClick={() => handleOpen(place.videoSrc)}
+              onClick={() =>
+                handleOpen({
+                  videoSrc: place.videoSrc,
+                  location: place.location,
+                })
+              }
             >
               <Card data={place} isSmall disableArrow />
             </Grid>
           ))}
         </Grid>
-        {open && (
-          <VideoModal handleClose={() => setOpen(false)} videoSrc={videoSrc} />
-        )}
+        {open && <VideoModal handleClose={() => setOpen(false)} data={data} />}
       </Container>
       <Donate />
     </Box>

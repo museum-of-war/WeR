@@ -1,12 +1,19 @@
 import React from 'react';
 import { Dialog, DialogContent } from '@mui/material';
+import { useIntl } from 'react-intl';
+import { TranslationKey } from '../../components/message/Message';
 
 type ModalProps = {
   handleClose: () => void;
-  videoSrc: string;
+  data: {
+    videoSrc: string;
+    location: TranslationKey;
+  };
 };
 
-export const VideoModal: React.FC<ModalProps> = ({ handleClose, videoSrc }) => {
+export const VideoModal: React.FC<ModalProps> = ({ handleClose, data }) => {
+  const intl = useIntl();
+
   return (
     <Dialog
       className="hide-scroll"
@@ -21,8 +28,8 @@ export const VideoModal: React.FC<ModalProps> = ({ handleClose, videoSrc }) => {
         <iframe
           width="100%"
           height="100%"
-          src={videoSrc}
-          // title={intl.formatMessage({ id: location.location })}
+          src={data.videoSrc}
+          title={intl.formatMessage({ id: data.location })}
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen

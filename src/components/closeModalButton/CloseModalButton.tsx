@@ -10,7 +10,13 @@ export const CloseModalButton: React.FC<CloseModalButtonProps> = ({
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box onClick={onClick} position="absolute" top={32} right={32}>
+    <Box
+      onClick={onClick}
+      position="absolute"
+      top={32}
+      right={32}
+      sx={{ cursor: 'pointer' }}
+    >
       <CloseIcon
         style={{ width: isMobile ? 24 : 34, height: isMobile ? 24 : 34 }}
       />

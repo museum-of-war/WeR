@@ -70,12 +70,12 @@ export const VR_PLACES: {
     imageSrc: '/images/vrplaces/previews/kapitanivka.jpg',
     region: Region.Kyiv,
   },
-  // {
-  //   location: 'vrPlaces.irpin',
-  //   videoSrc: 'https://youtube.com/embed/CKKdGX7LRUE',
-  //   imageSrc: '/images/vrplaces/previews/irpin.jpg', // preview
-  //   region: Region.Kyiv,
-  // },
+  {
+    location: 'vrPlaces.irpin',
+    videoSrc: 'https://youtube.com/embed/CKKdGX7LRUE',
+    imageSrc: '/images/vrplaces/previews/irpin.png', // preview
+    region: Region.Kyiv,
+  },
   {
     location: 'vrPlaces.borodyanka',
     videoSrc: 'https://youtube.com/embed/esrcU6iIasU',
@@ -88,30 +88,30 @@ export const VR_PLACES: {
     imageSrc: '/images/vrplaces/previews/priymachenko_museum.jpg',
     region: Region.Kyiv,
   },
-  // {
-  //   location: 'vrPlaces.vorzel',
-  //   videoSrc: 'https://youtube.com/embed/NvUt4cPw8Mk',
-  //   imageSrc: '/images/vrplaces/previews/vorzel.jpg', // preview
-  //   region: Region.Kyiv,
-  // },
+  {
+    location: 'vrPlaces.vorzel',
+    videoSrc: 'https://youtube.com/embed/NvUt4cPw8Mk',
+    imageSrc: '/images/vrplaces/previews/vorzel.png',
+    region: Region.Kyiv,
+  },
   {
     location: 'vrPlaces.rusaniv',
     videoSrc: 'https://youtube.com/embed/ugAPj-aqn-Y',
     imageSrc: '/images/vrplaces/previews/rusaniv.jpg',
     region: Region.Kyiv,
   },
-  // {
-  //   location: 'vrPlaces.gas_station',
-  //   videoSrc: 'https://youtube.com/embed/HnFNKTzrPkk',
-  //   imageSrc: '/images/vrplaces/previews/rusaniv.jpg', // preview
-  //   region: Region.Kyiv,
-  // },
-  // {
-  //   location: 'vrPlaces.bucha_novus',
-  //   videoSrc: 'https://youtube.com/embed/q_eJ5DR52mQ',
-  //   imageSrc: '/images/vrplaces/previews/rusaniv.jpg', // preview
-  //   region: Region.Kyiv,
-  // },
+  {
+    location: 'vrPlaces.gas_station',
+    videoSrc: 'https://youtube.com/embed/HnFNKTzrPkk',
+    imageSrc: '/images/vrplaces/previews/gas_station.png',
+    region: Region.Kyiv,
+  },
+  {
+    location: 'vrPlaces.bucha_novus',
+    videoSrc: 'https://youtube.com/embed/q_eJ5DR52mQ',
+    imageSrc: '/images/vrplaces/previews/novus.png',
+    region: Region.Kyiv,
+  },
   {
     location: 'vrPlaces.bucha',
     videoSrc: 'https://youtube.com/embed/p-Lt8PtQywM',

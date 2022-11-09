@@ -12,10 +12,11 @@ import { Header } from './components/header/Header';
 import { Footer } from './components/footer/Footer';
 import { en } from './intl/en';
 import { ua } from './intl/ua';
-import { useLocale } from './hooks/useLocale';
 import { RegionComponent as Region } from './pages/region/Region';
+import { AppLocale, GA_MEASUREMENT_ID } from './constants/contants';
+import { useLocale } from './providers/AppLocaleProvider';
 
-ReactGA.initialize('G-H6MQYL5SD8');
+ReactGA.initialize(GA_MEASUREMENT_ID);
 
 const onError: OnErrorFn = (error) => {
   if (error.code === ReactIntlErrorCode.MISSING_DATA) {
@@ -23,7 +24,6 @@ const onError: OnErrorFn = (error) => {
   }
 };
 
-export type AppLocale = 'en' | 'ua';
 export const App: React.FC = () => {
   useEffect(() => {
     ReactGA.send({
@@ -36,7 +36,7 @@ export const App: React.FC = () => {
     en,
     ua,
   };
-  const [locale] = useLocale();
+  const { locale, setLocale } = useLocale();
 
   return (
     <BrowserRouter>
@@ -59,7 +59,6 @@ export const App: React.FC = () => {
     </BrowserRouter>
   );
 };
-// todo @current live tours page
-// todo @current meta
+
 // todo @current add Google Analytics for donations
 // todo @current add Google Analytics for VR places

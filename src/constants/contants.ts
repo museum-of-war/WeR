@@ -219,3 +219,7 @@ export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
 export const LIVE_TOURS_CLASS_NAME = 'live-tours';
 export const VR_PLACES_CLASS_NAME = 'vr-places';
 export const ABOUT_US_CLASS_NAME = 'about-us';
+export const USER_LANGUAGE_LS_KEY = 'USER_LANGUAGE';
+export const GA_MEASUREMENT_ID = 'G-H6MQYL5SD8';
+
+export type AppLocale = 'en' | 'ua';

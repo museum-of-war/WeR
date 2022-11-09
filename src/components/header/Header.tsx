@@ -19,10 +19,10 @@ import {
   LIVE_TOURS_CLASS_NAME,
 } from '../../constants/contants';
 import { ReactComponent as Menu } from '../../icons/menu.svg';
-import { useLocale } from '../../hooks/useLocale';
+import { useLocale } from '../../providers/AppLocaleProvider';
 
 export const Header: React.FC = () => {
-  const [locale, setLocale] = useLocale();
+  const { locale, setLocale } = useLocale();
   const navigate = useNavigate();
   const { pathname } = useLocation();
   const theme = useTheme();
@@ -52,16 +52,16 @@ export const Header: React.FC = () => {
 
   return (
     <Container
-        sx={{
-          display: "flex",
-          position: "absolute",
-          top: "0",
-          right: "0",
-          bottom: "0",
-          left: "0",
-          zIndex: 10,
-          height: "96px",
-        }}
+      sx={{
+        display: 'flex',
+        position: 'absolute',
+        top: '0',
+        right: '0',
+        bottom: '0',
+        left: '0',
+        zIndex: 10,
+        height: '96px',
+      }}
     >
       <Stack
         flex={1}
@@ -70,7 +70,7 @@ export const Header: React.FC = () => {
         justifyContent="space-between"
       >
         <Link href="/">
-          <img src="/images/Logo_white.png" alt="logo" height={46} />
+          <img src="/images/logo_white.svg" alt="logo" height={46} />
         </Link>
         {md ? (
           <IconButton onClick={() => setShowMenu(true)}>
@@ -78,11 +78,11 @@ export const Header: React.FC = () => {
           </IconButton>
         ) : (
           <Box
-              sx={{
-                '& > button, a': {
-                  color: "#ffffff"
-                }
-              }}
+            sx={{
+              '& > button, a': {
+                color: '#ffffff',
+              },
+            }}
           >
             <Link mr={6} onClick={() => scrollToSection(LIVE_TOURS_CLASS_NAME)}>
               <Message id="header.liveTours" />
@@ -94,15 +94,27 @@ export const Header: React.FC = () => {
               <Message id="header.aboutUs" />
             </Link>
             <Button
-              variant={locale === 'en' ? 'outlined' : undefined}
-              sx={{ width: 75, borderColor: "#ffffff" }}
+              variant="outlined"
+              sx={{
+                width: 75,
+                borderColor: locale === 'en' ? '#ffffff' : 'transparent',
+                ':hover': {
+                  borderColor: locale === 'en' ? '#ffffff' : 'transparent',
+                },
+              }}
               onClick={() => setLocale('en')}
             >
               EN
             </Button>
             <Button
               variant={locale === 'ua' ? 'outlined' : undefined}
-              sx={{ width: 75 }}
+              sx={{
+                width: 75,
+                borderColor: locale === 'ua' ? '#ffffff' : 'transparent',
+                ':hover': {
+                  borderColor: locale === 'ua' ? '#ffffff' : 'transparent',
+                },
+              }}
               onClick={() => setLocale('ua')}
             >
               UA

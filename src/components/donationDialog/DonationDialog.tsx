@@ -19,7 +19,7 @@ import { CloseModalButton } from '../closeModalButton/CloseModalButton';
 import { ReactComponent as MetaMask } from '../../icons/meta-mask.svg';
 import { Select } from '../select/Select';
 import { CURRENCIES, Currency } from './constants';
-import { useLocale } from '../../hooks/useLocale';
+import { useLocale } from '../../providers/AppLocaleProvider';
 
 const providerOptions = {
   walletconnect: {
@@ -66,7 +66,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
   multiCurrency,
 }) => {
   const intl = useIntl();
-  const [locale] = useLocale();
+  const { locale } = useLocale();
   const [amount, setAmount] = useState<number>();
   const [currency, setCurrency] = useState(Currency.Eth);
   const [isWalletModal, setIsWalletModal] = useState(false);

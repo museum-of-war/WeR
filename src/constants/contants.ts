@@ -39,34 +39,7 @@ export type Location = {
   region: Region;
 };
 
-export const LOCATIONS: Location[] = [
-  {
-    shortLocation: 'locations.kyiv.shortLocation',
-    location: 'locations.kyiv.location',
-    url: '/Kyiv',
-    imageSrc: '/images/Irpin.png',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.hostomel.shortLocation',
-    location: 'locations.hostomel.location',
-    url: '/Hostomel',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.bucha.shortLocation',
-    location: 'locations.bucha.location',
-    url: '/Bucha',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
+export const TOURS: Location[] = [
   {
     shortLocation: 'locations.irpin.shortLocation',
     location: 'locations.irpin.location',
@@ -77,131 +50,72 @@ export const LOCATIONS: Location[] = [
     description: 'locations.irpin',
     region: Region.Kyiv,
   },
-  {
-    shortLocation: 'locations.borodyanka.shortLocation',
-    location: 'locations.borodyanka.location',
-    url: '/Borodyanka',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.moshchun.shortLocation',
-    location: 'locations.moshchun.location',
-    url: '/Moshchun',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.rusaniv.shortLocation',
-    location: 'locations.rusaniv.location',
-    url: '/Rusaniv',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.ivankiv.shortLocation',
-    location: 'locations.ivankiv.location',
-    url: '/Ivankiv',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.vorzel.shortLocation',
-    location: 'locations.vorzel.location',
-    url: '/Vorzel',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.stoyanka.shortLocation',
-    location: 'locations.stoyanka.location',
-    url: '/Stoyanka',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
-  {
-    shortLocation: 'locations.kapitanivka.shortLocation',
-    location: 'locations.kapitanivka.location',
-    url: '/Kapitanivka',
-    imageSrc: '',
-    videoSrc: '',
-    description: '',
-    region: Region.Kyiv,
-  },
 ];
-
-export const TOURS = LOCATIONS.filter((location) => location.videoSrc);
 
 export const VR_PLACES: {
   location: TranslationKey;
-  p360src: string;
+  videoSrc: string;
   imageSrc: string;
   region: Region;
 }[] = [
   {
     location: 'vrPlaces.an225',
-    p360src: '/images/vrplaces/pano/an225.jpg',
+    videoSrc: 'https://youtube.com/embed/O4eUnYHSfL8',
     imageSrc: '/images/vrplaces/previews/an225.jpg',
     region: Region.Kyiv,
   },
   {
+    location: 'vrPlaces.kapitanivka',
+    videoSrc: 'https://youtube.com/embed/28EQP-geN-w',
+    imageSrc: '/images/vrplaces/previews/kapitanivka.jpg',
+    region: Region.Kyiv,
+  },
+  // {
+  //   location: 'vrPlaces.irpin',
+  //   videoSrc: 'https://youtube.com/embed/CKKdGX7LRUE',
+  //   imageSrc: '/images/vrplaces/previews/irpin.jpg', // preview
+  //   region: Region.Kyiv,
+  // },
+  {
     location: 'vrPlaces.borodyanka',
-    p360src: '/images/vrplaces/pano/borodyanka.jpg',
+    videoSrc: 'https://youtube.com/embed/esrcU6iIasU',
     imageSrc: '/images/vrplaces/previews/borodyanka.jpg',
     region: Region.Kyiv,
   },
   {
-    location: 'vrPlaces.bucha',
-    p360src: '/images/vrplaces/pano/bucha.jpg',
-    imageSrc: '/images/vrplaces/previews/bucha.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.kapitanivka',
-    p360src: '/images/vrplaces/pano/kapitanivka.jpg',
-    imageSrc: '/images/vrplaces/previews/kapitanivka.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.lukyanivka',
-    p360src: '/images/vrplaces/pano/lukyanivka.jpg',
-    imageSrc: '/images/vrplaces/previews/lukyanivka.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.mist_hostomel',
-    p360src: '/images/vrplaces/pano/mist_hostomel.jpg',
-    imageSrc: '/images/vrplaces/previews/mist_hostomel.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.moschun',
-    p360src: '/images/vrplaces/pano/moschun.jpg',
-    imageSrc: '/images/vrplaces/previews/moschun.jpg',
-    region: Region.Kyiv,
-  },
-  {
     location: 'vrPlaces.priymachenko_museum',
-    p360src: '/images/vrplaces/pano/priymachenko_museum.jpg',
+    videoSrc: 'https://youtube.com/embed/89N4MLOWttw',
     imageSrc: '/images/vrplaces/previews/priymachenko_museum.jpg',
     region: Region.Kyiv,
   },
+  // {
+  //   location: 'vrPlaces.vorzel',
+  //   videoSrc: 'https://youtube.com/embed/NvUt4cPw8Mk',
+  //   imageSrc: '/images/vrplaces/previews/vorzel.jpg', // preview
+  //   region: Region.Kyiv,
+  // },
   {
     location: 'vrPlaces.rusaniv',
-    p360src: '/images/vrplaces/pano/rusaniv.jpg',
+    videoSrc: 'https://youtube.com/embed/ugAPj-aqn-Y',
     imageSrc: '/images/vrplaces/previews/rusaniv.jpg',
+    region: Region.Kyiv,
+  },
+  // {
+  //   location: 'vrPlaces.gas_station',
+  //   videoSrc: 'https://youtube.com/embed/HnFNKTzrPkk',
+  //   imageSrc: '/images/vrplaces/previews/rusaniv.jpg', // preview
+  //   region: Region.Kyiv,
+  // },
+  // {
+  //   location: 'vrPlaces.bucha_novus',
+  //   videoSrc: 'https://youtube.com/embed/q_eJ5DR52mQ',
+  //   imageSrc: '/images/vrplaces/previews/rusaniv.jpg', // preview
+  //   region: Region.Kyiv,
+  // },
+  {
+    location: 'vrPlaces.bucha',
+    videoSrc: 'https://youtube.com/embed/p-Lt8PtQywM',
+    imageSrc: '/images/vrplaces/previews/bucha.jpg',
     region: Region.Kyiv,
   },
 ];

@@ -5,14 +5,14 @@ import { ReactComponent as Arrow } from '../../icons/arrow.svg';
 import { Card } from '../../components/card/Card';
 import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/contants';
 import { Message } from '../../components/message/Message';
-import { Modal360 } from '../common/Modal360';
+import { VideoModal } from '../common/VideoModal';
 
 export const VRPlaces: React.FC = () => {
   const [open, setOpen] = useState(false);
-  const [p360src, setP360src] = useState('');
+  const [videoSrc, setVideoSrc] = useState('');
 
-  const handleOpen = useCallback((p360src: string) => {
-    setP360src(p360src);
+  const handleOpen = useCallback((videoSrc: string) => {
+    setVideoSrc(videoSrc);
     setOpen(true);
   }, []);
 
@@ -63,14 +63,14 @@ export const VRPlaces: React.FC = () => {
             xs={6}
             sm={3}
             className="card"
-            onClick={() => handleOpen(place.p360src)}
+            onClick={() => handleOpen(place.videoSrc)}
           >
             <Card data={place} isSmall disableArrow />
           </Grid>
         ))}
       </Grid>
       {open && (
-        <Modal360 handleClose={() => setOpen(false)} p360src={p360src} />
+        <VideoModal handleClose={() => setOpen(false)} videoSrc={videoSrc} />
       )}
     </Container>
   );

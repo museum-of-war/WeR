@@ -49,7 +49,7 @@ export const App: React.FC = () => {
           <Header />
           <Routes>
             <Route path="/" element={<Main />} />
-            <Route path="/:locationUrl" element={<Location />} />
+            <Route path="/location/:locationUrl" element={<Location />} />
             <Route path="/region/:regionId" element={<Region />} />
             <Route path="/vr-places" element={<VRPlaces />} />
           </Routes>

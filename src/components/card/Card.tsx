@@ -9,7 +9,7 @@ type CardProps = {
     imageSrc: string;
     isLive?: boolean;
     url?: string;
-    p360src?: string;
+    videoSrc?: string;
   };
   disableArrow?: boolean;
   isSmall?: boolean;
@@ -50,11 +50,7 @@ export const Card: React.FC<CardProps> = ({ data, disableArrow, isSmall }) => {
           </Typography>
         </Stack>
       )}
-      <img
-        src={data.imageSrc}
-        alt=""
-        style={{ width: '100%' }}
-      />
+      <img src={data.imageSrc} alt="" style={{ width: '100%' }} />
       <Stack direction="row" justifyContent="space-between" alignItems="center">
         <Typography
           variant={isSmall ? 'body1' : 'h3'}

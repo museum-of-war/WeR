@@ -11,8 +11,9 @@ import {
 } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useIntl } from 'react-intl';
+
 import { ReactComponent as Arrow } from '../../icons/arrow-white.svg';
-import { LOCATIONS } from '../../constants/contants';
+import { TOURS } from '../../constants/contants';
 import { Donate } from '../common/Donate';
 import { Message } from '../../components/message/Message';
 
@@ -27,9 +28,7 @@ export const Location: React.FC = () => {
     window.scrollTo(0, 0);
   }, [locationUrl]);
 
-  const location = LOCATIONS.find(
-    (location) => location.url === `/${locationUrl}`,
-  );
+  const location = TOURS.find((tour) => tour.url === `/${locationUrl}`);
 
   if (!location) return null;
 

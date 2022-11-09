@@ -16,7 +16,7 @@ import { VR_PLACES } from '../../constants/contants';
 import { Donate } from '../common/Donate';
 import { Message } from '../../components/message/Message';
 import { Card } from '../../components/card/Card';
-import { Modal360 } from '../common/Modal360';
+import { VideoModal } from '../common/VideoModal';
 
 export const VRPlaces: React.FC = () => {
   const theme = useTheme();
@@ -26,14 +26,14 @@ export const VRPlaces: React.FC = () => {
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
   const [open, setOpen] = React.useState(false);
-  const [p360src, setP360src] = useState('');
+  const [videoSrc, setVideoSrc] = useState('');
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [locationUrl]);
 
-  const handleOpen = useCallback((p360src: string) => {
-    setP360src(p360src);
+  const handleOpen = useCallback((videoSrc: string) => {
+    setVideoSrc(videoSrc);
     setOpen(true);
   }, []);
 
@@ -120,14 +120,14 @@ export const VRPlaces: React.FC = () => {
               xs={6}
               sm={3}
               className="card"
-              onClick={() => handleOpen(place.p360src)}
+              onClick={() => handleOpen(place.videoSrc)}
             >
               <Card data={place} isSmall disableArrow />
             </Grid>
           ))}
         </Grid>
         {open && (
-          <Modal360 handleClose={() => setOpen(false)} p360src={p360src} />
+          <VideoModal handleClose={() => setOpen(false)} videoSrc={videoSrc} />
         )}
       </Container>
       <Donate />

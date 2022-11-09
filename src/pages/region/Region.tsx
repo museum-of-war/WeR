@@ -20,19 +20,19 @@ import {
   VR_PLACES,
 } from '../../constants/contants';
 import { Card } from '../../components/card/Card';
-import { Modal360 } from '../common/Modal360';
+import { VideoModal } from '../common/VideoModal';
 
 export const RegionComponent: React.FC = () => {
   const { regionId } = useParams();
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
-  const [p360src, setP360src] = useState('');
+  const [videoSrc, setVideoSrc] = useState('');
 
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
 
-  const handleOpen = useCallback((p360src: string) => {
-    setP360src(p360src);
+  const handleOpen = useCallback((videoSrc: string) => {
+    setVideoSrc(videoSrc);
     setOpen(true);
   }, []);
 
@@ -63,10 +63,16 @@ export const RegionComponent: React.FC = () => {
         <img
           width="100%"
           src="/images/irpin.png"
-          style={{ minWidth: '100%', maxWidth: '100%' }}
+          style={{ height: '100%', objectFit: 'cover' }}
         />
       </Box>
-      <Container sx={{ zIndex: 1, position: 'relative' }}>
+      <Container
+        sx={{
+          zIndex: 1,
+          position: 'relative',
+          height: { xs: 284, sm: 384, md: 464 },
+        }}
+      >
         <Box
           sx={{
             borderBottom: '2px solid #ffffff',
@@ -91,7 +97,7 @@ export const RegionComponent: React.FC = () => {
           {regionId}
         </Typography>
       </Container>
-      <Box sx={{ mt: 32 }}>
+      <Box>
         <LiveTours
           heading="home.title.liveTours"
           className={LIVE_TOURS_CLASS_NAME}
@@ -116,14 +122,17 @@ export const RegionComponent: React.FC = () => {
                 xs={6}
                 sm={3}
                 className="card"
-                onClick={() => handleOpen(place.p360src)}
+                onClick={() => handleOpen(place.videoSrc)}
               >
                 <Card data={place} isSmall disableArrow />
               </Grid>
             ))}
           </Grid>
           {open && (
-            <Modal360 handleClose={() => setOpen(false)} p360src={p360src} />
+            <VideoModal
+              handleClose={() => setOpen(false)}
+              videoSrc={videoSrc}
+            />
           )}
         </Container>
       </Box>

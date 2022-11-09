@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react';
 import { Container, Grid, Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
+
 import { CardComingSoon } from '../../components/cardComingSoon/CardComingSoon';
 import { Message, TranslationKey } from '../../components/message/Message';
-import { Location, TOURS } from '../../constants/contants';
+import { Location } from '../../constants/contants';
 import { Card } from '../../components/card/Card';
 
 type LiveToursProps = {
@@ -55,7 +56,10 @@ export const LiveTours: React.FC<LiveToursProps> = ({
       <Grid container spacing={6} sx={{ mt: 0 }} className="cards">
         {tours.map((tour) => (
           <Grid item key={tour.location} xs={12} sm={6} className="card">
-            <Link to={tour.url} style={{ textDecoration: 'none' }}>
+            <Link
+              to={`/location${tour.url}`}
+              style={{ textDecoration: 'none' }}
+            >
               <Card data={tour} />
             </Link>
           </Grid>

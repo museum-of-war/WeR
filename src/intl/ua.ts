@@ -1,28 +1,8 @@
 import { TranslationKey } from '../components/message/Message';
 
 export const ua: Record<TranslationKey, string> = {
-  'locations.kyiv.shortLocation': 'Київ',
-  'locations.kyiv.location': 'Київ',
-  'locations.hostomel.shortLocation': 'Гостомель',
-  'locations.hostomel.location': 'Гостомель, Київська область',
-  'locations.bucha.shortLocation': 'Буча',
-  'locations.bucha.location': 'Буча, Київська область',
   'locations.irpin.shortLocation': 'Ірпінь',
   'locations.irpin.location': 'Ірпінь, Київська область',
-  'locations.borodyanka.shortLocation': 'Бородянка',
-  'locations.borodyanka.location': 'Бородянка, Київська область',
-  'locations.moshchun.shortLocation': 'Мощун',
-  'locations.moshchun.location': 'Мощун, Київська область',
-  'locations.rusaniv.shortLocation': 'Русанів',
-  'locations.rusaniv.location': 'Русанів, Київська область',
-  'locations.ivankiv.shortLocation': 'Іванків',
-  'locations.ivankiv.location': 'Іванків, Київська область',
-  'locations.vorzel.shortLocation': 'Ворзель',
-  'locations.vorzel.location': 'Ворзель, Київська область',
-  'locations.stoyanka.shortLocation': 'Стоянка',
-  'locations.stoyanka.location': 'Стоянка, Київська область',
-  'locations.kapitanivka.shortLocation': 'Капітанівка',
-  'locations.kapitanivka.location': 'Капітанівка, Київська область',
 
   'header.liveTours': 'Тури',
   'header.vrPlaces': 'VR Місця',
@@ -32,7 +12,7 @@ export const ua: Record<TranslationKey, string> = {
   'card.comingSoon': 'Далі буде',
 
   'heading.title': 'Війна як вона є',
-  'heading.subtitle': 'Відчуй. Погрузись. Пожертвуйте',
+  'heading.subtitle': 'Відчуй. Погрузись. Пожертвуй',
   'heading.description':
     'Ми показуємо світу справжню війну і даємо можливість зануритися в неї та відчути її.',
 
@@ -83,15 +63,17 @@ export const ua: Record<TranslationKey, string> = {
   'team.polikashkin.name': 'Андрій Полікашкін',
   'team.polikashkin.position': 'Cтворення VR контенту',
 
-  'vrPlaces.an225': 'Аеропорт Гостомель, літак АН - 225 Мрія',
-  'vrPlaces.borodyanka': 'Місто Бородянка',
-  'vrPlaces.bucha': 'Місто Буча',
-  'vrPlaces.kapitanivka': 'Село Капітанівка',
-  'vrPlaces.lukyanivka': "Місто Київ, Лук'янівка",
-  'vrPlaces.mist_hostomel': 'Міст Гостомель',
-  'vrPlaces.moschun': 'Приватний будинок - Мощун',
-  'vrPlaces.priymachenko_museum': 'Музей Примаченко',
-  'vrPlaces.rusaniv': 'Село Русанів',
+  'vrPlaces.an225': 'Аеропорт Гостомель, літак АН - 225 Мрія, Київська обл.',
+  'vrPlaces.borodyanka': 'Місто Бородянка, Київська обл.',
+  'vrPlaces.bucha': 'Місто Буча, Київська обл.',
+  'vrPlaces.kapitanivka': 'Село Капітанівка, Київська обл.',
+  'vrPlaces.priymachenko_museum':
+    'село Іванків, Музей Примаченко, Київська обл.',
+  'vrPlaces.rusaniv': 'Село Русанів, Київська обл.',
+  'vrPlaces.vorzel': 'Ворзель, Київська обл.',
+  'vrPlaces.irpin': 'Центральний будинок культури, Ірпінь, Київська обл.',
+  'vrPlaces.gas_station': 'Заправка, Київська обл.',
+  'vrPlaces.bucha_novus': 'Буча, супермаркет "Novus", Київська обл.',
 
   'home.title.liveTours': 'Тури',
 

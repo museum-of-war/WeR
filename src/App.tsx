@@ -36,7 +36,7 @@ export const App: React.FC = () => {
     en,
     ua,
   };
-  const { locale, setLocale } = useLocale();
+  const { locale } = useLocale();
 
   return (
     <BrowserRouter>

@@ -41,7 +41,7 @@ export const TOURS: Location[] = [
   {
     location: 'locations.irpinBridge',
     url: '/Irpin-bridge',
-    imageSrc: '/images//locations/irpinBridge.webp',
+    imageSrc: '/images/locations/irpinBridge.webp',
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/sp5UcE1Jvas',
     region: Region.Kyiv,

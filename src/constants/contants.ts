@@ -29,25 +29,69 @@ export enum Region {
 }
 
 export type Location = {
-  shortLocation: TranslationKey;
   location: TranslationKey;
   url: string;
   imageSrc: string;
   videoSrc: string;
-  description: TranslationKey | '';
   isLive?: boolean;
   region: Region;
 };
 
 export const TOURS: Location[] = [
   {
-    shortLocation: 'locations.irpin.shortLocation',
-    location: 'locations.irpin.location',
-    url: '/Irpin',
-    imageSrc: '/images/Irpin.png',
+    location: 'locations.irpinBridge',
+    url: '/Irpin-bridge',
+    imageSrc: '/images//locations/irpinBridge.webp',
     isLive: false,
-    videoSrc: 'https://www.youtube.com/embed/lf6OEjappzk?autoplay=1',
-    description: 'locations.irpin',
+    videoSrc: 'https://www.youtube.com/embed/sp5UcE1Jvas',
+    region: Region.Kyiv,
+  },
+  {
+    location: 'locations.irpin',
+    url: '/Irpin',
+    imageSrc: '/images/locations/irpin.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/t1YmWr9N_aY',
+    region: Region.Kyiv,
+  },
+  {
+    location: 'locations.hostomel',
+    url: '/Hostomel',
+    imageSrc: '/images/locations/hostomel.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/YIuEJfws6jY',
+    region: Region.Kyiv,
+  },
+  {
+    location: 'locations.borodyanka',
+    url: '/Borodyanka',
+    imageSrc: '/images/locations/borodyanka.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/2UFvrVyz_30',
+    region: Region.Kyiv,
+  },
+  {
+    location: 'locations.rusaniv',
+    url: '/Rusaniv',
+    imageSrc: '/images/locations/rusaniv.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/WnINA4xO1Ew',
+    region: Region.Kyiv,
+  },
+  {
+    location: 'locations.moschun',
+    url: '/Moschun',
+    imageSrc: '/images/locations/moschun.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/Whw1s-8SA6s',
+    region: Region.Kyiv,
+  },
+  {
+    location: 'locations.bucha',
+    url: '/Bucha',
+    imageSrc: '/images/locations/bucha.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/FRA5xtZF4fQ',
     region: Region.Kyiv,
   },
 ];

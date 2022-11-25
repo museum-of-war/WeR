@@ -1,6 +1,11 @@
 export const en = {
-  'locations.irpin.shortLocation': 'Irpin',
-  'locations.irpin.location': 'Irpin, Kyiv region',
+  'locations.irpinBridge': 'Irpin bridge, Kyiv region',
+  'locations.irpin': 'Irpin, Kyiv region',
+  'locations.hostomel': 'Hostomel, Kyiv region',
+  'locations.borodyanka': 'Borodyanka settlement, Kyiv region',
+  'locations.rusaniv': 'Rusaniv village, Kyiv region',
+  'locations.moschun': 'Moschun village, Kyiv region',
+  'locations.bucha': 'Bucha city, Kyiv region',
 
   'header.liveTours': 'Tours',
   'header.vrPlaces': 'VR Places',
@@ -78,10 +83,4 @@ export const en = {
   'footer.arr': 'All rights reserved',
 
   'partners.title': 'Partners',
-
-  'locations.irpin': `Russian troops pursued to take Irpin, Bucha and Hostomel towns under their control with a goal to surround the Ukrainian capital, Kyiv, from the west.
-
-The Russian army destroyed more than 50% of the Irpin town and killed numerous civilians. Law enforcements and activists are still finding mass graves of people tortured till death by Russian troops.
-
-Due to the Russian intense attack on the capital, Kyiv Regional State Administration called the towns of Bucha, Irpin, Hostomel, Vyshgorod as well as the M06 route – the most dangerous places of the Kyiv region. Irpin received a title of the Hero City of Ukraine on 24 March.`,
 };

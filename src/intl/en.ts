@@ -6,6 +6,12 @@ export const en = {
   'locations.rusaniv': 'Rusaniv village, Kyiv region',
   'locations.moschun': 'Moschun village, Kyiv region',
   'locations.bucha': 'Bucha city, Kyiv region',
+  'locations.kupiansk': 'Kupiansk, Kharkiv region',
+  'locations.izyumGrave':
+    'Izyum, Kharkiv region, mass grave of civilians with 470 graves',
+  'locations.izyum': 'Izyum, Kharkiv region',
+  'locations.saltivka': 'Northern Salrivka, Kharkiv',
+  'locations.ruskiTyshky': 'Ruski Tyshky village, Kharkiv region',
 
   'header.liveTours': 'Tours',
   'header.vrPlaces': 'VR Places',

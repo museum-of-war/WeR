@@ -94,6 +94,46 @@ export const TOURS: Location[] = [
     videoSrc: 'https://www.youtube.com/embed/FRA5xtZF4fQ',
     region: Region.Kyiv,
   },
+  {
+    location: 'locations.kupiansk',
+    url: '/Kupyansk',
+    imageSrc: '/images/locations/kupiansk.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/Vuhtk93Sb08',
+    region: Region.Kharkiv,
+  },
+  {
+    location: 'locations.izyumGrave',
+    url: '/Izyum-grave',
+    imageSrc: '/images/locations/izyumGrave.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/IT_ZNAI4pR0',
+    region: Region.Kharkiv,
+  },
+  {
+    location: 'locations.izyum',
+    url: '/Izyum',
+    imageSrc: '/images/locations/izyum.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/1NfT3rdvEtE',
+    region: Region.Kharkiv,
+  },
+  {
+    location: 'locations.saltivka',
+    url: '/Saltivka',
+    imageSrc: '/images/locations/saltivka.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/EvU5ZjN9Qms',
+    region: Region.Kharkiv,
+  },
+  {
+    location: 'locations.ruskiTyshky',
+    url: '/RuskiTyshky',
+    imageSrc: '/images/locations/ruskiTyshky.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/S7BIcPE_hMw',
+    region: Region.Kharkiv,
+  },
 ];
 
 export const VR_PLACES: {

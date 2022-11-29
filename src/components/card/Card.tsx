@@ -60,7 +60,9 @@ export const Card: React.FC<CardProps> = ({ data, disableArrow, isSmall }) => {
         >
           <Message id={data.location} />
         </Typography>
-        <Arrow style={{ opacity: showArrow && !disableArrow ? 1 : 0 }} />
+        <Arrow
+          style={{ opacity: showArrow && !disableArrow ? 1 : 0, minWidth: 48 }}
+        />
       </Stack>
     </Stack>
   );

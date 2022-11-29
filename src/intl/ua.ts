@@ -8,6 +8,12 @@ export const ua: Record<TranslationKey, string> = {
   'locations.rusaniv': 'Село Русанів, Київська область',
   'locations.moschun': 'Село Мощун, Київська область',
   'locations.bucha': 'Буча, Київська область',
+  'locations.kupiansk': "Куп'янськ, Харківська область",
+  'locations.izyumGrave':
+    'Ізюм, місце масового поховання цивільного населення 470 могил, Харківська область',
+  'locations.izyum': 'Ізюм, Харківська область',
+  'locations.saltivka': 'Північна Салтівка. Харків',
+  'locations.ruskiTyshky': 'Село Руські Тишкі, Харківська область',
 
   'header.liveTours': 'Тури',
   'header.vrPlaces': 'VR Місця',

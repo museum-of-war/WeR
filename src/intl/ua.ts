@@ -67,8 +67,6 @@ export const ua: Record<TranslationKey, string> = {
   'team.revva.position': 'Дизайн',
   'team.abduvaliiev.name': 'Рустам Абдувалієв',
   'team.abduvaliiev.position': 'Розробка',
-  'team.pokhylenko.name': 'Олександр Похиленко',
-  'team.pokhylenko.position': 'Розробка',
   'team.novyk.name': 'Іван Новик',
   'team.novyk.position': 'Cтворення VR контенту',
   'team.polikashkin.name': 'Андрій Полікашкін',

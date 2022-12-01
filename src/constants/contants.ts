@@ -209,7 +209,6 @@ export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
   { name: 'team.andrienko.name', position: 'team.andrienko.position' },
   { name: 'team.revva.name', position: 'team.revva.position' },
   { name: 'team.abduvaliiev.name', position: 'team.abduvaliiev.position' },
-  { name: 'team.pokhylenko.name', position: 'team.pokhylenko.position' },
   { name: 'team.novyk.name', position: 'team.novyk.position' },
   { name: 'team.polikashkin.name', position: 'team.polikashkin.position' },
 ];

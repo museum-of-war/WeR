@@ -10,7 +10,7 @@ export const en = {
   'locations.izyumGrave':
     'Izyum, Kharkiv region, mass grave of civilians with 470 graves',
   'locations.izyum': 'Izyum, Kharkiv region',
-  'locations.saltivka': 'Northern Salrivka, Kharkiv',
+  'locations.saltivka': 'Northern Saltivka, Kharkiv',
   'locations.ruskiTyshky': 'Ruski Tyshky village, Kharkiv region',
 
   'header.liveTours': 'Tours',

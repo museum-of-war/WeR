@@ -64,8 +64,6 @@ export const en = {
   'team.revva.position': 'Design',
   'team.abduvaliiev.name': 'Rustam Abduvaliiev',
   'team.abduvaliiev.position': 'Development',
-  'team.pokhylenko.name': 'Oleksandr Pokhylenko',
-  'team.pokhylenko.position': 'Development',
   'team.novyk.name': 'Ivan Novyk',
   'team.novyk.position': 'VR content creation',
   'team.polikashkin.name': 'Andriy Polikashkin',

@@ -264,7 +264,11 @@ export const Map: React.FC = () => {
       <SVGMap
         map={MAP}
         onLocationClick={(event: any) => {
-          navigate(`/region/${event.target.id}`);
+          const region = MAP.locations.find(
+            (location) => location.id === event.target.id,
+          );
+
+          if (region?.events) navigate(`/region/${event.target.id}`);
         }}
         childrenBefore={
           <path
@@ -287,6 +291,10 @@ export const Map: React.FC = () => {
                     ry="16"
                     stroke="none"
                     fill="#E93324"
+                    onClick={() => {
+                      navigate(`/region/${location.id}`);
+                    }}
+                    style={{ cursor: 'pointer' }}
                   />
                   <rect
                     x={location.markerX - 28}
@@ -297,11 +305,19 @@ export const Map: React.FC = () => {
                     stroke="none"
                     className="test"
                     fill={`url(#${location.name}_gradient)`}
+                    onClick={() => {
+                      navigate(`/region/${location.id}`);
+                    }}
+                    style={{ cursor: 'pointer' }}
                   />
                   <text
-                    x={location.markerX - (location.events < 10 ? 10 : 20)}
+                    x={location.markerX - (location.events < 10 ? 12 : 20)}
                     y={location.markerY}
                     className="map-counter"
+                    onClick={() => {
+                      navigate(`/region/${location.id}`);
+                    }}
+                    style={{ cursor: 'pointer' }}
                   >
                     {location.events}
                   </text>

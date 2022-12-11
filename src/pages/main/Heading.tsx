@@ -1,9 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Box, Container, Stack, Typography } from '@mui/material';
 import { Map } from './Map';
 import { Message } from '../../components/message/Message';
 
 export const Heading: React.FC = () => {
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const video = document.querySelector(
+        '.heading-video',
+      ) as HTMLVideoElement;
+
+      if (video) {
+        clearInterval(interval);
+        video.play();
+      }
+    }, 100);
+  }, []);
+
   return (
     <Container
       sx={{

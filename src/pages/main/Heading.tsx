@@ -36,6 +36,7 @@ export const Heading: React.FC = () => {
               height: 'calc(100% + 80px)',
               marginTop: '-40px',
               objectFit: 'cover',
+              pointerEvents: 'none',
             },
           }}
           dangerouslySetInnerHTML={{
@@ -46,6 +47,7 @@ export const Heading: React.FC = () => {
             muted
             loop
             autoPlay
+            controls="false"
           />`,
           }}
         />

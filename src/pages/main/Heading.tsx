@@ -35,7 +35,6 @@ export const Heading: React.FC = () => {
             src="/videos/MainBanner.mp4"
             className="heading-video"
             webkit-playsinline="true"
-            controls={false}
             muted
             loop
             autoPlay

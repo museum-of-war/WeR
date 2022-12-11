@@ -4,19 +4,6 @@ import { Map } from './Map';
 import { Message } from '../../components/message/Message';
 
 export const Heading: React.FC = () => {
-  useEffect(() => {
-    const interval = setInterval(() => {
-      const video = document.querySelector(
-        '.heading-video',
-      ) as HTMLVideoElement;
-
-      if (video) {
-        clearInterval(interval);
-        video.play();
-      }
-    }, 100);
-  }, []);
-
   return (
     <Container
       sx={{
@@ -52,18 +39,11 @@ export const Heading: React.FC = () => {
               pointerEvents: 'none',
             },
           }}
-          dangerouslySetInnerHTML={{
-            __html: `<video
-            src="/videos/MainBanner.mp4"
-            className="heading-video"
-            webkit-playsinline="true"
-            muted
-            loop
-            autoPlay
-            controls="false"
-          />`,
-          }}
-        />
+        >
+          <video autoPlay loop muted playsInline className="video-background ">
+            <source src="/videos/MainBanner.mp4" type="video/mp4" />
+          </video>
+        </Box>
         <Box
           position="absolute"
           zIndex={2}

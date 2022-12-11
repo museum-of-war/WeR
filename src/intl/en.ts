@@ -87,4 +87,6 @@ export const en = {
   'footer.arr': 'All rights reserved',
 
   'partners.title': 'Partners',
+  'warning.youtube':
+    'In order to get the best 360° experience on your phone, please use the YouTube app',
 };

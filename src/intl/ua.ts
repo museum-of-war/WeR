@@ -91,4 +91,7 @@ export const ua: Record<TranslationKey, string> = {
   'footer.arr': 'Всі права захищено',
 
   'partners.title': 'Партнери',
+
+  'warning.youtube':
+    'Щоб отримати найкращі враження від відео 360° на своєму телефоні, скористайтеся додатком YouTube',
 };

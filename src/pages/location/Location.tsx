@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import {
   Box,
   Container,
-  Grid,
   IconButton,
   Stack,
   Typography,
@@ -11,6 +10,7 @@ import {
 } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useIntl } from 'react-intl';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import { ReactComponent as Arrow } from '../../icons/arrow-white.svg';
 import { TOURS } from '../../constants/contants';
@@ -23,6 +23,7 @@ export const Location: React.FC = () => {
   const navigate = useNavigate();
   const intl = useIntl();
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
+  const isIos = !!navigator.platform.match(/iPhone|iPod|iPad/);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -101,6 +102,19 @@ export const Location: React.FC = () => {
         </Container>
       </Box>
       <Container>
+        {isIos && (
+          <Stack
+            py={4}
+            px={1}
+            mt={2}
+            sx={{ background: '#E93324', color: 'white' }}
+          >
+            <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+              <Message id="warning.youtube" />
+              <YouTubeIcon sx={{ ml: 1 }} fontSize="large" />
+            </Typography>
+          </Stack>
+        )}
         {location.videoSrc.startsWith('https://www.youtube.com/') ? (
           <Box
             position="relative"

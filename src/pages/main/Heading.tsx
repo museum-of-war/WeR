@@ -30,22 +30,25 @@ export const Heading: React.FC = () => {
           bottom={0}
           width="100%"
           className="video-trimmer"
-        >
-          <video
+          sx={{
+            '& video': {
+              width: '100%',
+              height: 'calc(100% + 80px)',
+              marginTop: '-40px',
+              objectFit: 'cover',
+            },
+          }}
+          dangerouslySetInnerHTML={{
+            __html: `<video
             src="/videos/MainBanner.mp4"
             className="heading-video"
             webkit-playsinline="true"
             muted
             loop
             autoPlay
-            style={{
-              width: '100%',
-              height: 'calc(100% + 80px)',
-              marginTop: '-40px',
-              objectFit: 'cover',
-            }}
-          />
-        </Box>
+          />`,
+          }}
+        />
         <Box
           position="absolute"
           zIndex={2}

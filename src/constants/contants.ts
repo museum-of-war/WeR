@@ -96,7 +96,7 @@ export const TOURS: Location[] = [
   },
   {
     location: 'locations.kupiansk',
-    url: '/Kupyansk',
+    url: '/Kupiansk',
     imageSrc: '/images/locations/kupiansk.webp',
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/Vuhtk93Sb08',

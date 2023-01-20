@@ -12,13 +12,14 @@ export const en = {
   'locations.izyum': 'Izyum, Kharkiv region',
   'locations.saltivka': 'Northern Saltivka, Kharkiv',
   'locations.ruskiTyshky': 'Ruski Tyshky village, Kharkiv region',
+  'locations.dnipro': 'Dnipro, Dnirpopetrovsk region',
 
   'header.liveTours': 'Tours',
   'header.vrPlaces': 'VR Places',
   'header.aboutUs': 'About Us',
 
   'card.liveNow': 'Live Now',
-  'card.comingSoon': 'More is coming soon',
+  'card.comingSoon': 'Coming soon',
 
   'heading.title': 'War as it is',
   'heading.subtitle': 'Feel. Immerse. Donate',

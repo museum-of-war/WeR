@@ -14,6 +14,7 @@ export const ua: Record<TranslationKey, string> = {
   'locations.izyum': 'Ізюм, Харківська область',
   'locations.saltivka': 'Північна Салтівка. Харків',
   'locations.ruskiTyshky': 'Село Руські Тишкі, Харківська область',
+  'locations.dnipro': 'Дніпро, Днипропетровська область',
 
   'header.liveTours': 'Тури',
   'header.vrPlaces': 'VR Місця',

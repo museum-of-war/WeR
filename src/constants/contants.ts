@@ -134,6 +134,14 @@ export const TOURS: Location[] = [
     videoSrc: 'https://www.youtube.com/embed/S7BIcPE_hMw',
     region: Region.Kharkiv,
   },
+  {
+    location: 'locations.dnipro',
+    url: '/Dnipro',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/SPeyg8OIEDw',
+    imageSrc: '/images/locations/dnipro.webp',
+    region: Region.Dnipropetrovsk,
+  },
 ];
 
 export const VR_PLACES: {

@@ -21,7 +21,7 @@ export const ua: Record<TranslationKey, string> = {
   'header.aboutUs': 'Про нас',
 
   'card.liveNow': 'Наживо',
-  'card.comingSoon': 'Далі буде',
+  'card.comingSoon': 'Ми працюємо над новими турами',
 
   'heading.title': 'Війна як вона є',
   'heading.subtitle': 'Відчуй. Погрузись. Пожертвуй',

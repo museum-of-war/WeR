@@ -19,7 +19,7 @@ export const en = {
   'header.aboutUs': 'About Us',
 
   'card.liveNow': 'Live Now',
-  'card.comingSoon': 'Coming soon',
+  'card.comingSoon': 'We are working on new tours',
 
   'heading.title': 'War as it is',
   'heading.subtitle': 'Feel. Immerse. Donate',

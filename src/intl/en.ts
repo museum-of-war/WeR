@@ -24,7 +24,7 @@ export const en = {
   'heading.title': 'War as it is',
   'heading.subtitle': 'Feel. Immerse. Donate',
   'heading.description':
-    'We show the world the real war and give you the opportunity to immerse yourself in it and feel it.',
+    "The world's first national platform of visual evidence of war, which shows the world real aggression and gives the opportunity to dive into it and feel it.",
 
   'aboutUs.title': 'About Us',
   'aboutUs.description1':

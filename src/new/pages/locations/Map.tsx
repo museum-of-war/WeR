@@ -201,11 +201,16 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
             {ACTIVE_REGIONS.map((region) => (
               <Accordion
                 key={region}
-                sx={{ background: 'transparent', mt: 1 }}
+                sx={{
+                  background: 'transparent',
+                  mt: 1,
+                  marginTop: '8px!important',
+                }}
                 expanded={currentLocation === region}
                 onChange={(_, expanded) => {
                   setCurrentLocation(expanded ? region : null);
                 }}
+                disableGutters
               >
                 <AccordionSummary
                   expandIcon={<Expand />}
@@ -215,6 +220,11 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                     borderRadius: '8px',
                     border: '1px solid #212121',
                     minHeight: 'unset!important',
+                    '&.Mui-expanded': {
+                      borderBottom: 'none',
+                      borderBottomLeftRadius: 0,
+                      borderBottomRightRadius: 0,
+                    },
                   }}
                 >
                   <Stack direction="row" alignItems="center">
@@ -236,7 +246,16 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                     </Typography>
                   </Stack>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails
+                  sx={{
+                    background: '#161616',
+                    padding: '0!important',
+                    borderBottomLeftRadius: '4px',
+                    borderBottomRightRadius: '4px',
+                    border: '1px solid #212121',
+                    borderTop: 'none',
+                  }}
+                >
                   <Box
                     width="100%"
                     overflow="scroll"

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { CardComingSoon } from '../../components/cardComingSoon/CardComingSoon';
 import { Message, TranslationKey } from '../../components/message/Message';
-import { Location } from '../../constants/contants';
+import { Location } from '../../constants/constants';
 import { Card } from '../../components/card/Card';
 
 type LiveToursProps = {

@@ -7,7 +7,7 @@ import {
   Stack,
   Typography,
 } from '@mui/material';
-import { ABOUT_US_CLASS_NAME, TEAM } from '../../constants/contants';
+import { ABOUT_US_CLASS_NAME, TEAM } from '../../constants/constants';
 import { Message } from '../../components/message/Message';
 import { DonationDialog } from '../../components/donationDialog/DonationDialog';
 

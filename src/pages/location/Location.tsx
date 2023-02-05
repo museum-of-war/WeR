@@ -13,7 +13,7 @@ import { useIntl } from 'react-intl';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 
 import { ReactComponent as Arrow } from '../../icons/arrow-white.svg';
-import { TOURS } from '../../constants/contants';
+import { TOURS } from '../../constants/constants';
 import { Donate } from '../common/Donate';
 import { Message } from '../../components/message/Message';
 

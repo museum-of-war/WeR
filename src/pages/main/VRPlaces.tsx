@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Grid, Typography, Stack } from '@mui/material';
 import { ReactComponent as Arrow } from '../../icons/arrow.svg';
 import { Card } from '../../components/card/Card';
-import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/contants';
+import { VR_PLACES, VR_PLACES_CLASS_NAME } from '../../constants/constants';
 import { Message, TranslationKey } from '../../components/message/Message';
 import { VideoModal } from '../common/VideoModal';
 

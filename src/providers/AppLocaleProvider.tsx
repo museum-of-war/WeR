@@ -5,7 +5,7 @@ import React, {
   useEffect,
   useState,
 } from 'react';
-import { AppLocale, USER_LANGUAGE_LS_KEY } from '../constants/contants';
+import { AppLocale, USER_LANGUAGE_LS_KEY } from '../constants/constants';
 
 const AppLocaleContext = createContext({
   locale: 'ua' as AppLocale,

@@ -17,7 +17,7 @@ import {
   ABOUT_US_CLASS_NAME,
   VR_PLACES_CLASS_NAME,
   LIVE_TOURS_CLASS_NAME,
-} from '../../constants/contants';
+} from '../../constants/constants';
 import { ReactComponent as Menu } from '../../icons/menu.svg';
 import { useLocale } from '../../providers/AppLocaleProvider';
 

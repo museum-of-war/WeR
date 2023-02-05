@@ -14,7 +14,7 @@ export const ua: Record<TranslationKey, string> = {
   'locations.izyum': 'Ізюм, Харківська область',
   'locations.saltivka': 'Північна Салтівка. Харків',
   'locations.ruskiTyshky': 'Село Руські Тишкі, Харківська область',
-  'locations.dnipro': 'Дніпро, Днипропетровська область',
+  'locations.dnipro': 'Дніпро, Дніпропетровська область',
 
   'header.liveTours': 'Тури',
   'header.vrPlaces': 'VR Місця',
@@ -95,4 +95,101 @@ export const ua: Record<TranslationKey, string> = {
 
   'warning.youtube':
     'Щоб отримати найкращі враження від відео 360° на своєму телефоні, скористайтеся додатком YouTube',
+
+  'new.main.button.explore': 'Список локацій',
+  'new.main.button.support': 'Підтримати Україну',
+  'new.main.button.about': 'Про WER',
+  'new.main.description1': 'Війна як вона є.',
+  'new.main.description2':
+    'Ми показуємо світові справжню війну і даємо можливість зануритися в неї та відчути її.',
+
+  'new.header.home': 'Головна',
+  'new.header.locations': 'Локації',
+  'new.header.about': 'Про WER',
+  'new.header.support': 'Підримати Україну',
+  'new.header.film': 'Фільм [Незабаром]',
+
+  'new.location.irpinBridge': 'Ірпінський міст, Київська область',
+  'new.location.irpin': 'Ірпінь, Київська область',
+  'new.location.hostomel': 'Гостомель, Київська область',
+  'new.location.borodyanka': 'Смт. Бородянка, Київська область',
+  'new.location.rusaniv': 'Село Русанів, Київська область',
+  'new.location.moschun': 'Село Мощун, Київська область',
+  'new.location.bucha': 'Буча, Київська область',
+  'new.location.kupiansk': "Куп'янськ, Харківська область",
+  'new.location.izyumGrave':
+    'Ізюм, місце масового поховання цивільного населення 470 могил, Харківська область',
+  'new.location.izyum': 'Ізюм, Харківська область',
+  'new.location.saltivka': 'Північна Салтівка. Харків',
+  'new.location.ruskiTyshky': 'Село Руські Тишкі, Харківська область',
+  'new.location.dnipro': 'Дніпро, Дніпропетровська область',
+
+  'new.locations.title': 'Локації',
+
+  'new.about.title1': 'Про WER',
+  'new.about.title2': 'Хто ми?',
+  'new.about.title3': 'Підтримати нас',
+  'new.about.title4': 'Будемо на звʼязку',
+  'new.about.description1':
+    "На цьому сайті ви зможете зануритися в сувору реальність сучасної війни, яка точиться на території України, за допомогою VR-турів і прямих трансляцій по знищеним російською армією цивільним, історичним і культурним об'єктам. .",
+  'new.about.description2':
+    'Ми – команда волонтерів, яка створила проект, спрямований на те, щоб світ побачив війну в Україні нашими очима, без редакторів і відповідного персоналу.',
+  'new.about.description3':
+    'Якщо вам подобається те, що ми робимо, ви можете підтримати наш проект і зробити пожертву безпосередньо нам.',
+  'new.about.description4':
+    'Маєте запитання чи пропозиції? Напишіть нам, ми відкриті для чату.',
+  'new.about.button.donation': 'Зробити пожертву',
+  'new.about.button.getInTouch': 'Написати нам',
+
+  'new.team.andrienko.name': 'Юрій Андрієнко',
+  'new.team.andrienko.position': 'COO',
+  'new.team.VK.name': 'V K',
+  'new.team.VK.position': 'CEO/Chaos',
+  'new.team.abduvaliiev.name': 'Рустам Абдувалієв',
+  'new.team.abduvaliiev.position': 'Розробка',
+  'new.team.novyk.name': 'Іван Новик',
+  'new.team.novyk.position': 'Cтворення VR контенту',
+  'new.team.polikashkin.name': 'Андрій Полікашкін',
+  'new.team.polikashkin.position': 'Cтворення VR контенту',
+  'new.team.kandul.name': 'Alex Kandul',
+  'new.team.kandul.position': 'UI/UX',
+
+  'new.support.title1':
+    'Міністерство культури та інформаційної політики України',
+  'new.support.title2': 'Dronarium',
+  'new.support.description1':
+    'Щодня російська армія руйнує міста, села та пам’ятки культурно-історичної спадщини. Кожна ваша пожертва – допомагає відкривати розбиті школи, дитячі садки та лікарні в Україні. Усі ваші кошти перераховуються на офіційні рахунки Національного банку України',
+  'new.support.description2':
+    'DRONARIUM – перший в Україні центр підготовки пілотів безпілотників, де випускники отримують практичний досвід експлуатації БПЛА в найрізноманітніших умовах, поглиблене вивчення авіаційного законодавства, законодавства України та міжнародного права у сфері БПЛА. Усе це робить випускників академії надійними захисниками українського неба та влучними очима небо. Ви можете підтримати академію та прискорити наближення перемоги – відправивши пожертву на будь-яку суму.',
+  'new.support.button.donate': 'Зробити пожертву',
+
+  'new.button.back.home': 'Головна',
+  'new.button.back.locations': 'Локації',
+
+  'new.oblast.cherkasy': 'Черкаська область',
+  'new.oblast.chernihiv': 'Чернігівська область',
+  'new.oblast.chernivtsi': 'Чернівецька область',
+  'new.oblast.crimea': 'Автономна республіка Крим',
+  'new.oblast.dnipropetrovsk': 'Дніпропетровська область',
+  'new.oblast.donetsk': 'Донецька область',
+  'new.oblast.ivano-frankivsk': 'Івано-Франківська область',
+  'new.oblast.kharkiv': 'Харківська область',
+  'new.oblast.kherson': 'Херсонська область',
+  'new.oblast.khmelnytskyi': 'Хмельницька область',
+  'new.oblast.kirovohrad': 'Кіровоградська область',
+  'new.oblast.kyiv': 'Київська область',
+  'new.oblast.kyiv-city': 'Місто Київ',
+  'new.oblast.luhansk': 'Луганська область',
+  'new.oblast.lviv': 'Львівська область',
+  'new.oblast.mykolaiv': 'Миколаївська область',
+  'new.oblast.odessa': 'Одеська область',
+  'new.oblast.poltava': 'Полтавська область',
+  'new.oblast.rivne': 'Рівненська область',
+  'new.oblast.sumy': 'Сумська область',
+  'new.oblast.ternopil': 'Тернопільська область',
+  'new.oblast.vinnytsia': 'Вінницька область',
+  'new.oblast.volyn': 'Волинська область',
+  'new.oblast.zakarpattia': 'Закарпатська область',
+  'new.oblast.zaporizhia': 'Запорізька область',
+  'new.oblast.zhytomyr': 'Житомирська область',
 };

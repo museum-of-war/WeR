@@ -90,4 +90,100 @@ export const en = {
   'partners.title': 'Partners',
   'warning.youtube':
     'In order to get the best 360° experience on your phone, please use the YouTube app',
+
+  'new.main.button.explore': 'Explore the locations',
+  'new.main.button.support': 'Support Ukraine',
+  'new.main.button.about': 'About WER',
+  'new.main.description1': 'War as it is.',
+  'new.main.description2':
+    'We show the world the real war and give you the opportunity to immerse yourself in and feel it.',
+
+  'new.header.home': 'Home',
+  'new.header.locations': 'Locations',
+  'new.header.about': 'About WER',
+  'new.header.support': 'Support Ukraine',
+  'new.header.film': 'The film [SOON]',
+
+  'new.location.irpinBridge': 'Irpin bridge, Kyiv region',
+  'new.location.irpin': 'Irpin, Kyiv region',
+  'new.location.hostomel': 'Hostomel, Kyiv region',
+  'new.location.borodyanka': 'Borodyanka settlement, Kyiv region',
+  'new.location.rusaniv': 'Rusaniv village, Kyiv region',
+  'new.location.moschun': 'Moschun village, Kyiv region',
+  'new.location.bucha': 'Bucha city, Kyiv region',
+  'new.location.kupiansk': 'Kupiansk, Kharkiv region',
+  'new.location.izyumGrave':
+    'Izyum, Kharkiv region, mass grave of civilians with 470 graves',
+  'new.location.izyum': 'Izyum, Kharkiv region',
+  'new.location.saltivka': 'Northern Saltivka, Kharkiv',
+  'new.location.ruskiTyshky': 'Ruski Tyshky village, Kharkiv region',
+  'new.location.dnipro': 'Dnipro, Dnirpopetrovsk region',
+
+  'new.locations.title': 'Locations',
+
+  'new.about.title1': 'About WER',
+  'new.about.title2': 'Who we are?',
+  'new.about.title3': 'Support us',
+  'new.about.title4': 'Get in touch',
+  'new.about.description1':
+    'On this site, you will be able to immerse yourself in the harsh reality of the modern war that is taking place on the territory of Ukraine, with the help of VR tours and live broadcasts of civilian, historical and cultural objects destroyed by the russian army.',
+  'new.about.description2':
+    'We are a team of volunteers who created a project aimed at making the world see the war in Ukraine through our eyes, without editors and the right staff.',
+  'new.about.description3':
+    'If you like what we are doing, you can support our project and donate directly to us.',
+  'new.about.description4':
+    'Have any questions or suggestions? Drop us a line, we’re open for a chat.',
+  'new.about.button.donation': 'Make a donation',
+  'new.about.button.getInTouch': 'Get in touch',
+
+  'new.team.andrienko.name': 'Yurii Andrienko',
+  'new.team.andrienko.position': 'COO',
+  'new.team.VK.name': 'V K',
+  'new.team.VK.position': 'CEO/Chaos',
+  'new.team.abduvaliiev.name': 'Rustam Abduvaliiev',
+  'new.team.abduvaliiev.position': 'Development',
+  'new.team.novyk.name': 'Ivan Novyk',
+  'new.team.novyk.position': 'VR content creation',
+  'new.team.polikashkin.name': 'Andriy Polikashkin',
+  'new.team.polikashkin.position': 'VR content creation',
+  'new.team.kandul.name': 'Alex Kandul',
+  'new.team.kandul.position': 'UI/UX',
+
+  'new.support.title1': 'Ministry of culture and information policy of ukraine',
+  'new.support.title2': 'Dronarium',
+  'new.support.description1':
+    'Every day, the russian army destroys cities, villages and monuments of cultural and historical heritage. Each of your donations - decide to open broken schools, kindergartens and hospitals in Ukraine. All your funds are transferred to the official accounts of the National Bank of Ukraine',
+  'new.support.description2':
+    'DRONARIUM is the first training center for drone pilots in Ukraine, where graduates get practical experience of operating UAVs in a wide variety of conditions, in-depth study of aviation law, Ukrainian legislation and international law in the field of UAVs. All this makes graduates of the academy reliable defenders of the Ukrainian sky and accurate eyes in the sky. You can support the academy and accelerate the approach of victory - by sending a donation of any amount.',
+  'new.support.button.donate': 'Make a donation',
+
+  'new.button.back.home': 'Home',
+  'new.button.back.locations': 'Home',
+
+  'new.oblast.cherkasy': 'Cherkasy region',
+  'new.oblast.chernihiv': 'Chernihiv region',
+  'new.oblast.chernivtsi': 'Chernivtsi region',
+  'new.oblast.crimea': 'Autonomous Republic of Crimea',
+  'new.oblast.dnipropetrovsk': 'Dnipropetrovsk region',
+  'new.oblast.donetsk': 'Donetsk region',
+  'new.oblast.ivano-frankivsk': 'Ivano-Frankivsk region',
+  'new.oblast.kharkiv': 'Kharkiv region',
+  'new.oblast.kherson': 'Kherson region',
+  'new.oblast.khmelnytskyi': 'Khmelnytskyi region',
+  'new.oblast.kirovohrad': 'Kirovohrad region',
+  'new.oblast.kyiv': 'Kyiv region',
+  'new.oblast.kyiv-city': 'Kyiv',
+  'new.oblast.luhansk': 'Luhansk region',
+  'new.oblast.lviv': 'Lviv region',
+  'new.oblast.mykolaiv': 'Mykolaiv region',
+  'new.oblast.odessa': 'Odesa region',
+  'new.oblast.poltava': 'Poltava region',
+  'new.oblast.rivne': 'Rivne region',
+  'new.oblast.sumy': 'Sumy region',
+  'new.oblast.ternopil': 'Ternopil region',
+  'new.oblast.vinnytsia': 'Vinnytsia region',
+  'new.oblast.volyn': 'Volyn region',
+  'new.oblast.zakarpattia': 'Zakarpattia region',
+  'new.oblast.zaporizhia': 'Zaporizhia region',
+  'new.oblast.zhytomyr': 'Zhytomyr region',
 };

@@ -1,0 +1,42 @@
+body, html, #root {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #101010;
+}
+
+@font-face {
+    font-family: "RockstarBlack";
+    src: local("RockstarBlack"),
+    url("/public/fonts/RockStar-Black.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "RockstarLight";
+    src: local("RockstarLight"),
+    url("/public/fonts/RockStar-Light.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "RockstarNarrowRegular";
+    src: local("RockstarNarrowRegular"),
+    url("/public/fonts/RockStar-NarrowRegular.otf") format("truetype");
+}
+
+.bold {
+    font-family: RockstarBlack!important;
+}
+
+.parallax {
+    transform: translate(calc(var(--x, 0) * 1px), calc(var(--y, 0) * 1px))
+}
+
+.hide-scroll::-webkit-scrollbar, .hide-scroll *::-webkit-scrollbar {
+    display: none;
+}
+
+.hide-scroll, .hide-scroll * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+

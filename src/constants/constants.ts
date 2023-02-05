@@ -1,40 +1,43 @@
 import { TranslationKey } from '../components/message/Message';
 
 export enum Region {
-  Zakarpattia = 'Zakarpattia',
-  Volyn = 'Volyn',
-  Lviv = 'Lviv',
-  IvanoFrankivsk = 'Ivano-Frankivsk',
-  Rivne = 'Rivne',
-  Khmelnytskyi = 'Khmelnytskyi',
-  Ternopil = 'Ternopil',
-  Chernivtsi = 'Chernivtsi',
-  Vinnytsia = 'Vinnytsia',
-  Crimea = 'Crimea',
-  Kherson = 'Kherson',
-  Chernihiv = 'Chernihiv',
-  Kyiv = 'Kyiv',
-  Zhytomyr = 'Zhytomyr',
-  Cherkasy = 'Cherkasy',
-  Kirovohrad = 'Kirovohrad',
-  Mykolaiv = 'Mykolaiv',
-  Odesa = 'Odesa',
-  Sumy = 'Sumy',
-  Poltava = 'Poltava',
-  Kharkiv = 'Kharkiv',
-  Luhansk = 'Luhansk',
-  Donetsk = 'Donetsk',
-  Dnipropetrovsk = 'Dnipropetrovsk',
-  Zaporizhia = 'Zaporizhia',
+  Cherkasy = 'cherkasy',
+  Chernihiv = 'chernihiv',
+  Chernivtsi = 'chernivtsi',
+  Crimea = 'crimea',
+  Dnipropetrovsk = 'dnipropetrovsk',
+  Donetsk = 'donetsk',
+  IvanoFrankivsk = 'ivano-frankivsk',
+  Kharkiv = 'kharkiv',
+  Kherson = 'kherson',
+  Khmelnytskyi = 'khmelnytskyi',
+  Kirovohrad = 'kirovohrad',
+  Kyiv = 'kyiv',
+  KyivCity = 'kyiv-city',
+  Luhansk = 'luhansk',
+  Lviv = 'lviv',
+  Mykolaiv = 'mykolaiv',
+  Odesa = 'odessa',
+  Poltava = 'poltava',
+  Rivne = 'rivne',
+  Sumy = 'sumy',
+  Ternopil = 'ternopil',
+  Vinnytsia = 'vinnytsia',
+  Volyn = 'volyn',
+  Zakarpattia = 'zakarpattia',
+  Zaporizhia = 'zaporizhia',
+  Zhytomyr = 'zhytomyr',
 }
 
 export type Location = {
   location: TranslationKey;
+  // todo remove
   url: string;
   imageSrc: string;
   videoSrc: string;
   isLive?: boolean;
   region: Region;
+  id: string;
 };
 
 export const TOURS: Location[] = [
@@ -45,6 +48,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/sp5UcE1Jvas?autoplay=1',
     region: Region.Kyiv,
+    id: 'irpinBridge',
   },
   {
     location: 'locations.irpin',
@@ -53,6 +57,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/t1YmWr9N_aY',
     region: Region.Kyiv,
+    id: 'irpin',
   },
   {
     location: 'locations.hostomel',
@@ -61,6 +66,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/YIuEJfws6jY',
     region: Region.Kyiv,
+    id: 'hostomel',
   },
   {
     location: 'locations.borodyanka',
@@ -69,6 +75,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/2UFvrVyz_30',
     region: Region.Kyiv,
+    id: 'borodyanka',
   },
   {
     location: 'locations.rusaniv',
@@ -77,6 +84,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/WnINA4xO1Ew',
     region: Region.Kyiv,
+    id: 'rusaniv',
   },
   {
     location: 'locations.moschun',
@@ -85,6 +93,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/Whw1s-8SA6s',
     region: Region.Kyiv,
+    id: 'moschun',
   },
   {
     location: 'locations.bucha',
@@ -93,6 +102,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/FRA5xtZF4fQ',
     region: Region.Kyiv,
+    id: 'bucha',
   },
   {
     location: 'locations.kupiansk',
@@ -101,6 +111,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/Vuhtk93Sb08',
     region: Region.Kharkiv,
+    id: 'kupiansk',
   },
   {
     location: 'locations.izyumGrave',
@@ -109,6 +120,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/IT_ZNAI4pR0',
     region: Region.Kharkiv,
+    id: 'izyumGrave',
   },
   {
     location: 'locations.izyum',
@@ -117,6 +129,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/1NfT3rdvEtE',
     region: Region.Kharkiv,
+    id: 'izyum',
   },
   {
     location: 'locations.saltivka',
@@ -125,6 +138,7 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/EvU5ZjN9Qms',
     region: Region.Kharkiv,
+    id: 'saltivka',
   },
   {
     location: 'locations.ruskiTyshky',
@@ -133,14 +147,35 @@ export const TOURS: Location[] = [
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/S7BIcPE_hMw',
     region: Region.Kharkiv,
+    id: 'ruskiTyshky',
   },
   {
     location: 'locations.dnipro',
     url: '/Dnipro',
+    imageSrc: '/images/locations/dnipro.webp',
     isLive: false,
     videoSrc: 'https://www.youtube.com/embed/SPeyg8OIEDw',
-    imageSrc: '/images/locations/dnipro.webp',
     region: Region.Dnipropetrovsk,
+    id: 'dnipro',
+  },
+];
+
+export const EVENT_COORDINATES = [
+  {
+    region: Region.Kharkiv,
+    coordinates: ['35%', '79%'],
+    events: TOURS.filter((tour) => tour.region === Region.Kyiv).length,
+  },
+  {
+    region: Region.Kyiv,
+    coordinates: ['34%', '44%'],
+    events: TOURS.filter((tour) => tour.region === Region.Kharkiv).length,
+  },
+  {
+    region: Region.Dnipropetrovsk,
+    coordinates: ['48%', '68%'],
+    events: TOURS.filter((tour) => tour.region === Region.Dnipropetrovsk)
+      .length,
   },
 ];
 
@@ -165,7 +200,7 @@ export const VR_PLACES: {
   {
     location: 'vrPlaces.irpin',
     videoSrc: 'https://youtube.com/embed/CKKdGX7LRUE',
-    imageSrc: '/images/vrplaces/previews/irpin.png', // preview
+    imageSrc: '/images/vrplaces/previews/irpin.png',
     region: Region.Kyiv,
   },
   {
@@ -213,12 +248,18 @@ export const VR_PLACES: {
 ];
 
 export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
-  { name: 'team.VK.name', position: 'team.VK.position' },
-  { name: 'team.andrienko.name', position: 'team.andrienko.position' },
-  { name: 'team.revva.name', position: 'team.revva.position' },
-  { name: 'team.abduvaliiev.name', position: 'team.abduvaliiev.position' },
-  { name: 'team.novyk.name', position: 'team.novyk.position' },
-  { name: 'team.polikashkin.name', position: 'team.polikashkin.position' },
+  { name: 'new.team.VK.name', position: 'new.team.VK.position' },
+  { name: 'new.team.andrienko.name', position: 'new.team.andrienko.position' },
+  {
+    name: 'new.team.abduvaliiev.name',
+    position: 'new.team.abduvaliiev.position',
+  },
+  { name: 'new.team.kandul.name', position: 'new.team.kandul.position' },
+  { name: 'new.team.novyk.name', position: 'new.team.novyk.position' },
+  {
+    name: 'new.team.polikashkin.name',
+    position: 'new.team.polikashkin.position',
+  },
 ];
 
 export const LIVE_TOURS_CLASS_NAME = 'live-tours';

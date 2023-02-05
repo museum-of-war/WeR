@@ -18,7 +18,7 @@ import {
   Region,
   TOURS,
   VR_PLACES,
-} from '../../constants/contants';
+} from '../../constants/constants';
 import { Card } from '../../components/card/Card';
 import { VideoModal } from '../common/VideoModal';
 import { TranslationKey } from '../../components/message/Message';

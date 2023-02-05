@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@mui/material';
 import { SVGMap } from 'react-svg-map';
 import 'react-svg-map/lib/index.css';
-import { Region, TOURS, VR_PLACES } from '../../constants/contants';
+import { Region, TOURS, VR_PLACES } from '../../constants/constants';
 import { useNavigate } from 'react-router-dom';
 
 type MapLocation = {

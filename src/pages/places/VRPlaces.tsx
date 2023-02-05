@@ -12,7 +12,7 @@ import {
 import { useNavigate, useParams } from 'react-router-dom';
 import { useIntl } from 'react-intl';
 import { ReactComponent as Arrow } from '../../icons/arrow-white.svg';
-import { VR_PLACES } from '../../constants/contants';
+import { VR_PLACES } from '../../constants/constants';
 import { Donate } from '../common/Donate';
 import { Message, TranslationKey } from '../../components/message/Message';
 import { Card } from '../../components/card/Card';

@@ -250,8 +250,8 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                   sx={{
                     background: '#161616',
                     padding: '0!important',
-                    borderBottomLeftRadius: '4px',
-                    borderBottomRightRadius: '4px',
+                    borderBottomLeftRadius: '8px',
+                    borderBottomRightRadius: '8px',
                     border: '1px solid #212121',
                     borderTop: 'none',
                   }}

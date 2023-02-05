@@ -108,9 +108,6 @@ export const App: React.FC = () => {
 };
 
 // cleanup old version
-// add banners to donate/about
-// add translations
-// change navigate to a
 
 // add partners
 // add filters

@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Container,
-  Link,
   Stack,
   Typography,
   useMediaQuery,
@@ -14,9 +13,11 @@ import { ReactComponent as ButtonArrow } from '../../icons/ButtonArrow.svg';
 import { GoBack } from '../../components/goBack/GoBack';
 import { TEAM } from '../../../constants/constants';
 import { Message } from '../../../components/message/Message';
+import { DonationDialog } from '../../components/donationDialog/DonationDialog';
 
 export const About: React.FC = () => {
   const md = useMediaQuery(theme.breakpoints.down('lg'));
+  const [open, setOpen] = useState(false);
 
   return (
     <Container
@@ -96,7 +97,10 @@ export const About: React.FC = () => {
             <Typography pt={1} px={1.5}>
               <Message id="new.about.description3" />
             </Typography>
-            <Button sx={{ mt: 1.5, mx: 1.5, mb: 3 }} onClick={() => {}}>
+            <Button
+              sx={{ mt: 1.5, mx: 1.5, mb: 3 }}
+              onClick={() => setOpen(true)}
+            >
               <>
                 <Message id="new.about.button.donation" />
                 <ButtonArrow />
@@ -109,18 +113,22 @@ export const About: React.FC = () => {
           <Typography pt={1} px={1.5}>
             <Message id="new.about.description4" />
           </Typography>
-          <Box>
-            <Button
-              href="mailto:general@wer.travel"
-              sx={{ mt: 1.5, mx: 1.5, mb: 3 }}
-              isSecondary
-            >
-              <Message id="new.about.button.getInTouch" />
-              <Envelope />
-            </Button>
-          </Box>
+          <Button
+            href="mailto:general@wer.travel"
+            sx={{ mt: 1.5, mx: 1.5, mb: 3 }}
+            isSecondary
+          >
+            <Message id="new.about.button.getInTouch" />
+            <Envelope />
+          </Button>
         </Stack>
       </Stack>
+      <DonationDialog
+        open={open}
+        onClose={() => setOpen(false)}
+        title="donate.recipient.wer.donate"
+        address="0xFC215bB18cCE2E515C7A5406d42e1E0AFe3C0Fc3"
+      />
     </Container>
   );
 };

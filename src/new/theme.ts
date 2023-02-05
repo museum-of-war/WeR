@@ -86,6 +86,14 @@ export const theme = createTheme({
         },
       },
     },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          background: '#101010',
+          borderRadius: '12px',
+        },
+      },
+    },
     MuiDialogTitle: {
       styleOverrides: {
         root: {

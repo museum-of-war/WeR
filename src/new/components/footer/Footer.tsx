@@ -2,7 +2,6 @@ import React from 'react';
 import {
   Container,
   IconButton,
-  Link,
   Stack,
   Typography,
   useMediaQuery,
@@ -38,20 +37,17 @@ export const Footer: React.FC = () => {
             © WeR Ukraine {new Date().getFullYear()}
           </Typography>
           <Stack direction="row">
-            <IconButton>
-              <Link href="https://www.youtube.com/channel/UCOssjJx0Vm9kuEvxRKaMPBg">
-                <YouTube />
-              </Link>
+            <IconButton
+              href="https://www.youtube.com/channel/UCOssjJx0Vm9kuEvxRKaMPBg"
+              target="_blank"
+            >
+              <YouTube />
             </IconButton>
-            <IconButton>
-              <Link href="https://twitter.com/werukraine">
-                <Twitter />
-              </Link>
+            <IconButton href="https://twitter.com/werukraine" target="_blank">
+              <Twitter />
             </IconButton>
-            <IconButton>
-              <Link href="https://instagram.com/werukraine">
-                <Instagram />
-              </Link>
+            <IconButton href="https://instagram.com/werukraine" target="_blank">
+              <Instagram />
             </IconButton>
           </Stack>
         </Stack>

@@ -23,6 +23,12 @@ body, html, #root {
     url("/public/fonts/RockStar-NarrowRegular.otf") format("truetype");
 }
 
+@font-face {
+    font-family: "Inter";
+    src: local("Inter"),
+    url("/public/fonts/Inter-Regular.woff") format("truetype");
+}
+
 .bold {
     font-family: RockstarBlack!important;
 }

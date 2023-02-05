@@ -11,7 +11,10 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'RockstarNarrowRegular',
+    fontFamily: 'Inter',
+    // @ts-ignore
+    letterSpacing: '40px',
+    lineHeight: '130%',
   },
   components: {
     MuiTypography: {
@@ -40,7 +43,7 @@ export const theme = createTheme({
           color: '#eaeaea',
           fontSize: 16,
           lineHeight: '20.8px',
-          fontFamily: 'RockstarLight',
+          fontFamily: 'Inter',
           [defaultTheme.breakpoints.down('sm')]: {
             fontSize: 20,
             lineHeight: '20px',
@@ -48,6 +51,7 @@ export const theme = createTheme({
         },
         body1: {
           color: '#eaeaea',
+          lineHeight: '130%',
         },
         body2: {
           color: '#404040',

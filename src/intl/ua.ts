@@ -197,7 +197,7 @@ export const ua: Record<TranslationKey, string> = {
   'new.support.dialog.amount': 'Введіть суму',
   'new.support.dialog.button.confirmation': 'Підтвердити і оплатити',
 
-  'new.location.button.play': 'Програти 360° відео',
+  'new.location.button.play': 'Відтворити 360° відео',
   'new.location.button.share': 'Поділитися посиланням',
   'new.location.more': 'Більше',
 };

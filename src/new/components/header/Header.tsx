@@ -53,7 +53,7 @@ export const Header: React.FC = () => {
           )}
           <Link href="/">
             <Stack direction="row" alignItems="center">
-              <Dot />
+              <Dot className="blink" />
               <Typography
                 textTransform="uppercase"
                 variant="h2"

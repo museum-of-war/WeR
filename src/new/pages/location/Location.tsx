@@ -84,7 +84,8 @@ export const Location: React.FC = () => {
             <Stack direction="row">
               <Button sx={{ mt: 3.5 }} onClick={() => setOpen(true)}>
                 <>
-                  Play 360° video <Play style={{ marginLeft: 12 }} />
+                  <Message id="new.location.button.play" />{' '}
+                  <Play style={{ marginLeft: 12 }} />
                 </>
               </Button>
               <Button
@@ -96,7 +97,8 @@ export const Location: React.FC = () => {
                 }}
               >
                 <>
-                  Share <Share style={{ marginLeft: 12 }} />
+                  <Message id="new.location.button.share" />{' '}
+                  <Share style={{ marginLeft: 12 }} />
                 </>
               </Button>
             </Stack>
@@ -114,7 +116,7 @@ export const Location: React.FC = () => {
           }}
         >
           <Typography variant="h2" px={1.5} pt={3} textTransform="uppercase">
-            More
+            <Message id="new.location.more" />
           </Typography>
           <Stack
             direction="column"

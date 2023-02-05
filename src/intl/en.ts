@@ -190,4 +190,8 @@ export const en = {
   'new.support.dialog.pm': 'Payment method',
   'new.support.dialog.amount': 'Specify the amount',
   'new.support.dialog.button.confirmation': 'Confirm and pay',
+
+  'new.location.button.play': 'Play 360° video',
+  'new.location.button.share': 'Share link',
+  'new.location.more': 'More',
 };

@@ -101,6 +101,7 @@ export const theme = createTheme({
     MuiDialogTitle: {
       styleOverrides: {
         root: {
+          fontFamily: 'RockstarNarrowRegular',
           padding: '48px 12px 12px 12px',
           background: '#101010',
         },

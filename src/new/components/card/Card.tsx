@@ -26,7 +26,6 @@ export const Card: React.FC<{
       <Link href={`/location/${location.region}/${location.id}`}>
         <Stack
           sx={{
-            border: '3px solid #eaeaea',
             borderRadius: '8px',
             height: '100%',
             width: '100%',
@@ -35,17 +34,25 @@ export const Card: React.FC<{
             backgroundImage: `url(${location.imageSrc})`,
             backgroundSize: 'cover',
             position: 'relative',
-          }}
-        >
-          <Stack
-            sx={{
-              background:
-                'linear-gradient(0deg, rgba(16, 16, 16, 0.64), rgba(16, 16, 16, 0.64))',
-              position: 'absolute',
+            ':hover .darken': {
               top: 0,
               left: 0,
               right: 0,
               bottom: 0,
+              border: '3px solid #eaeaea',
+            },
+          }}
+        >
+          <Stack
+            className="darken"
+            sx={{
+              background:
+                'linear-gradient(0deg, rgba(16, 16, 16, 0.64), rgba(16, 16, 16, 0.64))',
+              position: 'absolute',
+              top: '-3px',
+              left: '-3px',
+              right: '-3px',
+              bottom: '-3px',
               zIndex: 0,
               borderRadius: '8px',
             }}

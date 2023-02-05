@@ -228,6 +228,8 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                         px: 0.5,
                         py: 0.25,
                         borderRadius: '4px',
+                        width: 17,
+                        textAlign: 'center',
                       }}
                     >
                       {TOURS.filter((tour) => tour.region === region).length}

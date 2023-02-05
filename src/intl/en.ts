@@ -134,7 +134,7 @@ export const en = {
   'new.about.description4':
     'Have any questions or suggestions? Drop us a line, we’re open for a chat.',
   'new.about.button.donation': 'Make a donation',
-  'new.about.button.getInTouch': 'Get in touch',
+  'new.about.button.getInTouch': 'Contact us',
 
   'new.team.andrienko.name': 'Yurii Andrienko',
   'new.team.andrienko.position': 'COO',
@@ -186,4 +186,8 @@ export const en = {
   'new.oblast.zakarpattia': 'Zakarpattia region',
   'new.oblast.zaporizhia': 'Zaporizhia region',
   'new.oblast.zhytomyr': 'Zhytomyr region',
+
+  'new.support.dialog.pm': 'Payment method',
+  'new.support.dialog.amount': 'Specify the amount',
+  'new.support.dialog.button.confirmation': 'Confirm and pay',
 };

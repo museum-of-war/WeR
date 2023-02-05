@@ -192,4 +192,8 @@ export const ua: Record<TranslationKey, string> = {
   'new.oblast.zakarpattia': 'Закарпатська область',
   'new.oblast.zaporizhia': 'Запорізька область',
   'new.oblast.zhytomyr': 'Житомирська область',
+
+  'new.support.dialog.pm': 'Спосіб оплати',
+  'new.support.dialog.amount': 'Введіть суму',
+  'new.support.dialog.button.confirmation': 'Підтвердити і оплатити',
 };

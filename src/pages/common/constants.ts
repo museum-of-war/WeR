@@ -54,7 +54,7 @@ export const RECIPIENTS: Recipient[] = [
 export const RECIPIENTS_NEW: Recipient[] = [
   {
     title: 'new.support.title1',
-    donateToTitle: 'new.support.description1',
+    donateToTitle: 'new.support.title1',
     ethAddress: '0xc47f5F962b6816d204cb6DbFfbC78d146b42d66c',
     url: '',
     logo: '/images/donate/mincult.png',
@@ -78,7 +78,7 @@ export const RECIPIENTS_NEW: Recipient[] = [
   },
   {
     title: 'new.support.title2',
-    donateToTitle: 'new.support.description2',
+    donateToTitle: 'new.support.title2',
     ethAddress: '0x0a677927534E0654F89FFA256B9558b578D1cA04',
     url: '',
     logo: '/images/donate/dronarium.png',

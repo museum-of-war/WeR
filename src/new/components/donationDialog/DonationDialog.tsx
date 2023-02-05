@@ -173,7 +173,9 @@ export const DonationDialog: React.FC<DonationProps> = ({
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
       <CloseModalButton onClick={handleClose} />
       <DialogTitle sx={{ borderBottom: '1px solid #212121', p: 1.5 }}>
-        <Message id={title} />
+        <Typography variant="h2">
+          <Message id={title} />
+        </Typography>
       </DialogTitle>
       <DialogContent sx={{ borderBottom: '1px solid #212121', p: 0 }}>
         <Stack direction="column">
@@ -191,7 +193,9 @@ export const DonationDialog: React.FC<DonationProps> = ({
                   sx={{ borderBottom: '1px solid #212121' }}
                   p={1.5}
                 >
-                  <Typography>Payment method</Typography>
+                  <Typography>
+                    <Message id="new.support.dialog.pm" />
+                  </Typography>
                   <Stack direction="row" mt={1}>
                     {CURRENCIES.map((c) => (
                       <Button
@@ -210,7 +214,11 @@ export const DonationDialog: React.FC<DonationProps> = ({
                 </Stack>
               )}
               <Stack direction="column" sx={{ py: 1, px: 1.5 }}>
-                <Typography>Specify the amount</Typography>
+                <Typography>
+                  <Typography>
+                    <Message id="new.support.dialog.amount" />
+                  </Typography>
+                </Typography>
                 <TextField
                   variant="outlined"
                   inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
@@ -304,7 +312,11 @@ export const DonationDialog: React.FC<DonationProps> = ({
             onClick={handleContinue}
           >
             <>
-              <Typography>Confirm and pay</Typography>
+              <Typography>
+                <Typography>
+                  <Message id="new.support.dialog.button.confirmation" />
+                </Typography>
+              </Typography>
               <ButtonArrow />
             </>
           </Button>

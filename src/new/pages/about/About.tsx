@@ -1,5 +1,12 @@
 import React from 'react';
-import { Container, Stack, Typography, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  Container,
+  Link,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import { theme } from '../../theme';
 import { Button } from '../../components/button/Button';
 import { ReactComponent as Envelope } from '../../icons/Envelope.svg';
@@ -102,16 +109,16 @@ export const About: React.FC = () => {
           <Typography pt={1} px={1.5}>
             <Message id="new.about.description4" />
           </Typography>
-          <Button
-            sx={{ mt: 1.5, mx: 1.5, mb: 3 }}
-            isSecondary
-            onClick={() => {}}
-          >
-            <>
+          <Box>
+            <Button
+              href="mailto:general@wer.travel"
+              sx={{ mt: 1.5, mx: 1.5, mb: 3 }}
+              isSecondary
+            >
               <Message id="new.about.button.getInTouch" />
               <Envelope />
-            </>
-          </Button>
+            </Button>
+          </Box>
         </Stack>
       </Stack>
     </Container>

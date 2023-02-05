@@ -3,13 +3,11 @@ import { Box, Stack, Typography, useMediaQuery } from '@mui/material';
 import { ReactComponent as ButtonArrow } from '../../icons/ButtonArrow.svg';
 import { Button } from '../../components/button/Button';
 import { theme } from '../../theme';
-import { useNavigate } from 'react-router-dom';
 import { Message } from '../../../components/message/Message';
 
 export const SecondaryBlock: React.FC = () => {
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
   const sm = useMediaQuery(theme.breakpoints.down('md'));
-  const navigate = useNavigate();
 
   return (
     <Stack
@@ -33,7 +31,7 @@ export const SecondaryBlock: React.FC = () => {
         </Box>
         <Message id="new.main.description2" />
       </Typography>
-      <Button sx={{ mt: 1.5 }} onClick={() => navigate('/locations')}>
+      <Button sx={{ mt: 1.5 }} href="/locations">
         <>
           <Message id="new.main.button.explore" /> <ButtonArrow />
         </>
@@ -42,7 +40,7 @@ export const SecondaryBlock: React.FC = () => {
         <Button
           sx={{ mt: 1.5, display: 'flex', flexBasis: '50%' }}
           isSecondary
-          onClick={() => navigate('/about')}
+          href="/about"
         >
           <>
             <Message id="new.main.button.about" /> <ButtonArrow />
@@ -52,7 +50,7 @@ export const SecondaryBlock: React.FC = () => {
         <Button
           sx={{ mt: 1.5, display: 'flex', flexBasis: '50%' }}
           isSecondary
-          onClick={() => navigate('/support')}
+          href="/support"
         >
           <>
             <Message id="new.main.button.support" /> <ButtonArrow />

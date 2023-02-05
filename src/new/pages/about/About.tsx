@@ -11,7 +11,9 @@ import { DonationDialog } from '../../components/donationDialog/DonationDialog';
 
 export const About: React.FC = () => {
   const md = useMediaQuery(theme.breakpoints.down('lg'));
+  const sm = useMediaQuery(theme.breakpoints.down('md'));
   const [open, setOpen] = useState(false);
+  console.log(sm ? '150px' : md ? '300px' : 'auto');
 
   return (
     <Container
@@ -21,7 +23,12 @@ export const About: React.FC = () => {
       }}
     >
       <GoBack text="new.button.back.home" location="/" />
-      <Stack direction={md ? 'column' : 'row'}>
+      <Stack
+        direction={md ? 'column' : 'row'}
+        sx={{
+          maxHeight: sm ? '150px' : md ? '300px' : 'auto',
+        }}
+      >
         <img
           src="/images/new/about.png"
           alt=""
@@ -33,6 +40,7 @@ export const About: React.FC = () => {
             display: 'flex',
             alignSelf: 'flex-start',
             maxWidth: '100%',
+            height: '100%',
           }}
         />
         <Stack

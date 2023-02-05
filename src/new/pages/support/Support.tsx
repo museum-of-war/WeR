@@ -10,6 +10,7 @@ import { Message } from '../../../components/message/Message';
 
 export const Support: React.FC = () => {
   const md = useMediaQuery(theme.breakpoints.down('lg'));
+  const sm = useMediaQuery(theme.breakpoints.down('md'));
   const [activeRecipient, setActiveRecipient] = useState<Recipient | null>(
     null,
   );
@@ -22,7 +23,12 @@ export const Support: React.FC = () => {
       }}
     >
       <GoBack text="new.button.back.home" location="/" />
-      <Stack direction={md ? 'column' : 'row'}>
+      <Stack
+        direction={md ? 'column' : 'row'}
+        sx={{
+          maxHeight: sm ? '150px' : md ? '300px' : 'auto',
+        }}
+      >
         <img
           src="/images/new/support.png"
           alt=""
@@ -30,6 +36,7 @@ export const Support: React.FC = () => {
             borderRadius: '16px',
             flexBasis: md ? '100%' : '70%',
             minWidth: md ? '100%' : '70%',
+            height: '100%',
             objectFit: 'contain',
             display: 'flex',
             alignSelf: 'flex-start',

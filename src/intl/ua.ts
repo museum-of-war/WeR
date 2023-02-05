@@ -153,6 +153,8 @@ export const ua: Record<TranslationKey, string> = {
   'new.team.polikashkin.position': 'Cтворення VR контенту',
   'new.team.kandul.name': 'Alex Kandul',
   'new.team.kandul.position': 'UI/UX',
+  'new.team.baidala.name': 'Артем Байдала',
+  'new.team.baidala.position': 'Створення контенту',
 
   'new.support.title1':
     'Міністерство культури та інформаційної політики України',

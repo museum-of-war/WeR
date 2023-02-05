@@ -148,6 +148,8 @@ export const en = {
   'new.team.polikashkin.position': 'VR content creation',
   'new.team.kandul.name': 'Alex Kandul',
   'new.team.kandul.position': 'UI/UX',
+  'new.team.baidala.name': 'Artem Baidala',
+  'new.team.baidala.position': 'Content creation',
 
   'new.support.title1': 'Ministry of culture and information policy of ukraine',
   'new.support.title2': 'Dronarium',

@@ -97,6 +97,7 @@ export const theme = createTheme({
     MuiDialogTitle: {
       styleOverrides: {
         root: {
+          padding: '48px 12px 12px 12px',
           background: '#101010',
         },
       },

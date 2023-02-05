@@ -8,6 +8,7 @@ export const Main: React.FC = () => {
     <Container
       sx={{
         position: 'relative',
+        paddingBottom: '60px',
       }}
     >
       <PrimaryBlock />

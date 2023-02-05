@@ -172,10 +172,12 @@ export const DonationDialog: React.FC<DonationProps> = ({
   return (
     <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
       <CloseModalButton onClick={handleClose} />
-      <DialogTitle sx={{ borderBottom: '1px solid #212121', p: 1.5 }}>
-        <Typography variant="h2">
-          <Message id={title} />
-        </Typography>
+      <DialogTitle
+        sx={{
+          borderBottom: '1px solid #212121',
+        }}
+      >
+        <Message id={title} />
       </DialogTitle>
       <DialogContent sx={{ borderBottom: '1px solid #212121', p: 0 }}>
         <Stack direction="column">
@@ -207,7 +209,7 @@ export const DonationDialog: React.FC<DonationProps> = ({
                           '&:not(:first-of-type)': { ml: 1 },
                         }}
                       >
-                        {c.name}
+                        {c.name.toUpperCase()}
                       </Button>
                     ))}
                   </Stack>

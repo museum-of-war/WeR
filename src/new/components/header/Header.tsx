@@ -109,7 +109,7 @@ export const Header: React.FC = () => {
                 isSecondary
                 onClick={() => setLocale(locale === 'en' ? 'ua' : 'en')}
               >
-                {locale === 'en' ? 'English' : 'Українська'}
+                {locale === 'en' ? 'Українська' : 'English'}
                 <Globe style={{ height: 20 }} />
               </Button>
             )}

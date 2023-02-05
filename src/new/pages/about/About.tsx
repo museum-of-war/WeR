@@ -1,11 +1,5 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Container,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from '@mui/material';
+import { Container, Stack, Typography, useMediaQuery } from '@mui/material';
 import { theme } from '../../theme';
 import { Button } from '../../components/button/Button';
 import { ReactComponent as Envelope } from '../../icons/Envelope.svg';

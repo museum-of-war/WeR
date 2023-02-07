@@ -261,6 +261,18 @@ export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
     name: 'new.team.polikashkin.name',
     position: 'new.team.polikashkin.position',
   },
+  {
+    name: 'new.team.boiko.name',
+    position: 'new.team.boiko.position',
+  },
+  {
+    name: 'new.team.temborska.name',
+    position: 'new.team.temborska.position',
+  },
+  {
+    name: 'new.team.zubova.name',
+    position: 'new.team.zubova.position',
+  },
 ];
 
 export const LIVE_TOURS_CLASS_NAME = 'live-tours';

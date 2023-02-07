@@ -150,6 +150,12 @@ export const en = {
   'new.team.kandul.position': 'UI/UX',
   'new.team.baidala.name': 'Artem Baidala',
   'new.team.baidala.position': 'Content creation',
+  'new.team.boiko.name': 'Yana Boiko',
+  'new.team.boiko.position': 'Design',
+  'new.team.temborska.name': 'Snizhana Temborska',
+  'new.team.temborska.position': 'Copywriting',
+  'new.team.zubova.name': 'Sonia Zubova',
+  'new.team.zubova.position': 'PR',
 
   'new.support.title1': 'Ministry of culture and information policy of ukraine',
   'new.support.title2': 'Dronarium',

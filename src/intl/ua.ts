@@ -155,6 +155,12 @@ export const ua: Record<TranslationKey, string> = {
   'new.team.kandul.position': 'UI/UX',
   'new.team.baidala.name': 'Артем Байдала',
   'new.team.baidala.position': 'Створення контенту',
+  'new.team.boiko.name': 'Яна Бойко',
+  'new.team.boiko.position': 'Дизайн',
+  'new.team.temborska.name': 'Сніжана Темборська',
+  'new.team.temborska.position': 'Копірайтинг',
+  'new.team.zubova.name': 'Соня Зубова',
+  'new.team.zubova.position': 'PR',
 
   'new.support.title1':
     'Міністерство культури та інформаційної політики України',

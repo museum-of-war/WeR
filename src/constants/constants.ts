@@ -164,12 +164,12 @@ export const EVENT_COORDINATES = [
   {
     region: Region.Kharkiv,
     coordinates: ['35%', '79%'],
-    events: TOURS.filter((tour) => tour.region === Region.Kyiv).length,
+    events: TOURS.filter((tour) => tour.region === Region.Kharkiv).length,
   },
   {
     region: Region.Kyiv,
     coordinates: ['21%', '43%'],
-    events: TOURS.filter((tour) => tour.region === Region.Kharkiv).length,
+    events: TOURS.filter((tour) => tour.region === Region.Kyiv).length,
   },
   {
     region: Region.Dnipropetrovsk,

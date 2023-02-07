@@ -39,7 +39,7 @@ export const App: React.FC = () => {
       page: window.location.pathname + window.location.search,
     });
   }, []);
-  const [isNew, setIsNew] = useState(false);
+  const [isNew, setIsNew] = useState(true);
 
   const localesMap: Record<AppLocale, any> = {
     en,
@@ -47,13 +47,13 @@ export const App: React.FC = () => {
   };
   const { locale } = useLocale();
 
-  useEffect(() => {
-    const isNew = localStorage.getItem('new');
-
-    if (isNew) {
-      setIsNew(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   const isNew = localStorage.getItem('new');
+  //
+  //   if (isNew) {
+  //     setIsNew(true);
+  //   }
+  // }, []);
 
   return !isNew ? (
     <BrowserRouter>

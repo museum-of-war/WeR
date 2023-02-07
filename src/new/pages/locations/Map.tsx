@@ -145,11 +145,7 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
             pt={3}
             alignItems="center"
           >
-            <Typography
-              variant="h2"
-              textTransform="uppercase"
-              fontFamily="RockstarNarrowRegular"
-            >
+            <Typography variant="h2" textTransform="uppercase">
               <Message id="new.locations.title" />
             </Typography>
             {/*<Stack direction="row">*/}

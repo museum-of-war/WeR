@@ -33,7 +33,7 @@ export const theme = createTheme({
           color: '#eaeaea',
           fontSize: 24,
           lineHeight: '24px',
-          fontFamily: 'RockstarNarrowRegular',
+          fontFamily: 'RockstarBlack',
           [defaultTheme.breakpoints.down('sm')]: {
             fontSize: 20,
             lineHeight: '20px',

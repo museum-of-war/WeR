@@ -8,7 +8,7 @@ body, html, #root {
 @font-face {
     font-family: "RockstarBlack";
     src: local("RockstarBlack"),
-    url("/public/fonts/RockStar-Black.otf") format("truetype");
+    url("/public/fonts/RockStar-Bold.woff") format("truetype");
 }
 
 @font-face {

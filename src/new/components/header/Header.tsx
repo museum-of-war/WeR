@@ -127,6 +127,14 @@ export const Header: React.FC = () => {
           direction="column"
           sx={{ background: '#101010', height: '100%' }}
         >
+          <Button
+            sx={{ display: 'flex', height: 40, mx: 2, mt: 3 }}
+            isSecondary
+            onClick={() => setLocale(locale === 'en' ? 'ua' : 'en')}
+          >
+            {locale === 'en' ? 'Українська' : 'English'}
+            <Globe style={{ height: 20 }} />
+          </Button>
           <Link href="/" py={3}>
             <Typography ml={2.5} variant="h3">
               <Message id="new.header.home" />

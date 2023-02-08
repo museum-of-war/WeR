@@ -1,16 +1,22 @@
 import React from 'react';
-import { Container } from '@mui/material';
+import { Box, Container, useMediaQuery } from '@mui/material';
 import { SecondaryBlock } from './SecondaryBlock';
 import { PrimaryBlock } from './PrimaryBlock';
+import { theme } from '../../theme';
 
 export const Main: React.FC = () => {
-  return (
-    <Container
-      sx={{
-        position: 'relative',
-        paddingBottom: '60px',
-      }}
-    >
+  const md = useMediaQuery(theme.breakpoints.down('lg'));
+  const sm = useMediaQuery(theme.breakpoints.down('md'));
+
+  return sm || md ? (
+    <Box>
+      <PrimaryBlock />
+      <Box mx={2}>
+        <SecondaryBlock />
+      </Box>
+    </Box>
+  ) : (
+    <Container>
       <PrimaryBlock />
       <SecondaryBlock />
     </Container>

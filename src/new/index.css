@@ -41,7 +41,7 @@ body, html, #root {
     display: none;
 }
 
-.hide-scroll, .hide-scroll * {
+* {
     -ms-overflow-style: none;
     scrollbar-width: none;
 }

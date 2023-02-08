@@ -82,25 +82,37 @@ export const App: React.FC = () => {
         onError={onError}
       >
         <ThemeProvider theme={theme}>
-          <Header />
           <Box
-            paddingTop="60px"
-            paddingBottom="60px"
-            boxSizing="border-box"
-            height="100%"
+            position="relative"
+            height="100vh"
+            width="100vw"
+            overflow="hidden"
           >
-            <Routes>
-              <Route path="/" element={<Main />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/support" element={<Support />} />
-              <Route path="/locations" element={<Locations />} />
-              <Route
-                path="/location/:region/:location"
-                element={<Location />}
-              />
-            </Routes>
+            <Header />
+            <Box
+              boxSizing="border-box"
+              sx={{
+                position: 'absolute',
+                top: 65,
+                left: 0,
+                bottom: 65,
+                right: 0,
+                overflow: 'auto',
+              }}
+            >
+              <Routes>
+                <Route path="/" element={<Main />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/support" element={<Support />} />
+                <Route path="/locations" element={<Locations />} />
+                <Route
+                  path="/location/:region/:location"
+                  element={<Location />}
+                />
+              </Routes>
+            </Box>
+            <Footer />
           </Box>
-          <Footer />
         </ThemeProvider>
       </IntlProvider>
     </BrowserRouter>

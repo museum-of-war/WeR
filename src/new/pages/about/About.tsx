@@ -13,15 +13,9 @@ export const About: React.FC = () => {
   const md = useMediaQuery(theme.breakpoints.down('lg'));
   const sm = useMediaQuery(theme.breakpoints.down('md'));
   const [open, setOpen] = useState(false);
-  console.log(sm ? '150px' : md ? '300px' : 'auto');
 
   return (
-    <Container
-      sx={{
-        position: 'relative',
-        paddingBottom: '60px',
-      }}
-    >
+    <Container>
       <GoBack text="new.button.back.home" location="/" />
       <Stack
         direction={md ? 'column' : 'row'}

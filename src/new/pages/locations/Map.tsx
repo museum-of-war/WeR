@@ -81,12 +81,7 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
   }, [currentLocation]);
 
   return (
-    <Container
-      sx={{
-        position: 'relative',
-        paddingBottom: '60px',
-      }}
-    >
+    <Container>
       <GoBack text="new.button.back.home" location="/" />
       <Stack
         direction={md ? 'column' : 'row'}
@@ -134,6 +129,7 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
             border: '1px solid #212121',
             ml: md ? 0 : 4,
             mt: md ? 4 : 0,
+            pb: 2,
             flexBasis: md ? '100%' : '50%',
             maxWidth: md ? '100%' : '50%',
           }}
@@ -259,7 +255,7 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                     onMouseEnter={disableScroll}
                     onMouseLeave={enableScroll}
                     onWheel={handleWheelRegions}
-                    className="scroller hide-scroll"
+                    className="scroller"
                   >
                     {TOURS.filter((tour) => tour.region === region).map(
                       (tour) => (

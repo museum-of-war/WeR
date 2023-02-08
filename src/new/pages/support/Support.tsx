@@ -16,12 +16,7 @@ export const Support: React.FC = () => {
   );
 
   return (
-    <Container
-      sx={{
-        position: 'relative',
-        paddingBottom: '60px',
-      }}
-    >
+    <Container>
       <GoBack text="new.button.back.home" location="/" />
       <Stack
         direction={md ? 'column' : 'row'}

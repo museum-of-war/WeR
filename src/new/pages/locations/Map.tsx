@@ -115,9 +115,11 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                 position: 'absolute',
                 top: `calc(${event.coordinates[0]} - 10px)`,
                 left: `calc(${event.coordinates[1]} - 10px)`,
+                cursor: 'pointer',
               }}
               alignItems="center"
               justifyContent="center"
+              onClick={() => setCurrentLocation(event.region)}
             >
               <Typography>{event.events}</Typography>
             </Stack>

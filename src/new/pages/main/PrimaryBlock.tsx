@@ -6,7 +6,6 @@ import { theme } from '../../theme';
 
 export const PrimaryBlock: React.FC = () => {
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
-  const lg = useMediaQuery(theme.breakpoints.up('md'));
 
   useEffect(() => {
     const mapRange = (inputLower, inputUpper, outputLower, outputUpper) => {
@@ -20,6 +19,8 @@ export const PrimaryBlock: React.FC = () => {
 
     const bounds = 20;
     const update = ({ x, y }) => {
+      if ('ontouchstart' in window || navigator.msMaxTouchPoints) return;
+
       const posX = mapRange(0, window.innerWidth, -bounds, bounds)(x);
       const posY = mapRange(0, window.innerHeight, -bounds, bounds)(y);
 

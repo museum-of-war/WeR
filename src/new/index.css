@@ -5,6 +5,11 @@ body, html, #root {
     background-color: #101010;
 }
 
+.hide-scroll, .hide-scroll *, * {
+    -ms-overflow-style: none!important;
+    scrollbar-width: none!important;
+}
+
 @font-face {
     font-family: "RockstarBlack";
     src: local("RockstarBlack"),
@@ -39,11 +44,6 @@ body, html, #root {
 
 .hide-scroll::-webkit-scrollbar, .hide-scroll *::-webkit-scrollbar {
     display: none;
-}
-
-* {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
 }
 
 .blink {

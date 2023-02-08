@@ -87,6 +87,7 @@ export const App: React.FC = () => {
             height="100vh"
             width="100vw"
             overflow="hidden"
+            // className="hide-scroll"
           >
             <Header />
             <Box

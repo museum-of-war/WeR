@@ -16,6 +16,7 @@ export const VideoModal: React.FC<ModalProps> = ({ handleClose, data }) => {
 
   return (
     <Dialog
+      className="hide-scroll"
       onClose={handleClose}
       open={true}
       fullWidth

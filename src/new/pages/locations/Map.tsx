@@ -255,7 +255,7 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                     onMouseEnter={disableScroll}
                     onMouseLeave={enableScroll}
                     onWheel={handleWheelRegions}
-                    className="scroller"
+                    className="scroller hide-scroll"
                     paddingLeft="8px"
                     paddingRight="8px"
                     boxSizing="border-box"

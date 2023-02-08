@@ -256,6 +256,9 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
                     onMouseLeave={enableScroll}
                     onWheel={handleWheelRegions}
                     className="scroller"
+                    paddingLeft="8px"
+                    paddingRight="8px"
+                    boxSizing="border-box"
                   >
                     {TOURS.filter((tour) => tour.region === region).map(
                       (tour) => (

@@ -47,14 +47,6 @@ export const App: React.FC = () => {
   };
   const { locale } = useLocale();
 
-  // useEffect(() => {
-  //   const isNew = localStorage.getItem('new');
-  //
-  //   if (isNew) {
-  //     setIsNew(true);
-  //   }
-  // }, []);
-
   return !isNew ? (
     <BrowserRouter>
       <IntlProvider

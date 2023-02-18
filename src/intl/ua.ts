@@ -135,8 +135,8 @@ export const ua: Record<TranslationKey, string> = {
   'new.location.borodyanka1': 'Бородянка, Київська обл.',
   'new.location.rusaniv1': 'Русанів, Київська обл.',
   'new.location.bucha1': 'Буча, Київська обл.',
-  'new.location.kramatorsk': 'Краматорськ, Донецька обл.',
-  'new.location.druzhkivka': 'Дружківка, Донецька обл.',
+  'new.location.kramatorsk': 'Житловий будинок, Краматорськ, Донецька обл.',
+  'new.location.druzhkivka': 'Дитячий садок, Дружківка, Донецька обл.',
   'new.location.druzhkivkaSchool': 'Школа, Дружківка, Донецька обл.',
 
   'new.locations.title': 'Локації',

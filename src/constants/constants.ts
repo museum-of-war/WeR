@@ -248,6 +248,33 @@ export const TOURS: Location[] = [
     region: Region.Kyiv,
     id: 'bucha1',
   },
+  {
+    location: 'new.location.druzhkivka',
+    url: '/Druzhkivka',
+    imageSrc: '/images/locations/druzhkivka.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/SNmVoJPUB5g',
+    region: Region.Donetsk,
+    id: 'druzhkivka',
+  },
+  {
+    location: 'new.location.druzhkivkaSchool',
+    url: '/Druzhkivka_school',
+    imageSrc: '/images/locations/druzhkivkaSchool.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/5fZX8TFDwjg',
+    region: Region.Donetsk,
+    id: 'druzhkivkaSchool',
+  },
+  {
+    location: 'new.location.kramatorsk',
+    url: '/Kramatorsk',
+    imageSrc: '/images/locations/kramatorsk.webp',
+    isLive: false,
+    videoSrc: 'https://www.youtube.com/embed/9HLZlsLXfjQ',
+    region: Region.Donetsk,
+    id: 'kramatorsk',
+  },
 ];
 
 export const EVENT_COORDINATES = [
@@ -266,6 +293,11 @@ export const EVENT_COORDINATES = [
     coordinates: ['48%', '70%'],
     events: TOURS.filter((tour) => tour.region === Region.Dnipropetrovsk)
       .length,
+  },
+  {
+    region: Region.Donetsk,
+    coordinates: ['54%', '85%'],
+    events: TOURS.filter((tour) => tour.region === Region.Donetsk).length,
   },
 ];
 

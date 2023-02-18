@@ -129,6 +129,9 @@ export const en = {
   'new.location.borodyanka1': 'Borodyanka, Kyiv region',
   'new.location.rusaniv1': 'Rusaniv, Kyiv region',
   'new.location.bucha1': 'Bucha, Kyiv region',
+  'new.location.kramatorsk': 'Kramatorsk, Donetsk region',
+  'new.location.druzhkivka': 'Druzhkivka, Donetsk region',
+  'new.location.druzhkivkaSchool': 'School, Druzhkivka, Donetsk region',
 
   'new.locations.title': 'Locations',
 

@@ -15,8 +15,12 @@ export const Button: React.FC<
       border: isSecondary ? '1px solid #2c2c2c' : '1px solid #ff6262',
       background: isSecondary ? '#212121' : '#ff0000',
       '&:hover': {
-        background: isSecondary ? '#212121' : '#ff0000',
-        border: '1px solid transparent',
+        background: isSecondary ? '#303030' : '#e80000',
+        border: isSecondary ? '1px solid #2c2c2c' : '1px solid #ff6262',
+      },
+      '&:active': {
+        background: isSecondary ? '#161616' : '#b10000',
+        border: isSecondary ? '1px solid #2c2c2c' : '1px solid #ff6262',
       },
       ...sx,
     }}

@@ -100,6 +100,7 @@ export const Map: React.FC<{ width: number }> = ({ width }) => {
             minHeight: height,
             border: '1px solid #212121',
             borderRadius: '12px',
+            height: 0,
           }}
           className="map-container"
         >

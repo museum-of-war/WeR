@@ -6,71 +6,73 @@ export const theme = createTheme({
     primary: {
       main: '#101010',
     },
+    text: {
+      primary: '#eaeaea',
+    },
   },
   typography: {
-    fontFamily: 'RockstarNarrowRegular',
+    fontFamily: 'Inter',
+    // @ts-ignore
+    letterSpacing: '40px',
+    lineHeight: '130%',
   },
   components: {
     MuiTypography: {
       styleOverrides: {
         h1: {
-          fontSize: 84,
-          lineHeight: '80px',
-          fontWeight: 900,
-          fontFamily: 'RockstarBlack',
-          [defaultTheme.breakpoints.down('sm')]: {
-            fontSize: 48,
-            lineHeight: '48px',
-          },
-        },
-        h2: {
-          fontSize: 58,
-          lineHeight: '64px',
-          fontWeight: 900,
-          fontFamily: 'RockstarBlack',
-          [defaultTheme.breakpoints.down('sm')]: {
-            fontSize: 29,
-            lineHeight: '32px',
-          },
-        },
-        h3: {
-          fontSize: 40,
-          lineHeight: '48px',
-          fontWeight: 400,
-          fontFamily: 'RockstarNarrowRegular',
-          [defaultTheme.breakpoints.down('sm')]: {
-            fontSize: 22,
-            lineHeight: '32px',
-          },
-        },
-        body1: {
-          fontSize: 22,
+          color: '#eaeaea',
+          fontSize: 32,
           lineHeight: '32px',
-          fontWeight: 400,
-          fontFamily: 'RockstarNarrowRegular',
+          fontFamily: 'RockstarBlack',
           [defaultTheme.breakpoints.down('sm')]: {
-            fontSize: 16,
+            fontSize: 24,
             lineHeight: '24px',
           },
         },
+        h2: {
+          color: '#eaeaea',
+          fontSize: 24,
+          lineHeight: '24px',
+          fontFamily: 'RockstarBlack',
+          [defaultTheme.breakpoints.down('sm')]: {
+            fontSize: 20,
+            lineHeight: '20px',
+          },
+        },
+        h3: {
+          color: '#eaeaea',
+          fontSize: 16,
+          lineHeight: '20.8px',
+          fontFamily: 'Inter',
+          [defaultTheme.breakpoints.down('sm')]: {
+            fontSize: 20,
+            lineHeight: '20px',
+          },
+        },
+        body1: {
+          color: '#eaeaea',
+          lineHeight: '130%',
+        },
         body2: {
-          fontSize: 18,
-          lineHeight: '32px',
-          fontWeight: 400,
-          fontFamily: 'RockstarNarrowRegular',
+          color: '#404040',
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         root: {
-          fontSize: 18,
-          fontWeight: 400,
-          lineHeight: '48px',
-          borderRadius: 50,
-          height: 48,
-          textTransform: 'initial',
-          fontFamily: 'RockstarNarrowRegular',
+          minWidth: 0,
+          borderRadius: 8,
+          textTransform: 'none',
+          justifyContent: 'space-between',
+          color: '#eaeaea',
+        },
+      },
+    },
+    MuiContainer: {
+      styleOverrides: {
+        root: {
+          maxWidth: '2000px!important',
         },
       },
     },
@@ -78,99 +80,53 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textDecoration: 'none',
-          cursor: 'pointer',
-          fontFamily: 'RockstarNarrowRegular',
-          fontSize: 18,
-        },
-      },
-    },
-    MuiDialog: {
-      defaultProps: {
-        PaperProps: {
-          sx: {
-            paddingBottom: 8,
-            [defaultTheme.breakpoints.down('sm')]: {
-              paddingBottom: 4,
-            },
-          },
-        },
-      },
-    },
-    MuiDialogTitle: {
-      styleOverrides: {
-        root: {
-          paddingTop: 64,
-          paddingLeft: 64,
-          paddingRight: 64,
-          fontSize: 40,
-          lineHeight: '48px',
-          [defaultTheme.breakpoints.down('sm')]: {
-            fontSize: 29,
-            lineHeight: '32px',
-            paddingLeft: 32,
-            paddingRight: 32,
-          },
         },
       },
     },
     MuiDialogActions: {
       styleOverrides: {
         root: {
-          paddingLeft: '64px!important',
-          paddingRight: '64px!important',
-          marginTop: '32px!important',
-          justifyContent: 'space-between',
-          padding: 0,
-          flex: 1,
-          [defaultTheme.breakpoints.down('sm')]: {
-            paddingLeft: 32,
-            paddingRight: 32,
-          },
+          background: '#101010',
+        },
+      },
+    },
+    MuiDialog: {
+      styleOverrides: {
+        paper: {
+          background: '#101010',
+          borderRadius: '12px',
+        },
+      },
+    },
+    MuiDialogTitle: {
+      styleOverrides: {
+        root: {
+          fontFamily: 'RockstarNarrowRegular',
+          padding: '48px 12px 12px 12px',
+          background: '#101010',
         },
       },
     },
     MuiDialogContent: {
       styleOverrides: {
         root: {
-          marginTop: 48,
-          paddingLeft: 64,
-          paddingRight: 64,
-          [defaultTheme.breakpoints.down('sm')]: {
-            marginTop: 24,
-            [defaultTheme.breakpoints.down('sm')]: {
-              paddingLeft: 32,
-              paddingRight: 32,
-            },
-          },
+          background: '#101010',
+          padding: 0,
         },
       },
     },
-    MuiSelect: {
-      styleOverrides: {
-        standard: {
-          borderRadius: 0,
-          border: 'none',
-          minWidth: '256px!important',
-          [defaultTheme.breakpoints.down('sm')]: {
-            minWidth: '128px!important',
-          },
-        },
-        iconStandard: {
-          display: 'none',
-        },
-      },
-    },
-    MuiInput: {
+    MuiTextField: {
       styleOverrides: {
         root: {
-          height: 60,
-          borderBottom: '2px solid #101010',
-          '&:before, &:after': {
-            display: 'none',
+          border: '1px solid #2c2c2c',
+          padding: 0,
+          borderRadius: 8,
+          input: {
+            padding: 8,
+            borderRadius: 8,
           },
         },
       },
     },
   },
 });
-// todo @current move white to theme

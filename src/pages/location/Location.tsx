@@ -1,165 +1,168 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
+import { useIntl } from 'react-intl';
 import {
-  Box,
   Container,
-  IconButton,
+  Dialog,
+  Snackbar,
   Stack,
   Typography,
   useMediaQuery,
-  useTheme,
 } from '@mui/material';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useIntl } from 'react-intl';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-
-import { ReactComponent as Arrow } from '../../icons/arrow-white.svg';
+import copy from 'copy-to-clipboard';
+import { GoBack } from '../../components/goBack/GoBack';
+import { theme } from '../../theme';
+import { useParams } from 'react-router-dom';
 import { TOURS } from '../../constants/constants';
-import { Donate } from '../common/Donate';
 import { Message } from '../../components/message/Message';
+import { Button } from '../../components/button/Button';
+import { ReactComponent as Play } from '../../icons/Play.svg';
+import { ReactComponent as Share } from '../../icons/Share.svg';
+import { Card } from '../../components/card/Card';
 
 export const Location: React.FC = () => {
-  const theme = useTheme();
-  const { locationUrl } = useParams();
-  const navigate = useNavigate();
+  const md = useMediaQuery(theme.breakpoints.down('lg'));
+  const { region, location } = useParams();
   const intl = useIntl();
-  const xs = useMediaQuery(theme.breakpoints.down('sm'));
-  const isIos = !!navigator.platform.match(/iPhone|iPod|iPad/);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [locationUrl]);
+  const [open, setOpen] = useState(false);
+  const [notificationOpen, setNotificationOpen] = useState(false);
 
-  const location = TOURS.find((tour) => tour.url === `/${locationUrl}`);
+  const tour = TOURS.find((tour) => tour.id === location);
 
-  if (!location) return null;
+  if (!tour) return null;
 
-  // const description = intl
-  //   .formatMessage({ id: location.description })
-  //   .split('\n');
-  // const firstColParagraphsAmount = Math.ceil(description.length / 2);
-  // const descriptionPartOne = description
-  //   .slice(0, firstColParagraphsAmount)
-  //   .filter(Boolean)
-  //   .join('\n\n');
-  // const descriptionPartTwo = description
-  //   .slice(firstColParagraphsAmount)
-  //   .filter(Boolean)
-  //   .join('\n\n');
+  const otherItems = TOURS.filter((t) => t.id !== tour.id);
+  const moreItems = [
+    ...otherItems.filter((i) => i.region === region),
+    ...otherItems.filter((i) => i.region !== region),
+  ];
 
   return (
-    <Box>
-      <Box position="relative">
-        <Box
+    <Container sx={{ height: 'calc(100% - 60px)' }}>
+      <GoBack text="new.button.back.locations" location="/locations" />
+      <Stack
+        direction={md ? 'column' : 'row'}
+        height="100%"
+        alignItems={md ? undefined : 'flex-start'}
+      >
+        <Stack
           sx={{
-            backgroundImage: `url(${location.imageSrc})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            position: 'absolute',
-            top: 0,
-            bottom: 0,
-            zIndex: 0,
-            left: 0,
-            right: 0,
-            filter: 'blur(4px)',
+            flexBasis: md ? '100%' : '75%',
+            minWidth: md ? '100%' : '75%',
+            position: 'relative',
           }}
-        />
-        <Box
-          sx={{
-            opacity: 0.7,
-            position: 'absolute',
-            background: '#101010',
-            top: 0,
-            bottom: 0,
-            zIndex: 1,
-            left: 0,
-            right: 0,
-          }}
-        />
-        <Container sx={{ position: 'relative', zIndex: 2 }}>
-          <Box
-            sx={{
-              borderBottom: '2px solid #ffffff',
-              pb: 12,
+        >
+          <img
+            src={tour.imageSrc}
+            alt=""
+            style={{
+              objectFit: 'cover',
+              display: 'flex',
+              alignSelf: 'flex-start',
+              maxWidth: '100%',
+              borderRadius: '16px',
+              width: '100%',
+              height: '100%',
             }}
           />
-          <Stack direction="row" alignItems="center" my={6}>
-            <IconButton onClick={() => navigate('/')} sx={{ ml: -1 }}>
-              <Arrow height={xs ? 24 : 48} width={xs ? 24 : 48} />
-            </IconButton>
-            <Typography
-              variant="body2"
-              ml={2}
-              color="white"
-              onClick={() => navigate('/')}
-              sx={{ cursor: 'pointer' }}
-            >
-              Back
-            </Typography>
-          </Stack>
-          <Typography variant="h2" color="white" pb={6}>
-            <Message id={location.location} />
-          </Typography>
-        </Container>
-      </Box>
-      <Container>
-        {isIos && (
           <Stack
-            py={4}
-            px={1}
-            mt={2}
-            sx={{ background: '#E93324', color: 'white' }}
-          >
-            <Typography sx={{ display: 'flex', alignItems: 'center' }}>
-              <Message id="warning.youtube" />
-              <YouTubeIcon sx={{ ml: 1 }} fontSize="large" />
-            </Typography>
-          </Stack>
-        )}
-        {location.videoSrc.startsWith('https://www.youtube.com/') ? (
-          <Box
-            position="relative"
-            sx={{ paddingBottom: '56.25%', height: 0, marginTop: '40px' }}
-          >
-            <iframe
-              width="100%"
-              height="720"
-              src={location.videoSrc}
-              title={intl.formatMessage({ id: location.location })}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                width: '100%',
-                height: '100%',
-              }}
-            />
-          </Box>
-        ) : (
-          <video
-            src={location.videoSrc}
-            width="100%"
-            style={{ marginTop: 40 }}
-            controls
+            sx={{
+              background:
+                'linear-gradient(0deg, rgba(16, 16, 16, 0.64), rgba(16, 16, 16, 0.64))',
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              zIndex: 0,
+            }}
           />
-        )}
-        {/*<Grid container spacing={6} sx={{ mt: 0 }}>*/}
-        {/*  <Grid item sm={12} md={6}>*/}
-        {/*    <Typography sx={{ whiteSpace: 'pre-line' }}>*/}
-        {/*      {descriptionPartOne}*/}
-        {/*    </Typography>*/}
-        {/*  </Grid>*/}
-        {/*  <Grid item sm={12} md={6}>*/}
-        {/*    <Typography sx={{ whiteSpace: 'pre-line' }}>*/}
-        {/*      {descriptionPartTwo}*/}
-        {/*    </Typography>*/}
-        {/*  </Grid>*/}
-        {/*</Grid>*/}
-        {/*<LiveTours heading="location.title.moreLiveTours" tours={[]} />*/}
-      </Container>
-      <Donate />
-    </Box>
+          <Stack sx={{ position: 'absolute', left: 16, bottom: 16, zIndex: 1 }}>
+            <Typography variant="h2" textTransform="uppercase">
+              <Message id={tour.location} />
+            </Typography>
+            <Stack direction="row">
+              <Button sx={{ mt: 3.5 }} onClick={() => setOpen(true)}>
+                <>
+                  <Message id="new.location.button.play" />{' '}
+                  <Play style={{ marginLeft: 12 }} />
+                </>
+              </Button>
+              <Button
+                isSecondary
+                sx={{ mt: 3.5, ml: 1 }}
+                onClick={() => {
+                  copy(window.location.href);
+                  setNotificationOpen(true);
+                }}
+              >
+                <>
+                  <Message id="new.location.button.share" />{' '}
+                  <Share style={{ marginLeft: 12 }} />
+                </>
+              </Button>
+            </Stack>
+          </Stack>
+        </Stack>
+        <Stack
+          position="relative"
+          sx={{
+            borderRadius: '16px',
+            border: '1px solid #212121',
+            ml: md ? 0 : 4,
+            mt: md ? 4 : 0,
+            flexBasis: md ? '100%' : '25%',
+            height: '100%',
+          }}
+        >
+          <Typography variant="h2" px={1.5} pt={3} textTransform="uppercase">
+            <Message id="new.location.more" />
+          </Typography>
+          <Stack
+            direction="column"
+            maxHeight="100%"
+            overflow="auto"
+            position="absolute"
+            top={65}
+            left={0}
+            right={0}
+            bottom={0}
+          >
+            {moreItems.map((item) => (
+              <Card
+                key={item.id}
+                location={item}
+                width="100%"
+                sx={{
+                  '&:not(:first-of-type)': {
+                    mt: 1,
+                  },
+                }}
+              />
+            ))}
+          </Stack>
+        </Stack>
+      </Stack>
+      <Dialog onClose={() => setOpen(false)} open={open} maxWidth="xl">
+        <iframe
+          width="100%"
+          height="720"
+          src={tour.videoSrc}
+          title={intl.formatMessage({ id: tour.location })}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+          style={{
+            width: '80vw',
+          }}
+        />
+      </Dialog>
+      <Snackbar
+        open={notificationOpen}
+        autoHideDuration={2000}
+        onClose={() => setNotificationOpen(false)}
+        message="URL copied to clipboard"
+      />
+    </Container>
   );
 };

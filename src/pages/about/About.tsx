@@ -5,8 +5,8 @@ import { Button } from '../../components/button/Button';
 import { ReactComponent as Envelope } from '../../icons/Envelope.svg';
 import { ReactComponent as ButtonArrow } from '../../icons/ButtonArrow.svg';
 import { GoBack } from '../../components/goBack/GoBack';
-import { TEAM } from '../../../constants/constants';
-import { Message } from '../../../components/message/Message';
+import { TEAM } from '../../constants/constants';
+import { Message } from '../../components/message/Message';
 import { DonationDialog } from '../../components/donationDialog/DonationDialog';
 
 export const About: React.FC = () => {

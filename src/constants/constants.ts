@@ -301,74 +301,6 @@ export const EVENT_COORDINATES = [
   },
 ];
 
-export const VR_PLACES: {
-  location: TranslationKey;
-  videoSrc: string;
-  imageSrc: string;
-  region: Region;
-}[] = [
-  {
-    location: 'vrPlaces.an225',
-    videoSrc: 'https://youtube.com/embed/O4eUnYHSfL8',
-    imageSrc: '/images/locations/an225.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.kapitanivka',
-    videoSrc: 'https://youtube.com/embed/28EQP-geN-w',
-    imageSrc: '/images/locations/kapitanivka.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.irpin',
-    videoSrc: 'https://youtube.com/embed/CKKdGX7LRUE',
-    imageSrc: '/images/locations/irpin.png',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.borodyanka',
-    videoSrc: 'https://youtube.com/embed/esrcU6iIasU',
-    imageSrc: '/images/locations/borodyanka.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.priymachenko_museum',
-    videoSrc: 'https://youtube.com/embed/89N4MLOWttw',
-    imageSrc: '/images/locations/priymachenko_museum.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.vorzel',
-    videoSrc: 'https://youtube.com/embed/NvUt4cPw8Mk',
-    imageSrc: '/images/locations/vorzel.png',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.rusaniv',
-    videoSrc: 'https://youtube.com/embed/ugAPj-aqn-Y',
-    imageSrc: '/images/locations/rusaniv.jpg',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.gas_station',
-    videoSrc: 'https://youtube.com/embed/HnFNKTzrPkk',
-    imageSrc: '/images/locations/gas_station.png',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.bucha_novus',
-    videoSrc: 'https://youtube.com/embed/q_eJ5DR52mQ',
-    imageSrc: '/images/locations/novus.png',
-    region: Region.Kyiv,
-  },
-  {
-    location: 'vrPlaces.bucha',
-    videoSrc: 'https://youtube.com/embed/p-Lt8PtQywM',
-    imageSrc: '/images/locations/bucha.jpg',
-    region: Region.Kyiv,
-  },
-];
-
 export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
   { name: 'new.team.VK.name', position: 'new.team.VK.position' },
   { name: 'new.team.andrienko.name', position: 'new.team.andrienko.position' },
@@ -397,9 +329,6 @@ export const TEAM: { name: TranslationKey; position: TranslationKey }[] = [
   },
 ];
 
-export const LIVE_TOURS_CLASS_NAME = 'live-tours';
-export const VR_PLACES_CLASS_NAME = 'vr-places';
-export const ABOUT_US_CLASS_NAME = 'about-us';
 export const USER_LANGUAGE_LS_KEY = 'USER_LANGUAGE';
 export const GA_MEASUREMENT_ID = 'G-H6MQYL5SD8';
 

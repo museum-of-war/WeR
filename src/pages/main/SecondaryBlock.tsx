@@ -3,7 +3,7 @@ import { Box, Stack, Typography, useMediaQuery } from '@mui/material';
 import { ReactComponent as ButtonArrow } from '../../icons/ButtonArrow.svg';
 import { Button } from '../../components/button/Button';
 import { theme } from '../../theme';
-import { Message } from '../../../components/message/Message';
+import { Message } from '../../components/message/Message';
 
 export const SecondaryBlock: React.FC = () => {
   const xs = useMediaQuery(theme.breakpoints.down('sm'));
@@ -38,7 +38,7 @@ export const SecondaryBlock: React.FC = () => {
       </Button>
       <Stack direction="row" justifyContent="space-between">
         <Button
-          sx={{ mt: 1.5, display: 'flex', flexBasis: '50%' }}
+          sx={{ mt: 1.5, display: 'flex', flexBasis: '100%' }}
           isSecondary
           href="/about"
         >
@@ -46,16 +46,16 @@ export const SecondaryBlock: React.FC = () => {
             <Message id="new.main.button.about" /> <ButtonArrow />
           </>
         </Button>
-        <Box width={12} />
-        <Button
-          sx={{ mt: 1.5, display: 'flex', flexBasis: '50%' }}
-          isSecondary
-          href="/support"
-        >
-          <>
-            <Message id="new.main.button.support" /> <ButtonArrow />
-          </>
-        </Button>
+        {/*<Box width={12} />*/}
+        {/*<Button*/}
+        {/*  sx={{ mt: 1.5, display: 'flex', flexBasis: '50%' }}*/}
+        {/*  isSecondary*/}
+        {/*  href="/support"*/}
+        {/*>*/}
+        {/*  <>*/}
+        {/*    <Message id="new.main.button.support" /> <ButtonArrow />*/}
+        {/*  </>*/}
+        {/*</Button>*/}
       </Stack>
     </Stack>
   );

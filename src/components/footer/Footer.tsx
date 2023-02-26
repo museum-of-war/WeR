@@ -1,66 +1,57 @@
 import React from 'react';
-import { Container, Link, Stack, Typography } from '@mui/material';
-import { Message } from '../message/Message';
+import {
+  Container,
+  IconButton,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
+import { ReactComponent as YouTube } from '../../icons/YouTube.svg';
+import { ReactComponent as Twitter } from '../../icons/Twitter.svg';
+import { ReactComponent as Instagram } from '../../icons/Instagram.svg';
+import { theme } from '../../theme';
 
-export const Footer: React.FC = () => (
-  <Container>
+export const Footer: React.FC = () => {
+  const md = useMediaQuery(theme.breakpoints.down('lg'));
+
+  return (
     <Stack
-      alignItems="center"
-      justifyContent="space-between"
-      height={{ xs: '100%', sm: 96 }}
-      mt={{
-        xs: 1,
-        sm: 12,
-        md: 16,
+      direction="row"
+      width="100%"
+      sx={{
+        position: 'fixed',
+        bottom: 0,
+        bgcolor: 'primary.main',
+        zIndex: 99,
       }}
-      direction={{ xs: 'column-reverse', sm: 'row' }}
-      py={{ xs: 2, sm: 0 }}
     >
-      <Typography variant="body2" mt={{ xs: 1, sm: 0 }}>
-        Ⓒ {new Date().getFullYear()} <Message id="footer.arr" />
-      </Typography>
-      <Stack direction={{ sx: 'column', sm: 'row' }} alignItems="center">
-        <Link
-          sx={{ ml: 2, mt: { xs: 1, sm: 0 } }}
-          href="https://www.youtube.com/channel/UCOssjJx0Vm9kuEvxRKaMPBg"
-          variant="body2"
-          target="_blank"
+      <Container>
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+          sx={{ px: md ? 0 : 6 }}
+          height={60}
         >
-          YouTube
-        </Link>
-        <Link
-          sx={{ ml: 2, mt: { xs: 1, sm: 0 } }}
-          href="https://twitter.com/werukraine"
-          variant="body2"
-          target="_blank"
-        >
-          Twitter
-        </Link>
-        <Link
-          sx={{ ml: 2, mt: { xs: 1, sm: 0 } }}
-          href="https://instagram.com/werukraine"
-          variant="body2"
-          target="_blank"
-        >
-          Instagram
-        </Link>
-        <Link
-          sx={{ ml: 2, mt: { xs: 1, sm: 0 } }}
-          href="https://www.reddit.com/u/WeRUkraine"
-          variant="body2"
-          target="_blank"
-        >
-          Reddit
-        </Link>
-        <Link
-          sx={{ ml: 2, mt: { xs: 1, sm: 0 } }}
-          href="https://medium.com/@wer.ukraine"
-          variant="body2"
-          target="_blank"
-        >
-          Medium
-        </Link>
-      </Stack>
+          <Typography variant="h3" color="#404040">
+            © WeR Ukraine {new Date().getFullYear()}
+          </Typography>
+          <Stack direction="row">
+            <IconButton
+              href="https://www.youtube.com/channel/UCOssjJx0Vm9kuEvxRKaMPBg"
+              target="_blank"
+            >
+              <YouTube />
+            </IconButton>
+            <IconButton href="https://twitter.com/werukraine" target="_blank">
+              <Twitter />
+            </IconButton>
+            <IconButton href="https://instagram.com/werukraine" target="_blank">
+              <Instagram />
+            </IconButton>
+          </Stack>
+        </Stack>
+      </Container>
     </Stack>
-  </Container>
-);
+  );
+};

@@ -1,46 +1,62 @@
 body, html, #root {
-  margin: 0;
-  padding: 0;
-  height: 100%;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #101010;
+}
+
+.hide-scroll, .hide-scroll *, * {
+    -ms-overflow-style: none!important;
+    scrollbar-width: none!important;
 }
 
 @font-face {
-  font-family: "RockstarBlack";
-  src: local("RockstarBlack"),
-  url("/public/fonts/RockStar-Black.otf") format("truetype");
+    font-family: "RockstarBlack";
+    src: local("RockstarBlack"),
+    url("/public/fonts/RockStar-Bold.woff") format("truetype");
 }
 
 @font-face {
-  font-family: "RockstarLight";
-  src: local("RockstarLight"),
-  url("/public/fonts/RockStar-Light.otf") format("truetype");
+    font-family: "RockstarLight";
+    src: local("RockstarLight"),
+    url("/public/fonts/RockStar-Light.otf") format("truetype");
 }
 
 @font-face {
-  font-family: "RockstarNarrowRegular";
-  src: local("RockstarNarrowRegular"),
-  url("/public/fonts/RockStar-NarrowRegular.otf") format("truetype");
+    font-family: "RockstarNarrowRegular";
+    src: local("RockstarNarrowRegular"),
+    url("/public/fonts/RockStar-NarrowRegular.otf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: local("Inter"),
+    url("/public/fonts/Inter-Regular.woff") format("truetype");
 }
 
 .bold {
-  font-family: RockstarBlack!important;
+    font-family: RockstarBlack!important;
+}
+
+.parallax {
+    transform: translate(calc(var(--x, 0) * 1px), calc(var(--y, 0) * 1px))
 }
 
 .hide-scroll::-webkit-scrollbar, .hide-scroll *::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
-.hide-scroll, .hide-scroll * {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
 }
 
-img {
-  user-select: none;
+@keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
 }
-
-.map-counter {
-  font-size: 40px;
-  font-family: "RockstarNarrowRegular";
-  fill: white;
+@-webkit-keyframes blink-animation {
+    to {
+        visibility: hidden;
+    }
 }

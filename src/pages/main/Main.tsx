@@ -1,24 +1,24 @@
 import React from 'react';
-import { Box } from '@mui/material';
-import { Donate } from '../common/Donate';
-import { LIVE_TOURS_CLASS_NAME, TOURS } from '../../constants/constants';
-import { AboutUs } from './AboutUs';
-import { Heading } from './Heading';
-import { LiveTours } from './LiveTours';
-import { VRPlaces } from './VRPlaces';
-import { Partners } from './Partners';
+import { Box, Container, useMediaQuery } from '@mui/material';
+import { SecondaryBlock } from './SecondaryBlock';
+import { PrimaryBlock } from './PrimaryBlock';
+import { theme } from '../../theme';
 
-export const Main: React.FC = () => (
-  <Box>
-    <Heading />
-    <LiveTours
-      heading="home.title.liveTours"
-      className={LIVE_TOURS_CLASS_NAME}
-      tours={TOURS}
-    />
-    <VRPlaces />
-    <Donate />
-    <AboutUs />
-    <Partners />
-  </Box>
-);
+export const Main: React.FC = () => {
+  const md = useMediaQuery(theme.breakpoints.down('lg'));
+  const sm = useMediaQuery(theme.breakpoints.down('md'));
+
+  return sm || md ? (
+    <Box>
+      <PrimaryBlock />
+      <Box mx={2}>
+        <SecondaryBlock />
+      </Box>
+    </Box>
+  ) : (
+    <Container sx={{ position: 'relative' }}>
+      <PrimaryBlock />
+      <SecondaryBlock />
+    </Container>
+  );
+};

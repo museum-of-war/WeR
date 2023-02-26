@@ -5,8 +5,8 @@ import { Button } from '../../components/button/Button';
 import { ReactComponent as ButtonArrow } from '../../icons/ButtonArrow.svg';
 import { GoBack } from '../../components/goBack/GoBack';
 import { DonationDialog } from '../../components/donationDialog/DonationDialog';
-import { Recipient, RECIPIENTS_NEW } from '../../../pages/common/constants';
-import { Message } from '../../../components/message/Message';
+import { Recipient, RECIPIENTS_NEW } from '../common/constants';
+import { Message } from '../../components/message/Message';
 
 export const Support: React.FC = () => {
   const md = useMediaQuery(theme.breakpoints.down('lg'));

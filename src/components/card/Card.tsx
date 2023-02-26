@@ -1,69 +1,92 @@
-import React, { useState } from 'react';
-import { Box, Stack, Typography } from '@mui/material';
-import { ReactComponent as Arrow } from '../../icons/arrow.svg';
-import { Message, TranslationKey } from '../message/Message';
+import React from 'react';
+import { Box, Link, Stack, Theme, Typography } from '@mui/material';
+import { ReactComponent as CardLink } from '../../icons/CardLink.svg';
+import { Message } from '../message/Message';
+import { Location } from '../../constants/constants';
+import { SxProps } from '@mui/material/styles';
 
-type CardProps = {
-  data: {
-    location: TranslationKey;
-    imageSrc: string;
-    isLive?: boolean;
-    url?: string;
-    videoSrc?: string;
-  };
-  disableArrow?: boolean;
-  isSmall?: boolean;
-};
-export const Card: React.FC<CardProps> = ({ data, disableArrow, isSmall }) => {
-  const [showArrow, setShowArrow] = useState(false);
-
+export const Card: React.FC<{
+  location: Location;
+  width: string | number;
+  sx?: SxProps<Theme>;
+}> = ({ location, width, sx }) => {
   return (
-    <Stack
-      direction="column"
+    <Box
       sx={{
-        borderBottom: '2px solid #101010',
-        cursor: 'pointer',
-        height: '100%',
+        padding: '0 8px',
+        minWidth: width,
+        width,
+        height: 275,
+        minHeight: 275,
+        display: 'inline-block',
+        boxSizing: 'border-box',
+        ...sx,
       }}
-      onMouseEnter={() => setShowArrow(true)}
-      onMouseLeave={() => setShowArrow(false)}
-      position="relative"
     >
-      {data.isLive && (
+      <Link href={`/location/${location.region}/${location.id}`}>
         <Stack
-          position="absolute"
-          left={0}
-          top={48}
-          bgcolor="primary.main"
-          alignItems="center"
-          direction="row"
+          sx={{
+            borderRadius: '8px',
+            height: '100%',
+            width: '100%',
+            background: 'red',
+            boxSizing: 'border-box',
+            backgroundImage: `url(${location.imageSrc})`,
+            backgroundSize: 'cover',
+            position: 'relative',
+            ':hover .darken': {
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              border: '3px solid #eaeaea',
+            },
+          }}
         >
-          <Box
-            height={8}
-            width={8}
-            borderRadius={4}
-            sx={{ backgroundColor: '#DE4646' }}
-            ml={2}
+          <Stack
+            className="darken"
+            sx={{
+              background:
+                'linear-gradient(0deg, rgba(16, 16, 16, 0.64), rgba(16, 16, 16, 0.64))',
+              position: 'absolute',
+              top: '-3px',
+              left: '-3px',
+              right: '-3px',
+              bottom: '-3px',
+              zIndex: 0,
+              borderRadius: '8px',
+            }}
           />
-          <Typography variant="body2" color="white" ml={1} mr={2}>
-            <Message id="card.liveNow" />
-          </Typography>
+          <Stack
+            position="absolute"
+            sx={{
+              position: 'absolute',
+              top: 8,
+              left: 8,
+              right: 8,
+              bottom: 8,
+              zIndex: 1,
+            }}
+          >
+            <Box marginLeft="auto">
+              <CardLink />
+            </Box>
+            <Typography
+              variant="h2"
+              color="#eaeaea"
+              textTransform="uppercase"
+              textAlign="justify"
+              whiteSpace="normal"
+              marginTop="auto"
+              sx={{
+                wordBreak: 'break-word',
+              }}
+            >
+              <Message id={location.location} />
+            </Typography>
+          </Stack>
         </Stack>
-      )}
-      <img src={data.imageSrc} alt="" style={{ width: '100%' }} />
-      <Stack direction="row" justifyContent="space-between" alignItems="center">
-        <Typography
-          variant={isSmall ? 'body1' : 'h3'}
-          mt={isSmall ? 3 : 4}
-          mb={isSmall ? 4 : 6}
-          color="primary.main"
-        >
-          <Message id={data.location} />
-        </Typography>
-        <Arrow
-          style={{ opacity: showArrow && !disableArrow ? 1 : 0, minWidth: 48 }}
-        />
-      </Stack>
-    </Stack>
+      </Link>
+    </Box>
   );
 };

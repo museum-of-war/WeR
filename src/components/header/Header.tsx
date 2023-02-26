@@ -1,159 +1,168 @@
 import React, { useEffect, useState } from 'react';
 import {
-  Box,
-  Button,
   Container,
   Drawer,
   IconButton,
   Link,
   Stack,
+  Typography,
   useMediaQuery,
-  useTheme,
 } from '@mui/material';
-import { useLocation, useNavigate } from 'react-router-dom';
-
-import { Message } from '../message/Message';
-import {
-  ABOUT_US_CLASS_NAME,
-  VR_PLACES_CLASS_NAME,
-  LIVE_TOURS_CLASS_NAME,
-} from '../../constants/constants';
-import { ReactComponent as Menu } from '../../icons/menu.svg';
+import MenuIcon from '@mui/icons-material/Menu';
+import { theme } from '../../theme';
+import { ReactComponent as Dot } from '../../icons/Dot.svg';
+import { ReactComponent as Globe } from '../../icons/Globe.svg';
+import { Button } from '../button/Button';
 import { useLocale } from '../../providers/AppLocaleProvider';
+import { Message } from '../message/Message';
 
 export const Header: React.FC = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const md = useMediaQuery(theme.breakpoints.down('lg'));
   const { locale, setLocale } = useLocale();
-  const navigate = useNavigate();
-  const { pathname } = useLocation();
-  const theme = useTheme();
-  const md = useMediaQuery(theme.breakpoints.down('md'));
-  const [showMenu, setShowMenu] = useState(false);
-
-  const scrollToSection = async (selector: string) => {
-    if (pathname !== '/') {
-      await navigate('/');
-    }
-    const node = document.querySelector(`.${selector}`);
-
-    if (node) {
-      node.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: 'center',
-      });
-    }
-  };
 
   useEffect(() => {
-    if (!md) {
-      setShowMenu(false);
-    }
+    if (!md) setMenuOpen(false);
   }, [md]);
 
   return (
-    <Container
+    <Stack
+      direction="row"
+      width="100%"
       sx={{
-        display: 'flex',
-        position: 'absolute',
-        top: '0',
-        right: '0',
-        bottom: '0',
-        left: '0',
+        position: 'fixed',
+        top: 0,
+        borderBottom: '1px solid #212121',
         zIndex: 10,
-        height: '96px',
+        bgcolor: 'primary.main',
+        boxSizing: 'border-box',
       }}
     >
-      <Stack
-        flex={1}
-        direction="row"
-        alignItems="center"
-        justifyContent="space-between"
-      >
-        <Link href="/">
-          <img src="/images/logo_white.svg" alt="logo" height={46} />
-        </Link>
-        {md ? (
-          <IconButton onClick={() => setShowMenu(true)}>
-            <Menu />
-          </IconButton>
-        ) : (
-          <Box
-            sx={{
-              '& > button, a': {
-                color: '#ffffff',
-              },
-            }}
-          >
-            <Link mr={6} onClick={() => scrollToSection(LIVE_TOURS_CLASS_NAME)}>
-              <Message id="header.liveTours" />
-            </Link>
-            <Link mr={6} onClick={() => scrollToSection(VR_PLACES_CLASS_NAME)}>
-              <Message id="header.vrPlaces" />
-            </Link>
-            <Link mr={6} onClick={() => scrollToSection(ABOUT_US_CLASS_NAME)}>
-              <Message id="header.aboutUs" />
-            </Link>
-            <Button
-              variant="outlined"
-              sx={{
-                width: 75,
-                borderColor: locale === 'en' ? '#ffffff' : 'transparent',
-                ':hover': {
-                  borderColor: locale === 'en' ? '#ffffff' : 'transparent',
-                },
-              }}
-              onClick={() => setLocale('en')}
-            >
-              EN
-            </Button>
-            <Button
-              variant={locale === 'ua' ? 'outlined' : undefined}
-              sx={{
-                width: 75,
-                borderColor: locale === 'ua' ? '#ffffff' : 'transparent',
-                ':hover': {
-                  borderColor: locale === 'ua' ? '#ffffff' : 'transparent',
-                },
-              }}
-              onClick={() => setLocale('ua')}
-            >
-              UA
-            </Button>
-          </Box>
-        )}
-      </Stack>
-      <Drawer anchor="right" open={showMenu} onClose={() => setShowMenu(false)}>
+      <Container>
         <Stack
-          sx={{ minWidth: '65vw' }}
-          direction="column"
-          spacing={5}
-          pl={5}
-          pt={5}
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
+          sx={{ px: md ? 0 : 6 }}
+          height={59}
         >
-          <Link onClick={() => scrollToSection(LIVE_TOURS_CLASS_NAME)}>
-            <Message id="header.liveTours" />
+          {md && (
+            <IconButton onClick={() => setMenuOpen(true)}>
+              <MenuIcon sx={{ color: '#eaeaea' }} />
+            </IconButton>
+          )}
+          <Link href="/">
+            <Stack direction="row" alignItems="center">
+              <Dot className="blink" style={{ marginBottom: 3 }} />
+              <Typography
+                textTransform="uppercase"
+                variant="h2"
+                sx={{ mr: md ? 0.25 : 0.5 }}
+              >
+                wer ukraine
+              </Typography>
+            </Stack>
           </Link>
-          <Link onClick={() => scrollToSection(ABOUT_US_CLASS_NAME)}>
-            <Message id="header.aboutUs" />
-          </Link>
-          <Stack direction="row" spacing={5}>
-            <Button
-              variant={locale === 'en' ? 'outlined' : undefined}
-              sx={{ width: 75 }}
-              onClick={() => setLocale('en')}
-            >
-              EN
-            </Button>
-            <Button
-              variant={locale === 'ua' ? 'outlined' : undefined}
-              sx={{ width: 75 }}
-              onClick={() => setLocale('ua')}
-            >
-              UA
-            </Button>
+          {!md && (
+            <Stack direction="row" alignItems="center">
+              <Link href="/">
+                <Typography ml={2.5} variant="h3">
+                  <Message id="new.header.home" />
+                </Typography>
+              </Link>
+              <Link href="/locations">
+                <Typography ml={2.5} variant="h3">
+                  <Message id="new.header.locations" />
+                </Typography>
+              </Link>
+              <Link href="/about">
+                <Typography ml={2.5} variant="h3">
+                  <Message id="new.header.about" />
+                </Typography>
+              </Link>
+              {/*<Link href="/support">*/}
+              {/*  <Typography ml={2.5} variant="h3">*/}
+              {/*    <Message id="new.header.support" />*/}
+              {/*  </Typography>*/}
+              {/*</Link>*/}
+              {/*<Typography ml={2.5} variant="h3">*/}
+              {/*  Get in touch*/}
+              {/*</Typography>*/}
+              <Typography ml={2.5} variant="h3" sx={{ opacity: 0.3 }}>
+                <Message id="new.header.film" />
+              </Typography>
+            </Stack>
+          )}
+          <Stack direction="row" alignItems="center">
+            {/*{md ? (*/}
+            {/*  <IconButton>*/}
+            {/*    <Volume />*/}
+            {/*  </IconButton>*/}
+            {/*) : (*/}
+            {/*  <Button sx={{ display: 'flex', height: 40 }} isSecondary >*/}
+            {/*    <Volume />*/}
+            {/*  </Button>*/}
+            {/*)}*/}
+            {!md && (
+              <Button
+                sx={{ display: 'flex', height: 40, ml: 1.5 }}
+                isSecondary
+                onClick={() => setLocale(locale === 'en' ? 'ua' : 'en')}
+              >
+                {locale === 'en' ? 'Українська' : 'English'}
+                <Globe style={{ height: 20 }} />
+              </Button>
+            )}
           </Stack>
         </Stack>
+      </Container>
+      <Drawer
+        anchor="left"
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        sx={{ width: '90vw' }}
+      >
+        <Stack
+          width="50vw"
+          direction="column"
+          sx={{ background: '#101010', height: '100%' }}
+        >
+          <Button
+            sx={{ display: 'flex', height: 40, mx: 2, mt: 3 }}
+            isSecondary
+            onClick={() => setLocale(locale === 'en' ? 'ua' : 'en')}
+          >
+            {locale === 'en' ? 'Українська' : 'English'}
+            <Globe style={{ height: 20 }} />
+          </Button>
+          <Link href="/" py={3}>
+            <Typography ml={2.5} variant="h3">
+              <Message id="new.header.home" />
+            </Typography>
+          </Link>
+          <Link href="/locations" py={3}>
+            <Typography ml={2.5} variant="h3">
+              <Message id="new.header.locations" />
+            </Typography>
+          </Link>
+          <Link href="/about" py={3}>
+            <Typography ml={2.5} variant="h3">
+              <Message id="new.header.about" />
+            </Typography>
+          </Link>
+          <Link href="/support" py={3}>
+            <Typography ml={2.5} variant="h3">
+              <Message id="new.header.support" />
+            </Typography>
+          </Link>
+          {/*<Typography ml={2.5} variant="h3">*/}
+          {/*  Get in touch*/}
+          {/*</Typography>*/}
+          <Typography ml={2.5} py={3} variant="h3" sx={{ opacity: 0.3 }}>
+            The film [SOON]
+          </Typography>
+        </Stack>
       </Drawer>
-    </Container>
+    </Stack>
   );
 };

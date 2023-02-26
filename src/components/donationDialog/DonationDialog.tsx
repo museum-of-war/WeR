@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import {
-  Button,
   Dialog,
   DialogActions,
   DialogContent,
@@ -14,12 +13,13 @@ import { BytesLike, ethers } from 'ethers';
 import Web3Modal from 'web3modal';
 import WalletConnectProvider from '@walletconnect/web3-provider';
 import { useIntl } from 'react-intl';
-import { Message, TranslationKey } from '../message/Message';
-import { CloseModalButton } from '../closeModalButton/CloseModalButton';
-import { ReactComponent as MetaMask } from '../../icons/meta-mask.svg';
-import { Select } from '../select/Select';
+import { ReactComponent as MetaMask } from '../../icons/MetaMask.svg';
 import { CURRENCIES, Currency } from './constants';
+import { Message, TranslationKey } from '../message/Message';
 import { useLocale } from '../../providers/AppLocaleProvider';
+import { CloseModalButton } from '../closeModalButton/CloseModalButton';
+import { Button } from '../button/Button';
+import { ReactComponent as ButtonArrow } from '../../icons/ButtonArrow.svg';
 
 const providerOptions = {
   walletconnect: {
@@ -46,7 +46,11 @@ const DonateButton: React.FC<{
   currency: Currency;
   setAmount: (amount: number) => void;
 }> = ({ amount, currency, setAmount }) => (
-  <Button variant="text" onClick={() => setAmount(amount)}>
+  <Button
+    isSecondary
+    onClick={() => setAmount(amount)}
+    sx={{ '&:not(:first-of-type)': { ml: 1 }, flexBasis: '25%' }}
+  >
     {amount} {currency.toUpperCase()}
   </Button>
 );
@@ -166,82 +170,103 @@ export const DonationDialog: React.FC<DonationProps> = ({
   }, [currency]);
 
   return (
-    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="md">
+    <Dialog open={open} onClose={handleClose} fullWidth maxWidth="sm">
       <CloseModalButton onClick={handleClose} />
-      <DialogTitle>
+      <DialogTitle
+        sx={{
+          borderBottom: '1px solid #212121',
+        }}
+      >
         <Message id={title} />
       </DialogTitle>
-      <DialogContent>
-        <Stack spacing={2}>
-          <Stack direction="column" spacing={1}>
-            {isWalletModal ? (
-              <>
-                <Typography variant="body2">
-                  <Message id="donate.walletNeeded" />
+      <DialogContent sx={{ borderBottom: '1px solid #212121', p: 0 }}>
+        <Stack direction="column">
+          {isWalletModal ? (
+            <>
+              <Typography p={1.5}>
+                <Message id="donate.walletNeeded" />
+              </Typography>
+            </>
+          ) : (
+            <Stack direction="column">
+              {multiCurrency && (
+                <Stack
+                  direction="column"
+                  sx={{ borderBottom: '1px solid #212121' }}
+                  p={1.5}
+                >
+                  <Typography>
+                    <Message id="new.support.dialog.pm" />
+                  </Typography>
+                  <Stack direction="row" mt={1}>
+                    {CURRENCIES.map((c) => (
+                      <Button
+                        key={c.name}
+                        value={c.name}
+                        isSecondary={c.name !== currency}
+                        onClick={() => setCurrency(c.name)}
+                        sx={{
+                          '&:not(:first-of-type)': { ml: 1 },
+                        }}
+                      >
+                        {c.name.toUpperCase()}
+                      </Button>
+                    ))}
+                  </Stack>
+                </Stack>
+              )}
+              <Stack direction="column" sx={{ py: 1, px: 1.5 }}>
+                <Typography>
+                  <Typography>
+                    <Message id="new.support.dialog.amount" />
+                  </Typography>
                 </Typography>
-              </>
-            ) : (
-              <Stack direction="column" spacing={2}>
-                <Stack direction={{ xs: 'column', sm: 'row' }}>
-                  <TextField
-                    variant="standard"
-                    inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
-                    value={amount ?? ''}
-                    placeholder={intl.formatMessage({ id: 'donate.amount' })}
-                    onChange={(e) => {
-                      if (!isNaN(Math.abs(+e.target.value))) {
-                        setAmount(Math.abs(+e.target.value));
-                      }
-                    }}
-                    sx={{ flex: 1, height: '100%' }}
-                  />
-                  {multiCurrency && (
-                    <Select
-                      value={currency}
-                      onChange={(event) =>
-                        setCurrency(event.target.value as Currency)
-                      }
-                      sx={{
-                        ml: { xs: 0, sm: 4 },
-                        width: { xs: '100%', sm: 'auto' },
-                      }}
-                      inputProps={{ sx: { textTransform: 'uppercase' } }}
-                    >
-                      {CURRENCIES.map((currency) => (
-                        <MenuItem
-                          key={currency.name}
-                          value={currency.name}
-                          sx={{ textTransform: 'uppercase' }}
-                        >
-                          {currency.name}
-                        </MenuItem>
-                      ))}
-                    </Select>
-                  )}
-                </Stack>
-                <Stack direction="row" sx={{ pt: { xs: 2, sm: 0 } }}>
-                  {CURRENCIES.find(
-                    ({ name }) => name === currency,
-                  )?.defaultValues.map((value) => (
-                    <DonateButton
-                      amount={value}
-                      currency={currency}
-                      setAmount={setAmount}
-                      key={value}
-                    />
-                  ))}
-                </Stack>
+                <TextField
+                  variant="outlined"
+                  inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                  value={amount ?? ''}
+                  placeholder={intl.formatMessage({ id: 'donate.amount' })}
+                  onChange={(e) => {
+                    if (!isNaN(Math.abs(+e.target.value))) {
+                      setAmount(Math.abs(+e.target.value));
+                    }
+                  }}
+                  sx={{
+                    flex: 1,
+                    height: '100%',
+                    mt: 1,
+                    '& *': { borderRadius: '8px' },
+                  }}
+                />
               </Stack>
-            )}
-          </Stack>
+              <Stack direction="row" sx={{ py: 1, px: 1.5 }}>
+                {CURRENCIES.find(
+                  ({ name }) => name === currency,
+                )?.defaultValues.map((value) => (
+                  <DonateButton
+                    amount={value}
+                    currency={currency}
+                    setAmount={setAmount}
+                    key={value}
+                  />
+                ))}
+              </Stack>
+            </Stack>
+          )}
         </Stack>
       </DialogContent>
       {isWalletModal ? (
-        <DialogActions sx={{ flexDirection: { xs: 'column', sm: 'row' } }}>
+        <DialogActions
+          sx={{
+            flexDirection: { xs: 'column', sm: 'row' },
+            p: 1.5,
+            justifyContent: 'space-between',
+          }}
+        >
           <Button
-            variant="outlined"
             disabled={isConnecting}
             onClick={handleMetaMask}
+            isSecondary
             sx={{
               width: {
                 xs: '100%',
@@ -254,9 +279,9 @@ export const DonationDialog: React.FC<DonationProps> = ({
             MetaMask
           </Button>
           <Button
-            variant="outlined"
             disabled={isConnecting}
             onClick={handleWalletConnect}
+            isSecondary
             sx={{
               width: {
                 xs: '100%',
@@ -279,20 +304,23 @@ export const DonationDialog: React.FC<DonationProps> = ({
           </Button>
         </DialogActions>
       ) : (
-        <DialogActions>
+        <DialogActions sx={{ p: 1.5 }}>
           <Button
             sx={{
-              width: 'fit-content',
-              minWidth: {
-                xs: '100%',
-                sm: 160,
-              },
+              width: '100%',
+              '& *': { opacity: (amount ?? 0) <= 0 ? 0.6 : 1 },
             }}
-            variant="outlined"
             disabled={(amount ?? 0) <= 0}
             onClick={handleContinue}
           >
-            <Message id="donate.continue" />
+            <>
+              <Typography>
+                <Typography>
+                  <Message id="new.support.dialog.button.confirmation" />
+                </Typography>
+              </Typography>
+              <ButtonArrow />
+            </>
           </Button>
         </DialogActions>
       )}
